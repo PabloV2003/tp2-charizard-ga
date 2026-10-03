@@ -1,0 +1,15 @@
+tipo_caso,origen,moveset,movimientos_en,valido_showdown,mensaje
+moveset_resultante,"AG R1, AG R2, AG R4, AG OP-RUL, AG OP-1P, AG OP-MUT20, optimo R1, optimo R2, optimo R4, voraz+busqueda_local R1, voraz R2, voraz+busqueda_local R2, voraz+busqueda_local R4",fly|solar-beam|earthquake|focus-punch,Fly / Solar Beam / Earthquake / Focus Punch,True,
+moveset_resultante,"AG R3, optimo R3, voraz R3, voraz+busqueda_local R3",hyper-beam|solar-beam|focus-punch|blast-burn,Hyper Beam / Solar Beam / Focus Punch / Blast Burn,True,
+moveset_resultante,"AG R3, optimo R3",solar-beam|focus-punch|blast-burn|giga-impact,Solar Beam / Focus Punch / Blast Burn / Giga Impact,True,
+moveset_resultante,"AG R5, optimo R5, voraz R1, voraz R5, voraz+busqueda_local R5",fly|earthquake|focus-punch|blast-burn,Fly / Earthquake / Focus Punch / Blast Burn,True,
+moveset_resultante,optimo conservador R1,earthquake|flare-blitz|focus-blast|hurricane,Earthquake / Flare Blitz / Focus Blast / Hurricane,True,
+moveset_resultante,optimo conservador R2,earthquake|crunch|focus-blast|hurricane,Earthquake / Crunch / Focus Blast / Hurricane,True,
+moveset_resultante,optimo conservador R3,earthquake|outrage|overheat|hurricane,Earthquake / Outrage / Overheat / Hurricane,True,
+moveset_resultante,optimo conservador R4,earthquake|crunch|flare-blitz|air-slash,Earthquake / Crunch / Flare Blitz / Air Slash,True,
+moveset_resultante,optimo conservador R4,earthquake|crunch|flare-blitz|acrobatics,Earthquake / Crunch / Flare Blitz / Acrobatics,True,
+moveset_resultante,optimo conservador R5,earthquake|overheat|flare-blitz|hurricane,Earthquake / Overheat / Flare Blitz / Hurricane,True,
+moveset_resultante,voraz R4,solar-beam|earthquake|focus-punch|flare-blitz,Solar Beam / Earthquake / Focus Punch / Flare Blitz,True,
+moveset_resultante,ejemplo numérico,flamethrower|solar-beam|air-slash|dragon-pulse,Flamethrower / Solar Beam / Air Slash / Dragon Pulse,True,
+control_negativo,Thunderbolt no está en el learnset de Charizard,,Thunderbolt / Solar Beam / Earthquake / Focus Punch,False,Charizard can't learn Thunderbolt.
+control_negativo,Movimiento repetido,,Earthquake / Earthquake / Fly / Focus Punch,False,Charizard has multiple copies of Earthquake.

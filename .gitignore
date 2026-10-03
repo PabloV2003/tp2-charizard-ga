@@ -1,0 +1,16 @@
+# Entornos y caches (no se suben)
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+# Descargas completas de PokeAPI/Showdown (el dataset definitivo ya esta en data/)
+data/cache/
+# Clon opcional de Pokemon Showdown para la verificacion de legalidad
+.cache/
+# Salidas temporales
+results/demo/
+results/pytest_report.xml
+dist/
+~$*

@@ -1,0 +1,17 @@
+{
+  "M": 53,
+  "combinaciones": 292825,
+  "segundos_enumeracion_y_componentes": 1.389758100034669,
+  "maximo_por_componente": {
+    "C": 0.7222222222222222,
+    "P": 1.0,
+    "A": 1.0,
+    "S": 1.0,
+    "D": 1.0
+  },
+  "cobertura_maxima_tipos": 13,
+  "combinaciones_con_cobertura_maxima": 300,
+  "nota": "Los componentes de las C(M,4) combinaciones se calculan una vez con fitness.components; cada perfil solo pondera.",
+  "M_conservador": 46,
+  "combinaciones_conservador": 163185
+}

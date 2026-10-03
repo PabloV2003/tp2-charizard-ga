@@ -1,0 +1,15 @@
+{
+  "_descripcion": "Criterio de calidad adoptado. Se fijo el 2026-10-03 ANTES de ejecutar los experimentos y no se modifico despues de observar resultados.",
+  "definiciones": {
+    "solucion_valida": "Moveset de exactamente 4 movimientos distintos, todos pertenecientes al catalogo definitivo (aptitud > 0).",
+    "mejor_solucion_encontrada": "Mejor individuo de toda la corrida (copia conservada aunque desaparezca de la poblacion). No implica optimalidad.",
+    "optimo_demostrado": "Maximo de la funcion de aptitud sobre las C(M,4) combinaciones, obtenido por enumeracion exhaustiva del mismo catalogo con la misma funcion."
+  },
+  "tolerancia_empate": 1e-9,
+  "corrida_alcanza_optimo": "La mejor solucion encontrada es valida y su brecha absoluta respecto del optimo demostrado del perfil es menor que la tolerancia.",
+  "corrida_aceptable": "Brecha relativa respecto del optimo demostrado menor o igual a 1 %.",
+  "configuracion_satisfactoria": "Al menos 8 de las 10 replicas alcanzan el optimo demostrado y la brecha relativa media es menor o igual a 1 %.",
+  "umbral_replicas_optimo": 8,
+  "umbral_brecha_relativa": 0.01,
+  "alcance": "El criterio evalua al AG como metodo de busqueda bajo el modelo aprobado. No mide probabilidad de victoria ni calidad competitiva real."
+}

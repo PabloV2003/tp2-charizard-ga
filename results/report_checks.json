@@ -1,0 +1,24 @@
+{
+  "figuras": 14,
+  "tablas": 25,
+  "marcadores_sin_resolver": [],
+  "placeholders_completar": 0,
+  "repo_url": "https://github.com/PabloV2003/tp2-charizard-ga",
+  "figuras_insertadas": [
+    "figures/fig_tabla_tipos.png",
+    "figures/runs/R1_seed42.png",
+    "figures/runs/R2_seed42.png",
+    "figures/runs/R3_seed42.png",
+    "figures/runs/R4_seed42.png",
+    "figures/runs/R5_seed42.png",
+    "figures/fig_componentes_perfiles.png",
+    "figures/fig_variabilidad.png",
+    "figures/fig_operadores.png",
+    "figures/fig_ag_vs_aleatoria.png",
+    "figures/fig_distribucion_exhaustiva.png",
+    "figures/runs/OP-RUL_seed42.png",
+    "figures/runs/OP-1P_seed42.png",
+    "figures/runs/OP-MUT20_seed42.png"
+  ],
+  "pdf": "docs\\informe_final.pdf"
+}

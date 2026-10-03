@@ -1,0 +1,266 @@
+{
+  "generado_utc": "2026-10-03T23:26:32+00:00",
+  "dataset_version": "6557b19f60a8",
+  "fitness_version": "F1 (C/P/A/S/D; P normalizada por la potencia máxima del catálogo)",
+  "catalogo_M": 53,
+  "potencia_maxima_normalizacion": 150,
+  "semillas": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "semilla_principal": 42,
+  "perfil_base": "R1",
+  "alcance_probabilidades": {
+    "cx_prob": "por pareja de padres consecutivos seleccionados",
+    "cx_indpb": "por gen (posición) dentro de una pareja que se cruza (solo cruza uniforme)",
+    "mutation_prob": "por individuo hijo; si se activa, se reemplaza UN gen elegido al azar",
+    "generations": "generaciones evolutivas además de la generación inicial 0 (se registran 201 filas por corrida)"
+  },
+  "criterio_calidad": {
+    "_descripcion": "Criterio de calidad adoptado. Se fijo el 2026-10-03 ANTES de ejecutar los experimentos y no se modifico despues de observar resultados.",
+    "definiciones": {
+      "solucion_valida": "Moveset de exactamente 4 movimientos distintos, todos pertenecientes al catalogo definitivo (aptitud > 0).",
+      "mejor_solucion_encontrada": "Mejor individuo de toda la corrida (copia conservada aunque desaparezca de la poblacion). No implica optimalidad.",
+      "optimo_demostrado": "Maximo de la funcion de aptitud sobre las C(M,4) combinaciones, obtenido por enumeracion exhaustiva del mismo catalogo con la misma funcion."
+    },
+    "tolerancia_empate": 1e-09,
+    "corrida_alcanza_optimo": "La mejor solucion encontrada es valida y su brecha absoluta respecto del optimo demostrado del perfil es menor que la tolerancia.",
+    "corrida_aceptable": "Brecha relativa respecto del optimo demostrado menor o igual a 1 %.",
+    "configuracion_satisfactoria": "Al menos 8 de las 10 replicas alcanzan el optimo demostrado y la brecha relativa media es menor o igual a 1 %.",
+    "umbral_replicas_optimo": 8,
+    "umbral_brecha_relativa": 0.01,
+    "alcance": "El criterio evalua al AG como metodo de busqueda bajo el modelo aprobado. No mide probabilidad de victoria ni calidad competitiva real."
+  },
+  "configuraciones": [
+    {
+      "config_id": "R1",
+      "grupo": "principal",
+      "perfil": "R1",
+      "perfil_nombre": "Base",
+      "descripcion": "Perfil base",
+      "pesos": {
+        "wC": 0.4,
+        "wP": 0.2,
+        "wA": 0.15,
+        "wS": 0.15,
+        "wD": 0.1
+      },
+      "parametros_ag": {
+        "population_size": 100,
+        "generations": 200,
+        "selection": "tournament",
+        "tournament_size": 3,
+        "crossover": "uniform",
+        "cx_prob": 0.8,
+        "cx_indpb": 0.5,
+        "mutation_prob": 0.1,
+        "elitism": 2,
+        "stop_criterion": "generations"
+      },
+      "overrides_respecto_base": {}
+    },
+    {
+      "config_id": "R2",
+      "grupo": "principal",
+      "perfil": "R2",
+      "perfil_nombre": "Mayor cobertura",
+      "descripcion": "Perfil mayor cobertura",
+      "pesos": {
+        "wC": 0.6,
+        "wP": 0.15,
+        "wA": 0.1,
+        "wS": 0.05,
+        "wD": 0.1
+      },
+      "parametros_ag": {
+        "population_size": 100,
+        "generations": 200,
+        "selection": "tournament",
+        "tournament_size": 3,
+        "crossover": "uniform",
+        "cx_prob": 0.8,
+        "cx_indpb": 0.5,
+        "mutation_prob": 0.1,
+        "elitism": 2,
+        "stop_criterion": "generations"
+      },
+      "overrides_respecto_base": {}
+    },
+    {
+      "config_id": "R3",
+      "grupo": "principal",
+      "perfil": "R3",
+      "perfil_nombre": "Mayor potencia",
+      "descripcion": "Perfil mayor potencia",
+      "pesos": {
+        "wC": 0.2,
+        "wP": 0.45,
+        "wA": 0.15,
+        "wS": 0.1,
+        "wD": 0.1
+      },
+      "parametros_ag": {
+        "population_size": 100,
+        "generations": 200,
+        "selection": "tournament",
+        "tournament_size": 3,
+        "crossover": "uniform",
+        "cx_prob": 0.8,
+        "cx_indpb": 0.5,
+        "mutation_prob": 0.1,
+        "elitism": 2,
+        "stop_criterion": "generations"
+      },
+      "overrides_respecto_base": {}
+    },
+    {
+      "config_id": "R4",
+      "grupo": "principal",
+      "perfil": "R4",
+      "perfil_nombre": "Mayor precisión",
+      "descripcion": "Perfil mayor precisión",
+      "pesos": {
+        "wC": 0.25,
+        "wP": 0.15,
+        "wA": 0.4,
+        "wS": 0.1,
+        "wD": 0.1
+      },
+      "parametros_ag": {
+        "population_size": 100,
+        "generations": 200,
+        "selection": "tournament",
+        "tournament_size": 3,
+        "crossover": "uniform",
+        "cx_prob": 0.8,
+        "cx_indpb": 0.5,
+        "mutation_prob": 0.1,
+        "elitism": 2,
+        "stop_criterion": "generations"
+      },
+      "overrides_respecto_base": {}
+    },
+    {
+      "config_id": "R5",
+      "grupo": "principal",
+      "perfil": "R5",
+      "perfil_nombre": "Mayor STAB y diversidad",
+      "descripcion": "Perfil mayor STAB y diversidad",
+      "pesos": {
+        "wC": 0.25,
+        "wP": 0.15,
+        "wA": 0.1,
+        "wS": 0.3,
+        "wD": 0.2
+      },
+      "parametros_ag": {
+        "population_size": 100,
+        "generations": 200,
+        "selection": "tournament",
+        "tournament_size": 3,
+        "crossover": "uniform",
+        "cx_prob": 0.8,
+        "cx_indpb": 0.5,
+        "mutation_prob": 0.1,
+        "elitism": 2,
+        "stop_criterion": "generations"
+      },
+      "overrides_respecto_base": {}
+    },
+    {
+      "config_id": "OP-RUL",
+      "grupo": "operadores",
+      "perfil": "R1",
+      "perfil_nombre": "Base",
+      "descripcion": "Pesos base; selección por ruleta en lugar de torneo",
+      "pesos": {
+        "wC": 0.4,
+        "wP": 0.2,
+        "wA": 0.15,
+        "wS": 0.15,
+        "wD": 0.1
+      },
+      "parametros_ag": {
+        "population_size": 100,
+        "generations": 200,
+        "selection": "roulette",
+        "tournament_size": 3,
+        "crossover": "uniform",
+        "cx_prob": 0.8,
+        "cx_indpb": 0.5,
+        "mutation_prob": 0.1,
+        "elitism": 2,
+        "stop_criterion": "generations"
+      },
+      "overrides_respecto_base": {
+        "selection": "roulette"
+      }
+    },
+    {
+      "config_id": "OP-1P",
+      "grupo": "operadores",
+      "perfil": "R1",
+      "perfil_nombre": "Base",
+      "descripcion": "Pesos base; cruza de un punto en lugar de uniforme",
+      "pesos": {
+        "wC": 0.4,
+        "wP": 0.2,
+        "wA": 0.15,
+        "wS": 0.15,
+        "wD": 0.1
+      },
+      "parametros_ag": {
+        "population_size": 100,
+        "generations": 200,
+        "selection": "tournament",
+        "tournament_size": 3,
+        "crossover": "one_point",
+        "cx_prob": 0.8,
+        "cx_indpb": 0.5,
+        "mutation_prob": 0.1,
+        "elitism": 2,
+        "stop_criterion": "generations"
+      },
+      "overrides_respecto_base": {
+        "crossover": "one_point"
+      }
+    },
+    {
+      "config_id": "OP-MUT20",
+      "grupo": "operadores",
+      "perfil": "R1",
+      "perfil_nombre": "Base",
+      "descripcion": "Pesos base; probabilidad de mutación 0.20 en lugar de 0.10",
+      "pesos": {
+        "wC": 0.4,
+        "wP": 0.2,
+        "wA": 0.15,
+        "wS": 0.15,
+        "wD": 0.1
+      },
+      "parametros_ag": {
+        "population_size": 100,
+        "generations": 200,
+        "selection": "tournament",
+        "tournament_size": 3,
+        "crossover": "uniform",
+        "cx_prob": 0.8,
+        "cx_indpb": 0.5,
+        "mutation_prob": 0.2,
+        "elitism": 2,
+        "stop_criterion": "generations"
+      },
+      "overrides_respecto_base": {
+        "mutation_prob": 0.2
+      }
+    }
+  ]
+}

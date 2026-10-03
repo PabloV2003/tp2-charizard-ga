@@ -1,0 +1,146 @@
+{
+  "config_id": "R5",
+  "grupo": "principal",
+  "perfil": "R5",
+  "perfil_nombre": "Mayor STAB y diversidad",
+  "descripcion": "Perfil mayor STAB y diversidad",
+  "replica": 2,
+  "semilla": 43,
+  "corrida_principal": false,
+  "parametros_ag": {
+    "population_size": 100,
+    "generations": 200,
+    "selection": "tournament",
+    "tournament_size": 3,
+    "crossover": "uniform",
+    "cx_prob": 0.8,
+    "cx_indpb": 0.5,
+    "mutation_prob": 0.1,
+    "elitism": 2,
+    "stop_criterion": "generations"
+  },
+  "overrides_respecto_base": {},
+  "pesos": {
+    "wC": 0.25,
+    "wP": 0.15,
+    "wA": 0.1,
+    "wS": 0.3,
+    "wD": 0.2
+  },
+  "dataset_version": "6557b19f60a8",
+  "fitness_version": "F1 (C/P/A/S/D; P normalizada por la potencia máxima del catálogo)",
+  "mejor_solucion": {
+    "moveset_ids": [
+      19,
+      89,
+      264,
+      307
+    ],
+    "generacion_encontrada": 35,
+    "valido": true,
+    "movimientos": [
+      {
+        "move_id": 19,
+        "slug": "fly",
+        "nombre_es": "Vuelo",
+        "tipo": "flying",
+        "tipo_es": "Volador",
+        "potencia": 90,
+        "precision": 95,
+        "categoria": "physical",
+        "stab": true,
+        "efectos_ignorados": "requiere turno de carga"
+      },
+      {
+        "move_id": 89,
+        "slug": "earthquake",
+        "nombre_es": "Terremoto",
+        "tipo": "ground",
+        "tipo_es": "Tierra",
+        "potencia": 100,
+        "precision": 100,
+        "categoria": "physical",
+        "stab": false,
+        "efectos_ignorados": ""
+      },
+      {
+        "move_id": 264,
+        "slug": "focus-punch",
+        "nombre_es": "Puño Certero",
+        "tipo": "fighting",
+        "tipo_es": "Lucha",
+        "potencia": 150,
+        "precision": 100,
+        "categoria": "physical",
+        "stab": false,
+        "efectos_ignorados": "falla si el usuario recibe daño antes de actuar; prioridad -3"
+      },
+      {
+        "move_id": 307,
+        "slug": "blast-burn",
+        "nombre_es": "Anillo Ígneo",
+        "tipo": "fire",
+        "tipo_es": "Fuego",
+        "potencia": 150,
+        "precision": 90,
+        "categoria": "special",
+        "stab": true,
+        "efectos_ignorados": "obliga a recargar un turno"
+      }
+    ],
+    "componentes": {
+      "C": 0.6111111111111112,
+      "P": 0.8166666666666667,
+      "A": 0.9625,
+      "S": 0.5,
+      "D": 1.0
+    },
+    "aportes": {
+      "C": 15.277777777777779,
+      "P": 12.25,
+      "A": 9.625,
+      "S": 15.0,
+      "D": 20.0
+    },
+    "aptitud": 72.15277777777777,
+    "tipos_cubiertos": [
+      "normal",
+      "fire",
+      "electric",
+      "grass",
+      "ice",
+      "fighting",
+      "poison",
+      "bug",
+      "rock",
+      "dark",
+      "steel"
+    ],
+    "tipos_no_cubiertos": [
+      "water",
+      "ground",
+      "flying",
+      "psychic",
+      "ghost",
+      "dragon",
+      "fairy"
+    ],
+    "n_tipos_cubiertos": 11,
+    "aptitud_perfil_base": 72.71527777777777
+  },
+  "generaciones_ejecutadas": 200,
+  "filas_log": 201,
+  "motivo_paro": "se completaron las 200 generaciones configuradas (criterio de paro por generaciones)",
+  "tiempo_segundos": 0.22529209998901933,
+  "candidatos_generados": 19700,
+  "evaluaciones_solicitadas": 16080,
+  "evaluaciones_efectivas": 802,
+  "reutilizacion_cache": 15278,
+  "poblacion_final": {
+    "combinaciones_distintas": 13,
+    "aptitud_media": 71.57083333333333,
+    "aptitud_max": 72.15277777777777
+  },
+  "total_hijos_reparados": 3134,
+  "total_individuos_invalidos_registrados": 0
+}

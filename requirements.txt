@@ -1,0 +1,13 @@
+# Versiones comprobadas con Python 3.13.14 en Windows 11 (ver results/environment.json).
+deap==1.4.4
+numpy==2.5.3
+pandas==3.0.6
+matplotlib==3.11.2
+pytest==9.1.1
+# Notebook (ejecucion automatica de principio a fin)
+nbformat==5.11.1
+nbconvert==7.17.1
+ipykernel==7.4.0
+# Informe DOCX; la exportacion a PDF usa Microsoft Word mediante pywin32 (solo Windows)
+python-docx==1.2.0
+pywin32==312; sys_platform == "win32"

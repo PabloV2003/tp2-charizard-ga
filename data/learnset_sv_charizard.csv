@@ -1,0 +1,76 @@
+move_id,slug,nombre_es,nombre_en,tipo,tipo_es,potencia,precision,clase_danio,metodos_sv,valores_ajustados_a_sv,incluido,motivo_exclusion
+44,bite,Mordisco,Bite,dark,Siniestro,60,100,physical,egg,,True,
+242,crunch,Triturar,Crunch,dark,Siniestro,80,100,physical,machine,,True,
+784,breaking-swipe,Vasto Impacto,Breaking Swipe,dragon,Dragón,60,100,physical,machine,,True,
+225,dragon-breath,Dragoaliento,Dragon Breath,dragon,Dragón,60,100,special,level-up:12,,True,
+337,dragon-claw,Garra Dragón,Dragon Claw,dragon,Dragón,80,100,physical,level-up:1|machine,,True,
+406,dragon-pulse,Pulso Dragón,Dragon Pulse,dragon,Dragón,85,100,special,machine,,True,
+407,dragon-rush,Carga Dragón,Dragon Rush,dragon,Dragón,100,75,physical,egg,,True,
+525,dragon-tail,Cola Dragón,Dragon Tail,dragon,Dragón,60,90,physical,egg|machine,,True,
+200,outrage,Enfado,Outrage,dragon,Dragón,120,100,physical,machine,,True,
+9,thunder-punch,Puño Trueno,Thunder Punch,electric,Eléctrico,75,100,physical,machine,,True,
+280,brick-break,Demolición,Brick Break,fighting,Lucha,75,100,physical,machine,,True,
+411,focus-blast,Onda Certera,Focus Blast,fighting,Lucha,120,70,special,machine,,True,
+264,focus-punch,Puño Certero,Focus Punch,fighting,Lucha,150,100,physical,machine,,True,
+307,blast-burn,Anillo Ígneo,Blast Burn,fire,Fuego,150,90,special,machine,,True,
+52,ember,Ascuas,Ember,fire,Fuego,40,100,special,level-up:1,,True,
+126,fire-blast,Llamarada,Fire Blast,fire,Fuego,110,85,special,machine,,True,
+424,fire-fang,Colmillo Ígneo,Fire Fang,fire,Fuego,65,95,physical,level-up:19|machine,,True,
+519,fire-pledge,Voto Fuego,Fire Pledge,fire,Fuego,80,100,special,machine,,True,
+7,fire-punch,Puño Fuego,Fire Punch,fire,Fuego,75,100,physical,machine,,True,
+83,fire-spin,Giro Fuego,Fire Spin,fire,Fuego,35,85,special,level-up:46|machine,,True,
+488,flame-charge,Nitrocarga,Flame Charge,fire,Fuego,50,100,physical,machine,,True,
+53,flamethrower,Lanzallamas,Flamethrower,fire,Fuego,90,100,special,level-up:30|machine,,True,
+394,flare-blitz,Envite Ígneo,Flare Blitz,fire,Fuego,120,100,physical,level-up:62|machine,,True,
+257,heat-wave,Onda Ígnea,Heat Wave,fire,Fuego,95,90,special,level-up:1|machine,,True,
+517,inferno,Infierno,Inferno,fire,Fuego,100,50,special,level-up:54,,True,
+315,overheat,Sofoco,Overheat,fire,Fuego,130,90,special,machine,,True,
+915,temper-flare,Cólera Ardiente,Temper Flare,fire,Fuego,75,100,physical,machine,,True,
+512,acrobatics,Acróbata,Acrobatics,flying,Volador,55,100,physical,machine,,True,
+314,air-cutter,Aire Afilado,Air Cutter,flying,Volador,60,95,special,machine,,True,
+403,air-slash,Tajo Aéreo,Air Slash,flying,Volador,75,95,special,level-up:0|machine,,True,
+19,fly,Vuelo,Fly,flying,Volador,90,95,physical,machine,,True,
+542,hurricane,Vendaval,Hurricane,flying,Volador,110,70,special,machine,,True,
+421,shadow-claw,Garra Umbría,Shadow Claw,ghost,Fantasma,70,100,physical,machine,,True,
+76,solar-beam,Rayo Solar,Solar Beam,grass,Planta,120,100,special,machine,,True,
+523,bulldoze,Terratemblor,Bulldoze,ground,Tierra,60,100,physical,machine,,True,
+91,dig,Excavar,Dig,ground,Tierra,80,100,physical,machine,,True,
+89,earthquake,Terremoto,Earthquake,ground,Tierra,100,100,physical,machine,,True,
+815,scorching-sands,Arenas Ardientes,Scorching Sands,ground,Tierra,70,100,special,machine,,True,
+34,body-slam,Golpe Cuerpo,Body Slam,normal,Normal,85,100,physical,machine,,True,
+38,double-edge,Doble Filo,Double-Edge,normal,Normal,120,100,physical,machine,,True,
+263,facade,Fachada,Facade,normal,Normal,70,100,physical,machine,,True,
+416,giga-impact,Gigaimpacto,Giga Impact,normal,Normal,150,90,physical,machine,,True,
+63,hyper-beam,Hiperrayo,Hyper Beam,normal,Normal,150,90,special,machine,,True,
+10,scratch,Arañazo,Scratch,normal,Normal,40,100,physical,level-up:1,,True,
+163,slash,Cuchillada,Slash,normal,Normal,70,100,physical,level-up:24,,True,
+36,take-down,Derribo,Take Down,normal,Normal,90,85,physical,machine,,True,
+851,tera-blast,Teraexplosión,Tera Blast,normal,Normal,80,100,special,machine,,True,
+311,weather-ball,Meteorobola,Weather Ball,normal,Normal,50,100,special,machine,,True,
+246,ancient-power,Poder Pasado,Ancient Power,rock,Roca,60,100,special,egg,,True,
+157,rock-slide,Avalancha,Rock Slide,rock,Roca,75,90,physical,machine,,True,
+317,rock-tomb,Tumba Rocas,Rock Tomb,rock,Roca,60,95,physical,machine,,True,
+231,iron-tail,Cola Férrea,Iron Tail,steel,Acero,100,75,physical,egg,,True,
+232,metal-claw,Garra Metal,Metal Claw,steel,Acero,50,95,physical,egg,,True,
+374,fling,Lanzamiento,Fling,dark,Siniestro,,100,physical,machine,,False,POTENCIA_NO_NUMERICA
+913,dragon-cheer,Bramido Dragón,Dragon Cheer,dragon,Dragón,0,0,status,machine,,False,ESTADO
+349,dragon-dance,Danza Dragón,Dragon Dance,dragon,Dragón,,,status,machine,,False,ESTADO
+68,counter,Contraataque,Counter,fighting,Lucha,,100,physical,egg,,False,POTENCIA_NO_NUMERICA
+535,heat-crash,Golpe Calor,Heat Crash,fire,Fuego,,100,physical,machine,,False,POTENCIA_NO_NUMERICA
+241,sunny-day,Día Soleado,Sunny Day,fire,Fuego,,,status,machine,,False,ESTADO
+261,will-o-wisp,Fuego Fatuo,Will-O-Wisp,fire,Fuego,,85,status,machine,,False,ESTADO
+332,aerial-ace,Golpe Aéreo,Aerial Ace,flying,Volador,60,,physical,machine,,False,PRECISION_NO_NUMERICA
+187,belly-drum,Tambor,Belly Drum,normal,Normal,,,status,egg,,False,ESTADO
+203,endure,Aguante,Endure,normal,Normal,,,status,machine,,False,ESTADO
+45,growl,Gruñido,Growl,normal,Normal,,100,status,level-up:1,,False,ESTADO
+270,helping-hand,Refuerzo,Helping Hand,normal,Normal,,,status,machine,,False,ESTADO
+182,protect,Protección,Protect,normal,Normal,,,status,machine,,False,ESTADO
+46,roar,Rugido,Roar,normal,Normal,,,status,machine,,False,ESTADO
+184,scary-face,Cara Susto,Scary Face,normal,Normal,,100,status,level-up:39|machine,,False,ESTADO
+214,sleep-talk,Sonámbulo,Sleep Talk,normal,Normal,,,status,machine,,False,ESTADO
+108,smokescreen,Pantalla de Humo,Smokescreen,normal,Normal,,100,status,level-up:1,,False,ESTADO
+164,substitute,Sustituto,Substitute,normal,Normal,,,status,machine,,False,ESTADO
+129,swift,Meteoros,Swift,normal,Normal,60,,special,machine,,False,PRECISION_NO_NUMERICA
+14,swords-dance,Danza Espada,Swords Dance,normal,Normal,,,status,machine,,False,ESTADO
+156,rest,Descanso,Rest,psychic,Psíquico,,,status,machine,,False,ESTADO
+201,sandstorm,Tormenta de Arena,Sandstorm,rock,Roca,,,status,machine,,False,ESTADO

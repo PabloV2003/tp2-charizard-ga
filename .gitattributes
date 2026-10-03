@@ -1,0 +1,9 @@
+# Finales de linea LF en datos y logs para que los hashes y las comparaciones no cambien entre sistemas.
+*.csv text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.ipynb text eol=lf
+*.docx binary
+*.pdf binary
+*.png binary

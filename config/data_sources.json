@@ -1,0 +1,25 @@
+{
+  "_descripcion": "Fuentes de datos fijadas por commit para que la preparacion sea reproducible. Ambas son fuentes comunitarias (no oficiales de The Pokemon Company / Game Freak).",
+  "pokemon": {
+    "nombre": "charizard",
+    "pokeapi_id": 6,
+    "tipos": ["fire", "flying"]
+  },
+  "version_group": "scarlet-violet",
+  "generacion": "generation-ix",
+  "metodos_aprendizaje_incluidos": ["level-up", "machine", "egg", "tutor"],
+  "pokeapi": {
+    "repositorio": "https://github.com/PokeAPI/api-data",
+    "commit": "02a8d9dd1b1a4e102b8b32d786d17017e8c9769a",
+    "url_base": "https://raw.githubusercontent.com/PokeAPI/api-data/{commit}/data/api/v2",
+    "descripcion": "Volcado JSON estatico que respalda la API REST publica https://pokeapi.co/api/v2/"
+  },
+  "showdown": {
+    "repositorio": "https://github.com/smogon/pokemon-showdown",
+    "commit": "9fb3a5b99f1a0bea17f495c5cc1bfe04fdd19c3e",
+    "url_base": "https://raw.githubusercontent.com/smogon/pokemon-showdown/{commit}/data",
+    "archivos": ["moves.ts", "learnsets.ts", "typechart.ts"],
+    "uso": "Verificacion cruzada (learnset Gen 9, potencia, precision, tipo, categoria, tabla de tipos) y banderas mecanicas descriptivas (carga, recarga, retroceso, etc.)."
+  },
+  "especies_para_learnset_showdown": ["charizard", "charmeleon", "charmander"]
+}

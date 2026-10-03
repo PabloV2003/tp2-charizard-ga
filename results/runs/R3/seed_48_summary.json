@@ -1,0 +1,146 @@
+{
+  "config_id": "R3",
+  "grupo": "principal",
+  "perfil": "R3",
+  "perfil_nombre": "Mayor potencia",
+  "descripcion": "Perfil mayor potencia",
+  "replica": 7,
+  "semilla": 48,
+  "corrida_principal": false,
+  "parametros_ag": {
+    "population_size": 100,
+    "generations": 200,
+    "selection": "tournament",
+    "tournament_size": 3,
+    "crossover": "uniform",
+    "cx_prob": 0.8,
+    "cx_indpb": 0.5,
+    "mutation_prob": 0.1,
+    "elitism": 2,
+    "stop_criterion": "generations"
+  },
+  "overrides_respecto_base": {},
+  "pesos": {
+    "wC": 0.2,
+    "wP": 0.45,
+    "wA": 0.15,
+    "wS": 0.1,
+    "wD": 0.1
+  },
+  "dataset_version": "6557b19f60a8",
+  "fitness_version": "F1 (C/P/A/S/D; P normalizada por la potencia máxima del catálogo)",
+  "mejor_solucion": {
+    "moveset_ids": [
+      76,
+      264,
+      307,
+      416
+    ],
+    "generacion_encontrada": 7,
+    "valido": true,
+    "movimientos": [
+      {
+        "move_id": 76,
+        "slug": "solar-beam",
+        "nombre_es": "Rayo Solar",
+        "tipo": "grass",
+        "tipo_es": "Planta",
+        "potencia": 120,
+        "precision": 100,
+        "categoria": "special",
+        "stab": false,
+        "efectos_ignorados": "requiere turno de carga; potencia condicional (el modelo usa la potencia base)"
+      },
+      {
+        "move_id": 264,
+        "slug": "focus-punch",
+        "nombre_es": "Puño Certero",
+        "tipo": "fighting",
+        "tipo_es": "Lucha",
+        "potencia": 150,
+        "precision": 100,
+        "categoria": "physical",
+        "stab": false,
+        "efectos_ignorados": "falla si el usuario recibe daño antes de actuar; prioridad -3"
+      },
+      {
+        "move_id": 307,
+        "slug": "blast-burn",
+        "nombre_es": "Anillo Ígneo",
+        "tipo": "fire",
+        "tipo_es": "Fuego",
+        "potencia": 150,
+        "precision": 90,
+        "categoria": "special",
+        "stab": true,
+        "efectos_ignorados": "obliga a recargar un turno"
+      },
+      {
+        "move_id": 416,
+        "slug": "giga-impact",
+        "nombre_es": "Gigaimpacto",
+        "tipo": "normal",
+        "tipo_es": "Normal",
+        "potencia": 150,
+        "precision": 90,
+        "categoria": "physical",
+        "stab": false,
+        "efectos_ignorados": "obliga a recargar un turno"
+      }
+    ],
+    "componentes": {
+      "C": 0.5,
+      "P": 0.95,
+      "A": 0.95,
+      "S": 0.25,
+      "D": 1.0
+    },
+    "aportes": {
+      "C": 10.0,
+      "P": 42.75,
+      "A": 14.25,
+      "S": 2.5,
+      "D": 10.0
+    },
+    "aptitud": 79.5,
+    "tipos_cubiertos": [
+      "normal",
+      "water",
+      "grass",
+      "ice",
+      "ground",
+      "bug",
+      "rock",
+      "dark",
+      "steel"
+    ],
+    "tipos_no_cubiertos": [
+      "fire",
+      "electric",
+      "fighting",
+      "poison",
+      "flying",
+      "psychic",
+      "ghost",
+      "dragon",
+      "fairy"
+    ],
+    "n_tipos_cubiertos": 9,
+    "aptitud_perfil_base": 67.0
+  },
+  "generaciones_ejecutadas": 200,
+  "filas_log": 201,
+  "motivo_paro": "se completaron las 200 generaciones configuradas (criterio de paro por generaciones)",
+  "tiempo_segundos": 0.21998279995750636,
+  "candidatos_generados": 19700,
+  "evaluaciones_solicitadas": 16272,
+  "evaluaciones_efectivas": 698,
+  "reutilizacion_cache": 15574,
+  "poblacion_final": {
+    "combinaciones_distintas": 7,
+    "aptitud_media": 79.156875,
+    "aptitud_max": 79.5
+  },
+  "total_hijos_reparados": 3496,
+  "total_individuos_invalidos_registrados": 0
+}

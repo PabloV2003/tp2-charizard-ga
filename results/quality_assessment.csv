@@ -1,0 +1,9 @@
+config_id,perfil,replicas,replicas_alcanzan_optimo,brecha_relativa_media,brecha_relativa_max,corridas_aceptables,configuracion_satisfactoria,generacion_alcanza_optimo_media,efectivas_hasta_optimo_media
+R1,R1,10,10,0.0,0.0,10,True,19.5,545.7
+R2,R2,10,10,0.0,0.0,10,True,31.2,588.4
+R3,R3,10,10,0.0,0.0,10,True,10.2,443.7
+R4,R4,10,10,0.0,0.0,10,True,17.0,485.2
+R5,R5,10,10,0.0,0.0,10,True,29.8,580.7
+OP-RUL,R1,10,10,0.0,0.0,10,True,56.9,2487.8
+OP-1P,R1,10,10,0.0,0.0,10,True,22.7,560.5
+OP-MUT20,R1,10,10,0.0,0.0,10,True,15.5,635.3

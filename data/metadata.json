@@ -1,0 +1,736 @@
+{
+  "dataset_version": "6557b19f60a8",
+  "dataset_sha256": "6557b19f60a833ae778b76d44ce58500fe6404951fa60ea18c2e28d598282ab0",
+  "pokemon": "Charizard (tipos Fuego/Volador, PokeAPI id 6)",
+  "estadisticas_base_charizard": {
+    "hp": 78,
+    "attack": 84,
+    "defense": 78,
+    "special-attack": 109,
+    "special-defense": 85,
+    "speed": 100
+  },
+  "version_group": "scarlet-violet",
+  "generacion": "generation-ix",
+  "fecha_obtencion_utc": {
+    "primera": "2026-10-03T23:24:57+00:00",
+    "ultima": "2026-10-03T23:25:03+00:00"
+  },
+  "fuentes": {
+    "pokeapi": {
+      "repositorio": "https://github.com/PokeAPI/api-data",
+      "commit": "02a8d9dd1b1a4e102b8b32d786d17017e8c9769a",
+      "url_base": "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2",
+      "tipo": "comunitaria (no oficial)"
+    },
+    "showdown": {
+      "repositorio": "https://github.com/smogon/pokemon-showdown",
+      "commit": "9fb3a5b99f1a0bea17f495c5cc1bfe04fdd19c3e",
+      "url_base": "https://raw.githubusercontent.com/smogon/pokemon-showdown/9fb3a5b99f1a0bea17f495c5cc1bfe04fdd19c3e/data",
+      "tipo": "comunitaria (no oficial)"
+    }
+  },
+  "descargas": {
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/pokemon/6/index.json": {
+      "archivo_cache": "pokeapi_pokemon_6.json",
+      "sha256": "dd3f1da74fab981e1cbd9090a6c8720c2a6b6046cbfed0dc51cedbe43e331130",
+      "bytes": 540951,
+      "obtenido_utc": "2026-10-03T23:24:57+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/36/index.json": {
+      "archivo_cache": "pokeapi_move_36.json",
+      "sha256": "05b4c20a4295161cb2b142ae28d1e6b26c60e5d3057dfbd72d28ff982f84652d",
+      "bytes": 93823,
+      "obtenido_utc": "2026-10-03T23:24:57+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/19/index.json": {
+      "archivo_cache": "pokeapi_move_19.json",
+      "sha256": "3330d137972b0ebd6b84424c3c53de61978ecfefcad4fb9a124d58d1994fee76",
+      "bytes": 45581,
+      "obtenido_utc": "2026-10-03T23:24:57+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/7/index.json": {
+      "archivo_cache": "pokeapi_move_7.json",
+      "sha256": "bebe5e0fe38970aae9354f17235787d31d0462d800d5d85d03691db1cddc3ba9",
+      "bytes": 45572,
+      "obtenido_utc": "2026-10-03T23:24:57+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/10/index.json": {
+      "archivo_cache": "pokeapi_move_10.json",
+      "sha256": "1dfe6f0c7aeedcbf6cc663ab7aaa2f700036df4073a1064a846c1e2278fe5f65",
+      "bytes": 35418,
+      "obtenido_utc": "2026-10-03T23:24:57+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/9/index.json": {
+      "archivo_cache": "pokeapi_move_9.json",
+      "sha256": "eb192e78f20274ee36036d6a3e0a2f8e3c93d6c7ab6bf48b49cb150c07b6604c",
+      "bytes": 50468,
+      "obtenido_utc": "2026-10-03T23:24:57+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/14/index.json": {
+      "archivo_cache": "pokeapi_move_14.json",
+      "sha256": "10786ce51b7897c6ffde8a913f11df6974b6fd36065ed4b0b829b47faf86e0a0",
+      "bytes": 59878,
+      "obtenido_utc": "2026-10-03T23:24:57+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/34/index.json": {
+      "archivo_cache": "pokeapi_move_34.json",
+      "sha256": "908202fcc0b42c3f730d1c8dce5e33313cd9c09a1322d5289d45f92c9641314f",
+      "bytes": 84668,
+      "obtenido_utc": "2026-10-03T23:24:57+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/38/index.json": {
+      "archivo_cache": "pokeapi_move_38.json",
+      "sha256": "0b28451a5935c159e193b84f1a203347be1bc396034a17bde1486ddfaf00834e",
+      "bytes": 84749,
+      "obtenido_utc": "2026-10-03T23:24:57+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/44/index.json": {
+      "archivo_cache": "pokeapi_move_44.json",
+      "sha256": "72974d22967305e9b00a623e1ae4c30706b049c5203f3b914cd6e09a08cb74a6",
+      "bytes": 49484,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/53/index.json": {
+      "archivo_cache": "pokeapi_move_53.json",
+      "sha256": "44a4e35aafb0ef6033aa9d43c6de1883180ad7fd69f7632995558f3029daf00a",
+      "bytes": 53166,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/63/index.json": {
+      "archivo_cache": "pokeapi_move_63.json",
+      "sha256": "310b7644c55c7fa1f8ebf0d6ae9e3884fb19f77a81c1aa4ee9a92d020532c180",
+      "bytes": 92619,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/52/index.json": {
+      "archivo_cache": "pokeapi_move_52.json",
+      "sha256": "91638a3d1a1f494ff6beea343ebbb1aa1c26b2d04efc5df81596952b963247e0",
+      "bytes": 34342,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/45/index.json": {
+      "archivo_cache": "pokeapi_move_45.json",
+      "sha256": "3110ed2e2f2fad39cb7516e0ae3ef1359f1df8997979d6d4f0affa2682a56d0a",
+      "bytes": 47331,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/46/index.json": {
+      "archivo_cache": "pokeapi_move_46.json",
+      "sha256": "c897b492ac7e1687779199e2b4df0b109ca407fba1fd9d2bf732229014621a62",
+      "bytes": 56156,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/68/index.json": {
+      "archivo_cache": "pokeapi_move_68.json",
+      "sha256": "5287d0e96d61d4d88dbd2b6b35ff9afd417764152297a79903a7fcc198bce601",
+      "bytes": 50285,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/76/index.json": {
+      "archivo_cache": "pokeapi_move_76.json",
+      "sha256": "38e06fbad1996396022cc6fba5d826c6b4cd29926dc5d270a46f46d76c82672f",
+      "bytes": 66058,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/83/index.json": {
+      "archivo_cache": "pokeapi_move_83.json",
+      "sha256": "71faba3969b9e6a16507670b1fb3fa5eb00e4e203bdbc735118d0cafa31cc13e",
+      "bytes": 38826,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/91/index.json": {
+      "archivo_cache": "pokeapi_move_91.json",
+      "sha256": "3ab69142d5c79d51b45c95fe85ef28f4ed954e27312865608e204bba9095f27b",
+      "bytes": 72463,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/108/index.json": {
+      "archivo_cache": "pokeapi_move_108.json",
+      "sha256": "d6dd2b7cc4dc12050dc5392cb10487ded0524333f488c49c09637c809ed940b4",
+      "bytes": 30019,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/89/index.json": {
+      "archivo_cache": "pokeapi_move_89.json",
+      "sha256": "0689507b58fa2ac2d9be890f9e80ce8091bdda0aa3e4ce9e21c72eeb86192a61",
+      "bytes": 62941,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/126/index.json": {
+      "archivo_cache": "pokeapi_move_126.json",
+      "sha256": "d16954dff0a23a852ffc386da42b9ed0737eb38748f25b78bdd8f68e2cbe3a7b",
+      "bytes": 52283,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/157/index.json": {
+      "archivo_cache": "pokeapi_move_157.json",
+      "sha256": "cbfa1c457aeec33236c8566642b7cbd71a3ad2cd15c8930f8b62d98efbbba6fb",
+      "bytes": 70279,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/129/index.json": {
+      "archivo_cache": "pokeapi_move_129.json",
+      "sha256": "1040a2d135b15d7b774c000b267cc1763d0bb989d7ce46349e096a19615845b1",
+      "bytes": 75147,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/163/index.json": {
+      "archivo_cache": "pokeapi_move_163.json",
+      "sha256": "9483d8b89832aa4f5676bae1cdab6298bed3ec445ee340e147c7bbfa0a6d80ca",
+      "bytes": 40443,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/182/index.json": {
+      "archivo_cache": "pokeapi_move_182.json",
+      "sha256": "37df7adcda0f59888e462f58dcedfc50f53f0cf026a32224097bf2442bf66abd",
+      "bytes": 132573,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/184/index.json": {
+      "archivo_cache": "pokeapi_move_184.json",
+      "sha256": "031dcaa76949bda8fca2cebb4d8c01df000e7328d00de1dddeb26e5f26d802d4",
+      "bytes": 64161,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/164/index.json": {
+      "archivo_cache": "pokeapi_move_164.json",
+      "sha256": "a900b916be7468fb72fdd0b48a82427eb1e6c811625af594c647c6f454294a46",
+      "bytes": 135221,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/156/index.json": {
+      "archivo_cache": "pokeapi_move_156.json",
+      "sha256": "e3a750da43965a284ed3ae5e06a1ef839dcad8b36d0eadb139ba99481922406e",
+      "bytes": 132829,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/201/index.json": {
+      "archivo_cache": "pokeapi_move_201.json",
+      "sha256": "83de2147291dda9846dde3b60674ea7be1ed8a2be3b0edfb09669b48f289e8ff",
+      "bytes": 61899,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/200/index.json": {
+      "archivo_cache": "pokeapi_move_200.json",
+      "sha256": "6c057a42fc88fd4a931ad24259c271294d74a107ff0d4b87a1fa66de6d09bfab",
+      "bytes": 47299,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/187/index.json": {
+      "archivo_cache": "pokeapi_move_187.json",
+      "sha256": "2734b64b90d9604c1afdbd078f59f1375df99e7c1289e9bfcf6c9b0125741002",
+      "bytes": 32029,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/225/index.json": {
+      "archivo_cache": "pokeapi_move_225.json",
+      "sha256": "f1bf71b3bb3baa552e17d36710e7eba26441c179aebb0696c7ea0cc2e6b8fde9",
+      "bytes": 36096,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/203/index.json": {
+      "archivo_cache": "pokeapi_move_203.json",
+      "sha256": "3c1be6bc2f7fc24fc6a7ac5c28529b1620adcf08de884e9a3f1dd91ab07ba2da",
+      "bytes": 126392,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/214/index.json": {
+      "archivo_cache": "pokeapi_move_214.json",
+      "sha256": "8c1764fe7a8385e33061450e9488a14ddd3e9d35ceea5e15882a23bf358344a4",
+      "bytes": 129602,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/231/index.json": {
+      "archivo_cache": "pokeapi_move_231.json",
+      "sha256": "fe7925028687aa87a6add366d24fa45aa08df1dd273a8d9f93466dd680c92ade",
+      "bytes": 63136,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/241/index.json": {
+      "archivo_cache": "pokeapi_move_241.json",
+      "sha256": "83921d79fbbb0d711e0323e90d74304688efb28d3d475905c109deeba9aac374",
+      "bytes": 103116,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/232/index.json": {
+      "archivo_cache": "pokeapi_move_232.json",
+      "sha256": "0af5d0674af81bce50b034221235002a803c30425f852f5625dd6c8ee69aea80",
+      "bytes": 37423,
+      "obtenido_utc": "2026-10-03T23:24:58+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/242/index.json": {
+      "archivo_cache": "pokeapi_move_242.json",
+      "sha256": "388aaae961c04a0c36c6539dc6ba556abd04e7fe2f2c1666caf81075307caa80",
+      "bytes": 52543,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/261/index.json": {
+      "archivo_cache": "pokeapi_move_261.json",
+      "sha256": "dcd94c592b45828e47578bb84ff0a2179a6d3515edb19f1bed1f74d6333226aa",
+      "bytes": 43154,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/246/index.json": {
+      "archivo_cache": "pokeapi_move_246.json",
+      "sha256": "da301bc2efad8c168881a3a83ea852d079e526b23dc8179e6ad3b6341dd5c522",
+      "bytes": 44033,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/257/index.json": {
+      "archivo_cache": "pokeapi_move_257.json",
+      "sha256": "19c360abc42fe7a02a6272a93c20030c4929e6934fa9e13521b726d9ee8c8eb8",
+      "bytes": 43221,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/263/index.json": {
+      "archivo_cache": "pokeapi_move_263.json",
+      "sha256": "5026b1bcdd4722608d40977508c6dc4de5c9b0eb35668c7427cda300bd842dbc",
+      "bytes": 128699,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/280/index.json": {
+      "archivo_cache": "pokeapi_move_280.json",
+      "sha256": "2470be49ead77a69544b9aaebc245f84a11d40f3b3765e35f6a72f33d93c06a5",
+      "bytes": 68274,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/264/index.json": {
+      "archivo_cache": "pokeapi_move_264.json",
+      "sha256": "145149fcbc4687426574047cbc04bfe7b2d4739165e321b65b681c912c60364f",
+      "bytes": 53944,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/270/index.json": {
+      "archivo_cache": "pokeapi_move_270.json",
+      "sha256": "70764957c9bb37d3edfc9c2db14c8c2b63f6560bf27e56cb9ffcddf4458b5699",
+      "bytes": 82773,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/307/index.json": {
+      "archivo_cache": "pokeapi_move_307.json",
+      "sha256": "e971bd211fca8290b6beac7e062d6762a653a4881731eae9a7ba26427593bb02",
+      "bytes": 29273,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/315/index.json": {
+      "archivo_cache": "pokeapi_move_315.json",
+      "sha256": "fafe6fa3454f5da3532e094cf49b80cf5b2ac50c0606aa8c995a7e7a0f30b905",
+      "bytes": 42636,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/311/index.json": {
+      "archivo_cache": "pokeapi_move_311.json",
+      "sha256": "243978cb3c58ff45077c4ef9279a7548e99262d71f763362f1145f616a4dea16",
+      "bytes": 42196,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/314/index.json": {
+      "archivo_cache": "pokeapi_move_314.json",
+      "sha256": "352d290ed43d2cdcc4f9130b09b14c5eddafeda87f426f7b23b587c93a34e611",
+      "bytes": 38102,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/349/index.json": {
+      "archivo_cache": "pokeapi_move_349.json",
+      "sha256": "b5cc9457438074c6a1ce54cde8781a431627b0f593cc2ab1d2edb56b99f3f525",
+      "bytes": 35697,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/317/index.json": {
+      "archivo_cache": "pokeapi_move_317.json",
+      "sha256": "bb194bd2e4660e1b2f85b6df58b58c47f39b72d3137161d167e6d9cfa061d672",
+      "bytes": 69039,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/332/index.json": {
+      "archivo_cache": "pokeapi_move_332.json",
+      "sha256": "299197f1850782e360bf23790e117101c8986b2b79321534dd3534fd4b8678ff",
+      "bytes": 63103,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/337/index.json": {
+      "archivo_cache": "pokeapi_move_337.json",
+      "sha256": "b0007400998afabcfcabdcb1755e636f00739b0f7e0f1e4e9db1735b441e6410",
+      "bytes": 38493,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/394/index.json": {
+      "archivo_cache": "pokeapi_move_394.json",
+      "sha256": "8c0662f551dfb7a703adb005c32f926615ba2a262d5ef5b2c36d13184ff90510",
+      "bytes": 38616,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/374/index.json": {
+      "archivo_cache": "pokeapi_move_374.json",
+      "sha256": "ffe5142205c9d5d2a120d2af0e773e66e80245b79dfb8b0473736e66f120c546",
+      "bytes": 68820,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/406/index.json": {
+      "archivo_cache": "pokeapi_move_406.json",
+      "sha256": "b35178a3d30c8df3fb6d359764c8218584210a82ef6ed3ff06d12a6989c10748",
+      "bytes": 41103,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/403/index.json": {
+      "archivo_cache": "pokeapi_move_403.json",
+      "sha256": "5b2e7354f42274481b83c5c44e68caaff06485907a564f58f9d2bcaff5231585",
+      "bytes": 41341,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/424/index.json": {
+      "archivo_cache": "pokeapi_move_424.json",
+      "sha256": "6f10bfe87bf897faf5b09a3f39b70e581e099a6ca968140c7e19710e69ffee10",
+      "bytes": 39372,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/407/index.json": {
+      "archivo_cache": "pokeapi_move_407.json",
+      "sha256": "1b9163943d0bf89140d42a1045ecad47fc4954323cfc55f7016cdeaa18b120e9",
+      "bytes": 31326,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/488/index.json": {
+      "archivo_cache": "pokeapi_move_488.json",
+      "sha256": "e61abdb68736247ca48a99df52ecda1364f4894bb33b1383853e1059be99ddd4",
+      "bytes": 36873,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/421/index.json": {
+      "archivo_cache": "pokeapi_move_421.json",
+      "sha256": "60ef0ad504918b951636a8b0b25147f3b76dc0cf86b4a706c6013a83c5906645",
+      "bytes": 48477,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/512/index.json": {
+      "archivo_cache": "pokeapi_move_512.json",
+      "sha256": "39b2ec714e3381e35b0537bfa570100876669226d06f0813ebd406e797bebc47",
+      "bytes": 46162,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/411/index.json": {
+      "archivo_cache": "pokeapi_move_411.json",
+      "sha256": "6712aa8dbef612e026c6d222294a221c47bf110f701835f821569aa096f64e47",
+      "bytes": 54953,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/416/index.json": {
+      "archivo_cache": "pokeapi_move_416.json",
+      "sha256": "9478814bebe9ccf9e91471208f53ec9021e2e281a776617772b5738e12a82d3c",
+      "bytes": 91173,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/525/index.json": {
+      "archivo_cache": "pokeapi_move_525.json",
+      "sha256": "c7bc0d4fd3f0e9aad08336d1d58d7bb1bbdd5f6ab5c3525f845fa3dc32f5bd5b",
+      "bytes": 40448,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/542/index.json": {
+      "archivo_cache": "pokeapi_move_542.json",
+      "sha256": "e4b8b927a480ce8b39f90515b78a48c33a032a74b81593e9f40dfe8a427c7111",
+      "bytes": 35706,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/517/index.json": {
+      "archivo_cache": "pokeapi_move_517.json",
+      "sha256": "4cbd58efed21553d844180fb3d76e26bfc4336f112f627e2011ba6d58d85d36b",
+      "bytes": 26862,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/523/index.json": {
+      "archivo_cache": "pokeapi_move_523.json",
+      "sha256": "f8e05cd8bf17512b4a5bf92437f5ff53be569f1ed334dcd1ab03880214b075a9",
+      "bytes": 64247,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/519/index.json": {
+      "archivo_cache": "pokeapi_move_519.json",
+      "sha256": "01aec7c8950b5f5c4ce276839523699d8ff377761ba08dd9b3f1d2f7db9e552c",
+      "bytes": 31021,
+      "obtenido_utc": "2026-10-03T23:24:59+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/815/index.json": {
+      "archivo_cache": "pokeapi_move_815.json",
+      "sha256": "e4b56f832a7560e1cea58c20900053ca8696c303b527b717a13739675e954570",
+      "bytes": 17513,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/784/index.json": {
+      "archivo_cache": "pokeapi_move_784.json",
+      "sha256": "b2bc84b6b02443a01dcd0b2cc9bfdb5f51b1cdfb8b0ff49f557649325938f067",
+      "bytes": 16483,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/535/index.json": {
+      "archivo_cache": "pokeapi_move_535.json",
+      "sha256": "2ad20dff509c1606a1031fe9c726bd96c2b7987a361906ae2b4ce4d44fd411b9",
+      "bytes": 32979,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/851/index.json": {
+      "archivo_cache": "pokeapi_move_851.json",
+      "sha256": "eeca6b6db91b92f8009472a09b801a1146d4be2b49513e50f9c1e8e8bb4cce26",
+      "bytes": 69344,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/913/index.json": {
+      "archivo_cache": "pokeapi_move_913.json",
+      "sha256": "9afd9cb203522b103639c0347e5e97334bf4125936169ca5dbf2399c978cdfcb",
+      "bytes": 9023,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/move/915/index.json": {
+      "archivo_cache": "pokeapi_move_915.json",
+      "sha256": "f961c7dbd5b4f50766b867e67eff2526661a7ee05ce32173acacc4cb87e72099",
+      "bytes": 9862,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/version-group/index.json": {
+      "archivo_cache": "pokeapi_version-group.json",
+      "sha256": "ac1b0fd395278448869097fdf5424ee2778bf2ce649eb43501ddbf33af6f7b06",
+      "bytes": 2789,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/version-group/19/index.json": {
+      "archivo_cache": "pokeapi_version-group_19.json",
+      "sha256": "100cc3b5ffb9ad8cf52d7d5f90f744ef70f0bd599f1a4f455d69883311ac7b90",
+      "bytes": 802,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/version-group/20/index.json": {
+      "archivo_cache": "pokeapi_version-group_20.json",
+      "sha256": "2e1b193f249bc530838e66164b1a9501ca4803fe73697a5386e84e476133d5a0",
+      "bytes": 1084,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/version-group/15/index.json": {
+      "archivo_cache": "pokeapi_version-group_15.json",
+      "sha256": "71fcf441770a54c7ff79652235e7ff8b2c978a357c3b5c93e8ddfe4f06b09380",
+      "bytes": 1163,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/version-group/11/index.json": {
+      "archivo_cache": "pokeapi_version-group_11.json",
+      "sha256": "36e4487e251d680abfefe31f6535e1a019068b85259190cba72479e42c6df167",
+      "bytes": 1019,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/version-group/3/index.json": {
+      "archivo_cache": "pokeapi_version-group_3.json",
+      "sha256": "345df23ad79944a9ed199a956bdabd1ce2605def4ac6d0c9b891bd0c4659c606",
+      "bytes": 829,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/version-group/8/index.json": {
+      "archivo_cache": "pokeapi_version-group_8.json",
+      "sha256": "b3e5441f345aefd606d2e95f638beb31e59390f0bd15939bcb05a15844ce6c60",
+      "bytes": 938,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/version-group/25/index.json": {
+      "archivo_cache": "pokeapi_version-group_25.json",
+      "sha256": "f5a1355cb6b69b665dba5cd8db80bb9cc7f84c16e00295dcb32eedfa721d7f8a",
+      "bytes": 669,
+      "obtenido_utc": "2026-10-03T23:25:00+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/4/index.json": {
+      "archivo_cache": "pokeapi_type_4.json",
+      "sha256": "718040a35162d7d6cf0cf47f4a882305ba94d97ada602409f434c8579b2e9022",
+      "bytes": 26028,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/6/index.json": {
+      "archivo_cache": "pokeapi_type_6.json",
+      "sha256": "44c06c7308ffcc13071199a3ece05c64f2378ed791b90f46d9250a3c0027368e",
+      "bytes": 23880,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/3/index.json": {
+      "archivo_cache": "pokeapi_type_3.json",
+      "sha256": "ef713a4b1f0bdd06a6f131e401a3dd46bb8ee31a41c85e0076ead0ea6c4f6839",
+      "bytes": 30321,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/7/index.json": {
+      "archivo_cache": "pokeapi_type_7.json",
+      "sha256": "b2185ac28b8e8efd594a9deb4d78b34e59c8536ec053dbe2797c77d047e5f2a4",
+      "bytes": 26175,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/2/index.json": {
+      "archivo_cache": "pokeapi_type_2.json",
+      "sha256": "34e57d660c47ebf98e44d4490002994814e5a77ff995de91e948a32ca49f2279",
+      "bytes": 27034,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/5/index.json": {
+      "archivo_cache": "pokeapi_type_5.json",
+      "sha256": "efcabc6eec2905ff7309de4c1fdd4005a9c258cc330ecbd35de5d4ae56274b3e",
+      "bytes": 23022,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/8/index.json": {
+      "archivo_cache": "pokeapi_type_8.json",
+      "sha256": "34eba61feb80c24b0823e0093fa1ac9f7dd39c53d4bc243bc0cbe09c1c7d28c4",
+      "bytes": 25710,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/1/index.json": {
+      "archivo_cache": "pokeapi_type_1.json",
+      "sha256": "de68793d82a4b2b49fc0c7f0f7be9103340df95465b6fba3d10149e984a32122",
+      "bytes": 42598,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/9/index.json": {
+      "archivo_cache": "pokeapi_type_9.json",
+      "sha256": "7515387a244c3da313901608a86e0cd1c4b0fae6620e227e53cdbf3e8d3557a3",
+      "bytes": 26750,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/12/index.json": {
+      "archivo_cache": "pokeapi_type_12.json",
+      "sha256": "9cbc7f13449cf2bc13a6216b0ce1be71bc3756cda9f44556e1a4e211fc838874",
+      "bytes": 32979,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/10/index.json": {
+      "archivo_cache": "pokeapi_type_10.json",
+      "sha256": "41561c2115a88c935dd879f6e64a8ce770373895e1e78441397edad03b80ab39",
+      "bytes": 27684,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/13/index.json": {
+      "archivo_cache": "pokeapi_type_13.json",
+      "sha256": "f0eb8c9e18f3b718dc4e248c059c8398457c97c2f9685f7d69d22c643aee6156",
+      "bytes": 26636,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/11/index.json": {
+      "archivo_cache": "pokeapi_type_11.json",
+      "sha256": "1796ca2ec24d0c3252b6c35a09a785fedb95622f590a28490640edf70b3f97cc",
+      "bytes": 36201,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/15/index.json": {
+      "archivo_cache": "pokeapi_type_15.json",
+      "sha256": "fd1c0a8acad428b70751aa6554e1213b42dfa563496ed7e83c4f6a636a563fda",
+      "bytes": 21043,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/14/index.json": {
+      "archivo_cache": "pokeapi_type_14.json",
+      "sha256": "f340870f046de53b0725985736b71cc8dd71830cbdde169a32aaa49911fd4b11",
+      "bytes": 33116,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/16/index.json": {
+      "archivo_cache": "pokeapi_type_16.json",
+      "sha256": "a0e9c6cc4094e9e82c44eaac537c9375e38ffaf67b66c206f8ba39bbefe5e572",
+      "bytes": 25706,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/18/index.json": {
+      "archivo_cache": "pokeapi_type_18.json",
+      "sha256": "42797de510c4560601b7150673b70d4ffc8cb01b7f5d83fb2d94bef09c2550b5",
+      "bytes": 20431,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/PokeAPI/api-data/02a8d9dd1b1a4e102b8b32d786d17017e8c9769a/data/api/v2/type/17/index.json": {
+      "archivo_cache": "pokeapi_type_17.json",
+      "sha256": "c7a5b223680f54c0bdcf2d946dffbc08b0ef88b2bf4f6c827ecb72ec182273c9",
+      "bytes": 25970,
+      "obtenido_utc": "2026-10-03T23:25:01+00:00"
+    },
+    "https://raw.githubusercontent.com/smogon/pokemon-showdown/9fb3a5b99f1a0bea17f495c5cc1bfe04fdd19c3e/data/moves.ts": {
+      "archivo_cache": "showdown_moves.ts",
+      "sha256": "738b8cfc1ca491537c0188546ab697942aaa313c5e6be83a5432edd5dd8997f7",
+      "bytes": 484848,
+      "obtenido_utc": "2026-10-03T23:25:02+00:00"
+    },
+    "https://raw.githubusercontent.com/smogon/pokemon-showdown/9fb3a5b99f1a0bea17f495c5cc1bfe04fdd19c3e/data/learnsets.ts": {
+      "archivo_cache": "showdown_learnsets.ts",
+      "sha256": "26969c5e9ca7310b701612da8c9cea217b7d43efb8cd22a7e46783a6ca9b386e",
+      "bytes": 3725143,
+      "obtenido_utc": "2026-10-03T23:25:02+00:00"
+    },
+    "https://raw.githubusercontent.com/smogon/pokemon-showdown/9fb3a5b99f1a0bea17f495c5cc1bfe04fdd19c3e/data/typechart.ts": {
+      "archivo_cache": "showdown_typechart.ts",
+      "sha256": "7b0eae126bdcf98edfd71cbe75af00b763f5f0d5db36024b6f3e7c5e4aea95ac",
+      "bytes": 6745,
+      "obtenido_utc": "2026-10-03T23:25:03+00:00"
+    }
+  },
+  "filtros": {
+    "metodos_incluidos": [
+      "level-up",
+      "machine",
+      "egg",
+      "tutor"
+    ],
+    "reglas_exclusion": {
+      "ESTADO": "Movimiento de estado: no produce dano directo (fuera del alcance aprobado).",
+      "POTENCIA_NO_NUMERICA": "Potencia base no numerica (dano fijo, variable o dependiente del rival/objeto): la funcion aprobada no puede representarla sin inventar un valor.",
+      "POTENCIA_CERO": "Potencia 0 informada por la fuente: dato no utilizable como potencia de dano directo.",
+      "PRECISION_NO_NUMERICA": "Precision especial no numerica (por ejemplo, 'nunca falla'): no se convierte automaticamente a 100.",
+      "GOLPES_MULTIPLES": "Golpes multiples: la potencia por golpe no representa el dano total del movimiento.",
+      "OHKO": "Movimiento de KO en un golpe: no tiene potencia base comparable."
+    },
+    "nota_efectos": "Carga, recarga, retroceso, autodebuff, bloqueo, prioridad, potencia condicional y tipo variable se conservan en el catalogo y se documentan en columnas descriptivas; la funcion de aptitud aprobada los ignora."
+  },
+  "conteos": {
+    "learnset_total": 75,
+    "catalogo_M": 53,
+    "excluidos_por_motivo": {
+      "POTENCIA_NO_NUMERICA": 3,
+      "ESTADO": 17,
+      "PRECISION_NO_NUMERICA": 2
+    },
+    "combinaciones_C_M_4": 292825,
+    "subconjunto_conservador_M": 46,
+    "potencia_maxima_catalogo": 150
+  },
+  "verificacion_showdown": {
+    "tabla_tipos_diferencias": [],
+    "learnset_solo_en_pokeapi": [],
+    "learnset_solo_en_showdown": [
+      "falseswipe"
+    ],
+    "learnset_solo_en_showdown_detalle": {
+      "falseswipe": [
+        "charmeleon:9M",
+        "charmander:9M"
+      ]
+    },
+    "criterio_diferencias_learnset": "El catalogo usa el learnset propio de Charizard en PokeAPI. Si un movimiento aparece en Showdown solo por codigos de preevoluciones (charmander/charmeleon), se informa pero no se incorpora.",
+    "atributos_distintos_en_learnset": [],
+    "atributos_distintos_en_catalogo": [],
+    "catalogo_no_estandar_en_showdown": []
+  },
+  "limite_legalidad": "Se verifica la pertenencia individual de cada movimiento al learnset de Escarlata/Purpura (nivel, MT, huevo, tutor) en dos fuentes independientes. La coexistencia de los cuatro movimientos de un moveset concreto se verifica por separado con el validador de Pokemon Showdown (scripts/validate_legality_showdown.py) para los movimientos resultantes.",
+  "archivos_sha256": {
+    "catalog_moves.csv": "87b8b4855813c5b2431f5db65113f5ba280c45eec9cd5ac650ced66d9a2cba32",
+    "crosscheck_showdown.csv": "d63eeead0082e6a74502b1bfa3f19629ec4cd402835fe01f174d2b6d13838e14",
+    "learnset_sv_charizard.csv": "824bb73ca4d635da4dc64febb408a2ea86f7595fc144361a721cc762b0c41ef8",
+    "type_chart.csv": "20b67c64435f3a0c08d50031b1b1812fa0f38bcad16ecd8f18fa4cd8957a97e1",
+    "types.csv": "2a6488bed50bb52e1e595f0a64aefbd05e3fb04f044dd9cf0ad7f9f6b17c759d"
+  },
+  "entorno_preparacion": {
+    "python": "3.13.14",
+    "plataforma": "Windows-11-10.0.26200-SP0"
+  },
+  "tiempo_preparacion": {
+    "segundos_totales": 6.06,
+    "archivos_descargados": 105,
+    "archivos_desde_cache": 0,
+    "nota": "Incluye descarga (si no hay cache), lectura y validacion. Es independiente del tiempo de busqueda del AG."
+  },
+  "tiempo_ultima_descarga": {
+    "segundos_totales": 6.06,
+    "archivos_descargados": 105,
+    "archivos_desde_cache": 0,
+    "nota": "Incluye descarga (si no hay cache), lectura y validacion. Es independiente del tiempo de busqueda del AG.",
+    "fecha_utc": "2026-10-03T23:25:03+00:00"
+  }
+}

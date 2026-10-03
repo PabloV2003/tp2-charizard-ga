@@ -1,0 +1,2325 @@
+{
+ "moves": {
+  "bite": {
+   "num": 44,
+   "name": "Bite",
+   "basePower": 60,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Dark",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "bite",
+    "contact",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "crunch": {
+   "num": 242,
+   "name": "Crunch",
+   "basePower": 80,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Dark",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "bite",
+    "contact",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "breakingswipe": {
+   "num": 784,
+   "name": "Breaking Swipe",
+   "basePower": 60,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Dragon",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "dragonbreath": {
+   "num": 225,
+   "name": "Dragon Breath",
+   "basePower": 60,
+   "accuracy": 100,
+   "category": "Special",
+   "type": "Dragon",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "dragonclaw": {
+   "num": 337,
+   "name": "Dragon Claw",
+   "basePower": 80,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Dragon",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "dragonpulse": {
+   "num": 406,
+   "name": "Dragon Pulse",
+   "basePower": 85,
+   "accuracy": 100,
+   "category": "Special",
+   "type": "Dragon",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "distance",
+    "metronome",
+    "mirror",
+    "protect",
+    "pulse"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "dragonrush": {
+   "num": 407,
+   "name": "Dragon Rush",
+   "basePower": 100,
+   "accuracy": 75,
+   "category": "Physical",
+   "type": "Dragon",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "minimize",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "dragontail": {
+   "num": 525,
+   "name": "Dragon Tail",
+   "basePower": 60,
+   "accuracy": 90,
+   "category": "Physical",
+   "type": "Dragon",
+   "priority": -6,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "failcopycat",
+    "metronome",
+    "mirror",
+    "noassist",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": true,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "outrage": {
+   "num": 200,
+   "name": "Outrage",
+   "basePower": 120,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Dragon",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "failinstruct",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": true,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "thunderpunch": {
+   "num": 9,
+   "name": "Thunder Punch",
+   "basePower": 75,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Electric",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "mirror",
+    "protect",
+    "punch"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "brickbreak": {
+   "num": 280,
+   "name": "Brick Break",
+   "basePower": 75,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Fighting",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "onTryHit"
+   ]
+  },
+  "focusblast": {
+   "num": 411,
+   "name": "Focus Blast",
+   "basePower": 120,
+   "accuracy": 70,
+   "category": "Special",
+   "type": "Fighting",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "bullet",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "focuspunch": {
+   "num": 264,
+   "name": "Focus Punch",
+   "basePower": 150,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Fighting",
+   "priority": -3,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "failcopycat",
+    "failinstruct",
+    "failmefirst",
+    "noassist",
+    "nosleeptalk",
+    "protect",
+    "punch"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "beforeMoveCallback",
+    "priorityChargeCallback"
+   ]
+  },
+  "blastburn": {
+   "num": 307,
+   "name": "Blast Burn",
+   "basePower": 150,
+   "accuracy": 90,
+   "category": "Special",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect",
+    "recharge"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": true,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "ember": {
+   "num": 52,
+   "name": "Ember",
+   "basePower": 40,
+   "accuracy": 100,
+   "category": "Special",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "fireblast": {
+   "num": 126,
+   "name": "Fire Blast",
+   "basePower": 110,
+   "accuracy": 85,
+   "category": "Special",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "firefang": {
+   "num": 424,
+   "name": "Fire Fang",
+   "basePower": 65,
+   "accuracy": 95,
+   "category": "Physical",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "bite",
+    "contact",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "firepledge": {
+   "num": 519,
+   "name": "Fire Pledge",
+   "basePower": 80,
+   "accuracy": 100,
+   "category": "Special",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "nonsky",
+    "pledgecombo",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "basePowerCallback",
+    "onModifyMove",
+    "onPrepareHit"
+   ]
+  },
+  "firepunch": {
+   "num": 7,
+   "name": "Fire Punch",
+   "basePower": 75,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "mirror",
+    "protect",
+    "punch"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "firespin": {
+   "num": 83,
+   "name": "Fire Spin",
+   "basePower": 35,
+   "accuracy": 85,
+   "category": "Special",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": true,
+   "callbacks": []
+  },
+  "flamecharge": {
+   "num": 488,
+   "name": "Flame Charge",
+   "basePower": 50,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "flamethrower": {
+   "num": 53,
+   "name": "Flamethrower",
+   "basePower": 90,
+   "accuracy": 100,
+   "category": "Special",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "flareblitz": {
+   "num": 394,
+   "name": "Flare Blitz",
+   "basePower": 120,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "defrost",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": [
+    33,
+    100
+   ],
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "heatwave": {
+   "num": 257,
+   "name": "Heat Wave",
+   "basePower": 95,
+   "accuracy": 90,
+   "category": "Special",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect",
+    "wind"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "inferno": {
+   "num": 517,
+   "name": "Inferno",
+   "basePower": 100,
+   "accuracy": 50,
+   "category": "Special",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "overheat": {
+   "num": 315,
+   "name": "Overheat",
+   "basePower": 130,
+   "accuracy": 90,
+   "category": "Special",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {
+    "spa": -2
+   },
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "temperflare": {
+   "num": 915,
+   "name": "Temper Flare",
+   "basePower": 75,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "basePowerCallback"
+   ]
+  },
+  "acrobatics": {
+   "num": 512,
+   "name": "Acrobatics",
+   "basePower": 55,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Flying",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "distance",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "basePowerCallback"
+   ]
+  },
+  "aircutter": {
+   "num": 314,
+   "name": "Air Cutter",
+   "basePower": 60,
+   "accuracy": 95,
+   "category": "Special",
+   "type": "Flying",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect",
+    "slicing",
+    "wind"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "airslash": {
+   "num": 403,
+   "name": "Air Slash",
+   "basePower": 75,
+   "accuracy": 95,
+   "category": "Special",
+   "type": "Flying",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "distance",
+    "metronome",
+    "mirror",
+    "protect",
+    "slicing"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "fly": {
+   "num": 19,
+   "name": "Fly",
+   "basePower": 90,
+   "accuracy": 95,
+   "category": "Physical",
+   "type": "Flying",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "charge",
+    "contact",
+    "distance",
+    "failinstruct",
+    "gravity",
+    "metronome",
+    "mirror",
+    "noassist",
+    "nosleeptalk",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "onTryMove"
+   ]
+  },
+  "hurricane": {
+   "num": 542,
+   "name": "Hurricane",
+   "basePower": 110,
+   "accuracy": 70,
+   "category": "Special",
+   "type": "Flying",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "distance",
+    "metronome",
+    "mirror",
+    "protect",
+    "wind"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "onModifyMove"
+   ]
+  },
+  "shadowclaw": {
+   "num": 421,
+   "name": "Shadow Claw",
+   "basePower": 70,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Ghost",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "solarbeam": {
+   "num": 76,
+   "name": "Solar Beam",
+   "basePower": 120,
+   "accuracy": 100,
+   "category": "Special",
+   "type": "Grass",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "charge",
+    "failinstruct",
+    "metronome",
+    "mirror",
+    "nosleeptalk",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "onBasePower",
+    "onTryMove"
+   ]
+  },
+  "bulldoze": {
+   "num": 523,
+   "name": "Bulldoze",
+   "basePower": 60,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Ground",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "nonsky",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "dig": {
+   "num": 91,
+   "name": "Dig",
+   "basePower": 80,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Ground",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "charge",
+    "contact",
+    "failinstruct",
+    "metronome",
+    "mirror",
+    "noassist",
+    "nonsky",
+    "nosleeptalk",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "onTryMove"
+   ]
+  },
+  "earthquake": {
+   "num": 89,
+   "name": "Earthquake",
+   "basePower": 100,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Ground",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "nonsky",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "scorchingsands": {
+   "num": 815,
+   "name": "Scorching Sands",
+   "basePower": 70,
+   "accuracy": 100,
+   "category": "Special",
+   "type": "Ground",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "defrost",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "bodyslam": {
+   "num": 34,
+   "name": "Body Slam",
+   "basePower": 85,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "minimize",
+    "mirror",
+    "nonsky",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "doubleedge": {
+   "num": 38,
+   "name": "Double-Edge",
+   "basePower": 120,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": [
+    33,
+    100
+   ],
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "facade": {
+   "num": 263,
+   "name": "Facade",
+   "basePower": 70,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "onBasePower"
+   ]
+  },
+  "gigaimpact": {
+   "num": 416,
+   "name": "Giga Impact",
+   "basePower": 150,
+   "accuracy": 90,
+   "category": "Physical",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "mirror",
+    "protect",
+    "recharge"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": true,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "hyperbeam": {
+   "num": 63,
+   "name": "Hyper Beam",
+   "basePower": 150,
+   "accuracy": 90,
+   "category": "Special",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect",
+    "recharge"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": true,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "scratch": {
+   "num": 10,
+   "name": "Scratch",
+   "basePower": 40,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "slash": {
+   "num": 163,
+   "name": "Slash",
+   "basePower": 70,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "mirror",
+    "protect",
+    "slicing"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "takedown": {
+   "num": 36,
+   "name": "Take Down",
+   "basePower": 90,
+   "accuracy": 85,
+   "category": "Physical",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": [
+    1,
+    4
+   ],
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "terablast": {
+   "num": 851,
+   "name": "Tera Blast",
+   "basePower": 80,
+   "accuracy": 100,
+   "category": "Special",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "mustpressure",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "basePowerCallback",
+    "onModifyMove",
+    "onModifyType",
+    "onPrepareHit"
+   ]
+  },
+  "weatherball": {
+   "num": 311,
+   "name": "Weather Ball",
+   "basePower": 50,
+   "accuracy": 100,
+   "category": "Special",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "bullet",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "onModifyMove",
+    "onModifyType"
+   ]
+  },
+  "ancientpower": {
+   "num": 246,
+   "name": "Ancient Power",
+   "basePower": 60,
+   "accuracy": 100,
+   "category": "Special",
+   "type": "Rock",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "rockslide": {
+   "num": 157,
+   "name": "Rock Slide",
+   "basePower": 75,
+   "accuracy": 90,
+   "category": "Physical",
+   "type": "Rock",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "rocktomb": {
+   "num": 317,
+   "name": "Rock Tomb",
+   "basePower": 60,
+   "accuracy": 95,
+   "category": "Physical",
+   "type": "Rock",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "irontail": {
+   "num": 231,
+   "name": "Iron Tail",
+   "basePower": 100,
+   "accuracy": 75,
+   "category": "Physical",
+   "type": "Steel",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "metalclaw": {
+   "num": 232,
+   "name": "Metal Claw",
+   "basePower": 50,
+   "accuracy": 95,
+   "category": "Physical",
+   "type": "Steel",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "fling": {
+   "num": 374,
+   "name": "Fling",
+   "basePower": 0,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Dark",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "allyanim",
+    "metronome",
+    "mirror",
+    "noparentalbond",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "onPrepareHit"
+   ]
+  },
+  "dragoncheer": {
+   "num": 913,
+   "name": "Dragon Cheer",
+   "basePower": 0,
+   "accuracy": true,
+   "category": "Status",
+   "type": "Dragon",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "allyanim",
+    "bypasssub",
+    "metronome"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "dragondance": {
+   "num": 349,
+   "name": "Dragon Dance",
+   "basePower": 0,
+   "accuracy": true,
+   "category": "Status",
+   "type": "Dragon",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "dance",
+    "metronome",
+    "snatch"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "counter": {
+   "num": 68,
+   "name": "Counter",
+   "basePower": 0,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Fighting",
+   "priority": -5,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "failcopycat",
+    "failmefirst",
+    "noassist",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "beforeTurnCallback",
+    "damageCallback",
+    "onTry"
+   ]
+  },
+  "heatcrash": {
+   "num": 535,
+   "name": "Heat Crash",
+   "basePower": 0,
+   "accuracy": 100,
+   "category": "Physical",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "metronome",
+    "minimize",
+    "mirror",
+    "nonsky",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "basePowerCallback",
+    "onTryHit"
+   ]
+  },
+  "sunnyday": {
+   "num": 241,
+   "name": "Sunny Day",
+   "basePower": 0,
+   "accuracy": true,
+   "category": "Status",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "willowisp": {
+   "num": 261,
+   "name": "Will-O-Wisp",
+   "basePower": 0,
+   "accuracy": 85,
+   "category": "Status",
+   "type": "Fire",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect",
+    "reflectable"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "aerialace": {
+   "num": 332,
+   "name": "Aerial Ace",
+   "basePower": 60,
+   "accuracy": true,
+   "category": "Physical",
+   "type": "Flying",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "contact",
+    "distance",
+    "metronome",
+    "mirror",
+    "protect",
+    "slicing"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "bellydrum": {
+   "num": 187,
+   "name": "Belly Drum",
+   "basePower": 0,
+   "accuracy": true,
+   "category": "Status",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "snatch"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "onHit"
+   ]
+  },
+  "endure": {
+   "num": 203,
+   "name": "Endure",
+   "basePower": 0,
+   "accuracy": true,
+   "category": "Status",
+   "type": "Normal",
+   "priority": 4,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "failcopycat",
+    "noassist"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "onHit",
+    "onPrepareHit"
+   ]
+  },
+  "growl": {
+   "num": 45,
+   "name": "Growl",
+   "basePower": 0,
+   "accuracy": 100,
+   "category": "Status",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "bypasssub",
+    "metronome",
+    "mirror",
+    "protect",
+    "reflectable",
+    "sound"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "helpinghand": {
+   "num": 270,
+   "name": "Helping Hand",
+   "basePower": 0,
+   "accuracy": true,
+   "category": "Status",
+   "type": "Normal",
+   "priority": 5,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "bypasssub",
+    "failcopycat",
+    "noassist"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "onTryHit"
+   ]
+  },
+  "protect": {
+   "num": 182,
+   "name": "Protect",
+   "basePower": 0,
+   "accuracy": true,
+   "category": "Status",
+   "type": "Normal",
+   "priority": 4,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "failcopycat",
+    "noassist"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": true,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "onHit",
+    "onPrepareHit"
+   ]
+  },
+  "roar": {
+   "num": 46,
+   "name": "Roar",
+   "basePower": 0,
+   "accuracy": true,
+   "category": "Status",
+   "type": "Normal",
+   "priority": -6,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "allyanim",
+    "bypasssub",
+    "failcopycat",
+    "metronome",
+    "mirror",
+    "noassist",
+    "reflectable",
+    "sound"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": true,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "scaryface": {
+   "num": 184,
+   "name": "Scary Face",
+   "basePower": 0,
+   "accuracy": 100,
+   "category": "Status",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "allyanim",
+    "metronome",
+    "mirror",
+    "protect",
+    "reflectable"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "sleeptalk": {
+   "num": 214,
+   "name": "Sleep Talk",
+   "basePower": 0,
+   "accuracy": true,
+   "category": "Status",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "failcopycat",
+    "failencore",
+    "failinstruct",
+    "failmimic",
+    "noassist",
+    "nosleeptalk"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "onHit",
+    "onTry"
+   ]
+  },
+  "smokescreen": {
+   "num": 108,
+   "name": "Smokescreen",
+   "basePower": 0,
+   "accuracy": 100,
+   "category": "Status",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect",
+    "reflectable"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "substitute": {
+   "num": 164,
+   "name": "Substitute",
+   "basePower": 0,
+   "accuracy": true,
+   "category": "Status",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "nonsky",
+    "snatch"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": true,
+   "callbacks": [
+    "onHit",
+    "onTryHit"
+   ]
+  },
+  "swift": {
+   "num": 129,
+   "name": "Swift",
+   "basePower": 60,
+   "accuracy": true,
+   "category": "Special",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "mirror",
+    "protect"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "swordsdance": {
+   "num": 14,
+   "name": "Swords Dance",
+   "basePower": 0,
+   "accuracy": true,
+   "category": "Status",
+   "type": "Normal",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "dance",
+    "metronome",
+    "snatch"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  },
+  "rest": {
+   "num": 156,
+   "name": "Rest",
+   "basePower": 0,
+   "accuracy": true,
+   "category": "Status",
+   "type": "Psychic",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "heal",
+    "metronome",
+    "snatch"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": [
+    "onHit",
+    "onTry"
+   ]
+  },
+  "sandstorm": {
+   "num": 201,
+   "name": "Sandstorm",
+   "basePower": 0,
+   "accuracy": true,
+   "category": "Status",
+   "type": "Rock",
+   "priority": 0,
+   "isNonstandard": null,
+   "multihit": null,
+   "ohko": false,
+   "flags": [
+    "metronome",
+    "wind"
+   ],
+   "recoil": null,
+   "self_drops": {},
+   "mustrecharge": false,
+   "lockedmove": false,
+   "forceSwitch": false,
+   "partiallytrapped": false,
+   "callbacks": []
+  }
+ },
+ "learnset_gen9_charizard_y_preevoluciones": {
+  "acrobatics": [
+   "charizard:9M"
+  ],
+  "aerialace": [
+   "charizard:9M"
+  ],
+  "aircutter": [
+   "charizard:9M"
+  ],
+  "airslash": [
+   "charizard:9M",
+   "charizard:9L0"
+  ],
+  "blastburn": [
+   "charizard:9M"
+  ],
+  "bodyslam": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "breakingswipe": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "brickbreak": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "bulldoze": [
+   "charizard:9M"
+  ],
+  "crunch": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "dig": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "doubleedge": [
+   "charizard:9M"
+  ],
+  "dragonbreath": [
+   "charizard:9L12",
+   "charmeleon:9L12",
+   "charmander:9L12"
+  ],
+  "dragoncheer": [
+   "charizard:9M"
+  ],
+  "dragonclaw": [
+   "charizard:9M",
+   "charizard:9L1",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "dragondance": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "dragonpulse": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "dragontail": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M",
+   "charmander:9E"
+  ],
+  "earthquake": [
+   "charizard:9M"
+  ],
+  "ember": [
+   "charizard:9L1",
+   "charmeleon:9L1",
+   "charmander:9L4"
+  ],
+  "endure": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "facade": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "fireblast": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "firefang": [
+   "charizard:9M",
+   "charizard:9L19",
+   "charmeleon:9M",
+   "charmeleon:9L19",
+   "charmander:9M",
+   "charmander:9L17"
+  ],
+  "firepledge": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "firepunch": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "firespin": [
+   "charizard:9M",
+   "charizard:9L46",
+   "charmeleon:9M",
+   "charmander:9M",
+   "charmander:9L32"
+  ],
+  "flamecharge": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "flamethrower": [
+   "charizard:9M",
+   "charizard:9L30",
+   "charmeleon:9M",
+   "charmeleon:9L30",
+   "charmander:9M",
+   "charmander:9L24"
+  ],
+  "flareblitz": [
+   "charizard:9M",
+   "charizard:9L62",
+   "charmeleon:9M",
+   "charmeleon:9L54",
+   "charmander:9M",
+   "charmander:9L40"
+  ],
+  "fling": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "fly": [
+   "charizard:9M"
+  ],
+  "focusblast": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "focuspunch": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "gigaimpact": [
+   "charizard:9M"
+  ],
+  "growl": [
+   "charizard:9L1",
+   "charmeleon:9L1",
+   "charmander:9L1"
+  ],
+  "heatcrash": [
+   "charizard:9M"
+  ],
+  "heatwave": [
+   "charizard:9M",
+   "charizard:9L1",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "helpinghand": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "hurricane": [
+   "charizard:9M"
+  ],
+  "hyperbeam": [
+   "charizard:9M"
+  ],
+  "inferno": [
+   "charizard:9L54",
+   "charmeleon:9L48",
+   "charmander:9L36"
+  ],
+  "outrage": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "overheat": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "protect": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "rest": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "roar": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "rockslide": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "rocktomb": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "sandstorm": [
+   "charizard:9M"
+  ],
+  "scaryface": [
+   "charizard:9M",
+   "charizard:9L39",
+   "charmeleon:9M",
+   "charmeleon:9L37",
+   "charmander:9M",
+   "charmander:9L28"
+  ],
+  "scorchingsands": [
+   "charizard:9M"
+  ],
+  "scratch": [
+   "charizard:9L1",
+   "charmeleon:9L1",
+   "charmander:9L1"
+  ],
+  "shadowclaw": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "slash": [
+   "charizard:9L24",
+   "charmeleon:9L24",
+   "charmander:9L20"
+  ],
+  "sleeptalk": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "smokescreen": [
+   "charizard:9L1",
+   "charmeleon:9L1",
+   "charmander:9L8"
+  ],
+  "solarbeam": [
+   "charizard:9M"
+  ],
+  "substitute": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "sunnyday": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "swift": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "swordsdance": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "takedown": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "temperflare": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "terablast": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "thunderpunch": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "weatherball": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "willowisp": [
+   "charizard:9M",
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "falseswipe": [
+   "charmeleon:9M",
+   "charmander:9M"
+  ],
+  "ancientpower": [
+   "charmander:9E"
+  ],
+  "bellydrum": [
+   "charmander:9E"
+  ],
+  "bite": [
+   "charmander:9E"
+  ],
+  "counter": [
+   "charmander:9E"
+  ],
+  "dragonrush": [
+   "charmander:9E"
+  ],
+  "irontail": [
+   "charmander:9E"
+  ],
+  "metalclaw": [
+   "charmander:9M",
+   "charmander:9E"
+  ]
+ }
+}

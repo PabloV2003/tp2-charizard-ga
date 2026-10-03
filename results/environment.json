@@ -1,0 +1,14 @@
+{
+  "python": "3.13.14",
+  "implementacion": "CPython",
+  "sistema": "Windows-11-10.0.26200-SP0",
+  "procesador": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "nucleos_logicos": 20,
+  "deap": "1.4.4",
+  "numpy": "2.5.3",
+  "pandas": "3.0.6",
+  "matplotlib": "3.11.2",
+  "python_docx": "1.2.0",
+  "pytest": "9.1.1",
+  "nbconvert": "7.17.1"
+}

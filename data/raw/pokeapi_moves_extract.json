@@ -1,0 +1,2679 @@
+[
+ {
+  "id": 7,
+  "name": "fire-punch",
+  "names_es_en": {
+   "es": "Puño Fuego",
+   "en": "Fire Punch"
+  },
+  "power_actual": 75,
+  "accuracy_actual": 100,
+  "type_actual": "fire",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-ailment",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 75,
+   "accuracy": 100,
+   "type": "fire",
+   "pp": 15,
+   "effect_chance": 10
+  },
+  "short_effect_en": "Has a chance to burn the target.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 9,
+  "name": "thunder-punch",
+  "names_es_en": {
+   "es": "Puño Trueno",
+   "en": "Thunder Punch"
+  },
+  "power_actual": 75,
+  "accuracy_actual": 100,
+  "type_actual": "electric",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-ailment",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 75,
+   "accuracy": 100,
+   "type": "electric",
+   "pp": 15,
+   "effect_chance": 10
+  },
+  "short_effect_en": "Has a chance to paralyze the target.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 10,
+  "name": "scratch",
+  "names_es_en": {
+   "es": "Arañazo",
+   "en": "Scratch"
+  },
+  "power_actual": 40,
+  "accuracy_actual": 100,
+  "type_actual": "normal",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 40,
+   "accuracy": 100,
+   "type": "normal",
+   "pp": 35,
+   "effect_chance": null
+  },
+  "short_effect_en": "Inflicts regular damage with no additional effect.",
+  "metodos_sv": [
+   [
+    "level-up",
+    1
+   ]
+  ]
+ },
+ {
+  "id": 14,
+  "name": "swords-dance",
+  "names_es_en": {
+   "es": "Danza Espada",
+   "en": "Swords Dance"
+  },
+  "power_actual": null,
+  "accuracy_actual": null,
+  "type_actual": "normal",
+  "damage_class": "status",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "net-good-stats",
+  "past_values": [
+   {
+    "version_group": "x-y",
+    "power": null,
+    "accuracy": null,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": null,
+   "type": "normal",
+   "pp": 20,
+   "effect_chance": null
+  },
+  "short_effect_en": "Raises the user’s Attack by two stages.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 19,
+  "name": "fly",
+  "names_es_en": {
+   "es": "Vuelo",
+   "en": "Fly"
+  },
+  "power_actual": 90,
+  "accuracy_actual": 95,
+  "type_actual": "flying",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [
+   {
+    "version_group": "diamond-pearl",
+    "power": 70,
+    "accuracy": null,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 90,
+   "accuracy": 95,
+   "type": "flying",
+   "pp": 15,
+   "effect_chance": null
+  },
+  "short_effect_en": "User flies high into the air, dodging all attacks, and hits next turn.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 34,
+  "name": "body-slam",
+  "names_es_en": {
+   "es": "Golpe Cuerpo",
+   "en": "Body Slam"
+  },
+  "power_actual": 85,
+  "accuracy_actual": 100,
+  "type_actual": "normal",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-ailment",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 85,
+   "accuracy": 100,
+   "type": "normal",
+   "pp": 15,
+   "effect_chance": 30
+  },
+  "short_effect_en": "Has a chance to paralyze the target.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 36,
+  "name": "take-down",
+  "names_es_en": {
+   "es": "Derribo",
+   "en": "Take Down"
+  },
+  "power_actual": 90,
+  "accuracy_actual": 85,
+  "type_actual": "normal",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": -25
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 90,
+   "accuracy": 85,
+   "type": "normal",
+   "pp": 20,
+   "effect_chance": null
+  },
+  "short_effect_en": "User receives 1/4 the damage it inflicts in recoil.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 38,
+  "name": "double-edge",
+  "names_es_en": {
+   "es": "Doble Filo",
+   "en": "Double-Edge"
+  },
+  "power_actual": 120,
+  "accuracy_actual": 100,
+  "type_actual": "normal",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": -33
+  },
+  "meta_category": "damage",
+  "past_values": [
+   {
+    "version_group": "gold-silver",
+    "power": 100,
+    "accuracy": null,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 120,
+   "accuracy": 100,
+   "type": "normal",
+   "pp": 15,
+   "effect_chance": null
+  },
+  "short_effect_en": "User receives 1/3 the damage inflicted in recoil.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 44,
+  "name": "bite",
+  "names_es_en": {
+   "es": "Mordisco",
+   "en": "Bite"
+  },
+  "power_actual": 60,
+  "accuracy_actual": 100,
+  "type_actual": "dark",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [
+   {
+    "version_group": "gold-silver",
+    "power": null,
+    "accuracy": null,
+    "type": "normal"
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 60,
+   "accuracy": 100,
+   "type": "dark",
+   "pp": 25,
+   "effect_chance": 30
+  },
+  "short_effect_en": "Has a chance to make the target flinch.",
+  "metodos_sv": [
+   [
+    "egg",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 45,
+  "name": "growl",
+  "names_es_en": {
+   "es": "Gruñido",
+   "en": "Growl"
+  },
+  "power_actual": null,
+  "accuracy_actual": 100,
+  "type_actual": "normal",
+  "damage_class": "status",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "net-good-stats",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": 100,
+   "type": "normal",
+   "pp": 40,
+   "effect_chance": null
+  },
+  "short_effect_en": "Lowers the target’s Attack by one stage.",
+  "metodos_sv": [
+   [
+    "level-up",
+    1
+   ]
+  ]
+ },
+ {
+  "id": 46,
+  "name": "roar",
+  "names_es_en": {
+   "es": "Rugido",
+   "en": "Roar"
+  },
+  "power_actual": null,
+  "accuracy_actual": null,
+  "type_actual": "normal",
+  "damage_class": "status",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "force-switch",
+  "past_values": [
+   {
+    "version_group": "x-y",
+    "power": null,
+    "accuracy": 100,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": null,
+   "type": "normal",
+   "pp": 20,
+   "effect_chance": null
+  },
+  "short_effect_en": "Immediately ends wild battles.  Forces trainers to switch Pokémon.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 52,
+  "name": "ember",
+  "names_es_en": {
+   "es": "Ascuas",
+   "en": "Ember"
+  },
+  "power_actual": 40,
+  "accuracy_actual": 100,
+  "type_actual": "fire",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-ailment",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 40,
+   "accuracy": 100,
+   "type": "fire",
+   "pp": 25,
+   "effect_chance": 10
+  },
+  "short_effect_en": "Has a chance to burn the target.",
+  "metodos_sv": [
+   [
+    "level-up",
+    1
+   ]
+  ]
+ },
+ {
+  "id": 53,
+  "name": "flamethrower",
+  "names_es_en": {
+   "es": "Lanzallamas",
+   "en": "Flamethrower"
+  },
+  "power_actual": 90,
+  "accuracy_actual": 100,
+  "type_actual": "fire",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-ailment",
+  "past_values": [
+   {
+    "version_group": "x-y",
+    "power": 95,
+    "accuracy": null,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 90,
+   "accuracy": 100,
+   "type": "fire",
+   "pp": 15,
+   "effect_chance": 10
+  },
+  "short_effect_en": "Has a chance to burn the target.",
+  "metodos_sv": [
+   [
+    "level-up",
+    30
+   ],
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 63,
+  "name": "hyper-beam",
+  "names_es_en": {
+   "es": "Hiperrayo",
+   "en": "Hyper Beam"
+  },
+  "power_actual": 150,
+  "accuracy_actual": 90,
+  "type_actual": "normal",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 150,
+   "accuracy": 90,
+   "type": "normal",
+   "pp": 5,
+   "effect_chance": null
+  },
+  "short_effect_en": "User foregoes its next turn to recharge.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 68,
+  "name": "counter",
+  "names_es_en": {
+   "es": "Contraataque",
+   "en": "Counter"
+  },
+  "power_actual": null,
+  "accuracy_actual": 100,
+  "type_actual": "fighting",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": 100,
+   "type": "fighting",
+   "pp": 20,
+   "effect_chance": null
+  },
+  "short_effect_en": "Inflicts twice the damage the user received from the last physical hit it took.",
+  "metodos_sv": [
+   [
+    "egg",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 76,
+  "name": "solar-beam",
+  "names_es_en": {
+   "es": "Rayo Solar",
+   "en": "Solar Beam"
+  },
+  "power_actual": 120,
+  "accuracy_actual": 100,
+  "type_actual": "grass",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [
+   {
+    "version_group": "lets-go-pikachu-lets-go-eevee",
+    "power": 120,
+    "accuracy": null,
+    "type": null
+   },
+   {
+    "version_group": "sword-shield",
+    "power": 200,
+    "accuracy": null,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 120,
+   "accuracy": 100,
+   "type": "grass",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "Requires a turn to charge before attacking.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 83,
+  "name": "fire-spin",
+  "names_es_en": {
+   "es": "Giro Fuego",
+   "en": "Fire Spin"
+  },
+  "power_actual": 35,
+  "accuracy_actual": 85,
+  "type_actual": "fire",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-ailment",
+  "past_values": [
+   {
+    "version_group": "black-white",
+    "power": 15,
+    "accuracy": 70,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 35,
+   "accuracy": 85,
+   "type": "fire",
+   "pp": 15,
+   "effect_chance": 100
+  },
+  "short_effect_en": "Prevents the target from fleeing and inflicts damage for 2-5 turns.",
+  "metodos_sv": [
+   [
+    "level-up",
+    46
+   ],
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 89,
+  "name": "earthquake",
+  "names_es_en": {
+   "es": "Terremoto",
+   "en": "Earthquake"
+  },
+  "power_actual": 100,
+  "accuracy_actual": 100,
+  "type_actual": "ground",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 100,
+   "accuracy": 100,
+   "type": "ground",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "Inflicts regular damage and can hit Dig users.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 91,
+  "name": "dig",
+  "names_es_en": {
+   "es": "Excavar",
+   "en": "Dig"
+  },
+  "power_actual": 80,
+  "accuracy_actual": 100,
+  "type_actual": "ground",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [
+   {
+    "version_group": "gold-silver",
+    "power": 100,
+    "accuracy": null,
+    "type": null
+   },
+   {
+    "version_group": "diamond-pearl",
+    "power": 60,
+    "accuracy": null,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 80,
+   "accuracy": 100,
+   "type": "ground",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "User digs underground, dodging all attacks, and hits next turn.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 108,
+  "name": "smokescreen",
+  "names_es_en": {
+   "es": "Pantalla de Humo",
+   "en": "Smokescreen"
+  },
+  "power_actual": null,
+  "accuracy_actual": 100,
+  "type_actual": "normal",
+  "damage_class": "status",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "net-good-stats",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": 100,
+   "type": "normal",
+   "pp": 20,
+   "effect_chance": null
+  },
+  "short_effect_en": "Lowers the target’s accuracy by one stage.",
+  "metodos_sv": [
+   [
+    "level-up",
+    1
+   ]
+  ]
+ },
+ {
+  "id": 126,
+  "name": "fire-blast",
+  "names_es_en": {
+   "es": "Llamarada",
+   "en": "Fire Blast"
+  },
+  "power_actual": 110,
+  "accuracy_actual": 85,
+  "type_actual": "fire",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-ailment",
+  "past_values": [
+   {
+    "version_group": "gold-silver",
+    "power": null,
+    "accuracy": null,
+    "type": null
+   },
+   {
+    "version_group": "x-y",
+    "power": 120,
+    "accuracy": null,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 110,
+   "accuracy": 85,
+   "type": "fire",
+   "pp": 5,
+   "effect_chance": 10
+  },
+  "short_effect_en": "Has a chance to burn the target.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 129,
+  "name": "swift",
+  "names_es_en": {
+   "es": "Meteoros",
+   "en": "Swift"
+  },
+  "power_actual": 60,
+  "accuracy_actual": null,
+  "type_actual": "normal",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 60,
+   "accuracy": null,
+   "type": "normal",
+   "pp": 20,
+   "effect_chance": null
+  },
+  "short_effect_en": "Never misses.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 156,
+  "name": "rest",
+  "names_es_en": {
+   "es": "Descanso",
+   "en": "Rest"
+  },
+  "power_actual": null,
+  "accuracy_actual": null,
+  "type_actual": "psychic",
+  "damage_class": "status",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "unique",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": null,
+   "type": "psychic",
+   "pp": 5,
+   "effect_chance": null
+  },
+  "short_effect_en": "User sleeps for two turns, completely healing itself.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 157,
+  "name": "rock-slide",
+  "names_es_en": {
+   "es": "Avalancha",
+   "en": "Rock Slide"
+  },
+  "power_actual": 75,
+  "accuracy_actual": 90,
+  "type_actual": "rock",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [
+   {
+    "version_group": "gold-silver",
+    "power": null,
+    "accuracy": null,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 75,
+   "accuracy": 90,
+   "type": "rock",
+   "pp": 10,
+   "effect_chance": 30
+  },
+  "short_effect_en": "Has a chance to make the target flinch.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 163,
+  "name": "slash",
+  "names_es_en": {
+   "es": "Cuchillada",
+   "en": "Slash"
+  },
+  "power_actual": 70,
+  "accuracy_actual": 100,
+  "type_actual": "normal",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 70,
+   "accuracy": 100,
+   "type": "normal",
+   "pp": 20,
+   "effect_chance": null
+  },
+  "short_effect_en": "Has an increased chance for a critical hit.",
+  "metodos_sv": [
+   [
+    "level-up",
+    24
+   ]
+  ]
+ },
+ {
+  "id": 164,
+  "name": "substitute",
+  "names_es_en": {
+   "es": "Sustituto",
+   "en": "Substitute"
+  },
+  "power_actual": null,
+  "accuracy_actual": null,
+  "type_actual": "normal",
+  "damage_class": "status",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "unique",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": null,
+   "type": "normal",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "Transfers 1/4 of the user’s max HP into a doll, protecting the user from further damage or status changes until it breaks.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 182,
+  "name": "protect",
+  "names_es_en": {
+   "es": "Protección",
+   "en": "Protect"
+  },
+  "power_actual": null,
+  "accuracy_actual": null,
+  "type_actual": "normal",
+  "damage_class": "status",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "unique",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": null,
+   "type": "normal",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "Prevents any moves from hitting the user this turn.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 184,
+  "name": "scary-face",
+  "names_es_en": {
+   "es": "Cara Susto",
+   "en": "Scary Face"
+  },
+  "power_actual": null,
+  "accuracy_actual": 100,
+  "type_actual": "normal",
+  "damage_class": "status",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "net-good-stats",
+  "past_values": [
+   {
+    "version_group": "black-white",
+    "power": null,
+    "accuracy": 90,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": 100,
+   "type": "normal",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "Lowers the target’s Speed by two stages.",
+  "metodos_sv": [
+   [
+    "level-up",
+    39
+   ],
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 187,
+  "name": "belly-drum",
+  "names_es_en": {
+   "es": "Tambor",
+   "en": "Belly Drum"
+  },
+  "power_actual": null,
+  "accuracy_actual": null,
+  "type_actual": "normal",
+  "damage_class": "status",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "unique",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": null,
+   "type": "normal",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "User pays half its max HP to max out its Attack.",
+  "metodos_sv": [
+   [
+    "egg",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 200,
+  "name": "outrage",
+  "names_es_en": {
+   "es": "Enfado",
+   "en": "Outrage"
+  },
+  "power_actual": 120,
+  "accuracy_actual": 100,
+  "type_actual": "dragon",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [
+   {
+    "version_group": "diamond-pearl",
+    "power": 90,
+    "accuracy": null,
+    "type": null
+   },
+   {
+    "version_group": "black-white",
+    "power": null,
+    "accuracy": null,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 120,
+   "accuracy": 100,
+   "type": "dragon",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "Hits every turn for 2-3 turns, then confuses the user.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 201,
+  "name": "sandstorm",
+  "names_es_en": {
+   "es": "Tormenta de Arena",
+   "en": "Sandstorm"
+  },
+  "power_actual": null,
+  "accuracy_actual": null,
+  "type_actual": "rock",
+  "damage_class": "status",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "whole-field-effect",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": null,
+   "type": "rock",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "Changes the weather to a sandstorm for five turns.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 203,
+  "name": "endure",
+  "names_es_en": {
+   "es": "Aguante",
+   "en": "Endure"
+  },
+  "power_actual": null,
+  "accuracy_actual": null,
+  "type_actual": "normal",
+  "damage_class": "status",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "unique",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": null,
+   "type": "normal",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "Prevents the user’s HP from lowering below 1 this turn.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 214,
+  "name": "sleep-talk",
+  "names_es_en": {
+   "es": "Sonámbulo",
+   "en": "Sleep Talk"
+  },
+  "power_actual": null,
+  "accuracy_actual": null,
+  "type_actual": "normal",
+  "damage_class": "status",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "unique",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": null,
+   "type": "normal",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "Randomly uses one of the user’s other three moves.  Only works if the user is sleeping.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 225,
+  "name": "dragon-breath",
+  "names_es_en": {
+   "es": "Dragoaliento",
+   "en": "Dragon Breath"
+  },
+  "power_actual": 60,
+  "accuracy_actual": 100,
+  "type_actual": "dragon",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-ailment",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 60,
+   "accuracy": 100,
+   "type": "dragon",
+   "pp": 20,
+   "effect_chance": 30
+  },
+  "short_effect_en": "Has a chance to paralyze the target.",
+  "metodos_sv": [
+   [
+    "level-up",
+    12
+   ]
+  ]
+ },
+ {
+  "id": 231,
+  "name": "iron-tail",
+  "names_es_en": {
+   "es": "Cola Férrea",
+   "en": "Iron Tail"
+  },
+  "power_actual": 100,
+  "accuracy_actual": 75,
+  "type_actual": "steel",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-lower",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 100,
+   "accuracy": 75,
+   "type": "steel",
+   "pp": 15,
+   "effect_chance": 30
+  },
+  "short_effect_en": "Has a chance to lower the target’s Defense by one stage.",
+  "metodos_sv": [
+   [
+    "egg",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 232,
+  "name": "metal-claw",
+  "names_es_en": {
+   "es": "Garra Metal",
+   "en": "Metal Claw"
+  },
+  "power_actual": 50,
+  "accuracy_actual": 95,
+  "type_actual": "steel",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-raise",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 50,
+   "accuracy": 95,
+   "type": "steel",
+   "pp": 35,
+   "effect_chance": 10
+  },
+  "short_effect_en": "Has a chance to raise the user’s Attack by one stage.",
+  "metodos_sv": [
+   [
+    "egg",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 241,
+  "name": "sunny-day",
+  "names_es_en": {
+   "es": "Día Soleado",
+   "en": "Sunny Day"
+  },
+  "power_actual": null,
+  "accuracy_actual": null,
+  "type_actual": "fire",
+  "damage_class": "status",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "whole-field-effect",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": null,
+   "type": "fire",
+   "pp": 5,
+   "effect_chance": null
+  },
+  "short_effect_en": "Changes the weather to sunny for five turns.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 242,
+  "name": "crunch",
+  "names_es_en": {
+   "es": "Triturar",
+   "en": "Crunch"
+  },
+  "power_actual": 80,
+  "accuracy_actual": 100,
+  "type_actual": "dark",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-lower",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 80,
+   "accuracy": 100,
+   "type": "dark",
+   "pp": 15,
+   "effect_chance": 20
+  },
+  "short_effect_en": "Has a chance to lower the target’s Defense by one stage.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 246,
+  "name": "ancient-power",
+  "names_es_en": {
+   "es": "Poder Pasado",
+   "en": "Ancient Power"
+  },
+  "power_actual": 60,
+  "accuracy_actual": 100,
+  "type_actual": "rock",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-raise",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 60,
+   "accuracy": 100,
+   "type": "rock",
+   "pp": 5,
+   "effect_chance": 10
+  },
+  "short_effect_en": "Has a chance to raise all of the user’s stats by one stage.",
+  "metodos_sv": [
+   [
+    "egg",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 257,
+  "name": "heat-wave",
+  "names_es_en": {
+   "es": "Onda Ígnea",
+   "en": "Heat Wave"
+  },
+  "power_actual": 95,
+  "accuracy_actual": 90,
+  "type_actual": "fire",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-ailment",
+  "past_values": [
+   {
+    "version_group": "x-y",
+    "power": 100,
+    "accuracy": null,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 95,
+   "accuracy": 90,
+   "type": "fire",
+   "pp": 10,
+   "effect_chance": 10
+  },
+  "short_effect_en": "Has a chance to burn the target.",
+  "metodos_sv": [
+   [
+    "level-up",
+    1
+   ],
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 261,
+  "name": "will-o-wisp",
+  "names_es_en": {
+   "es": "Fuego Fatuo",
+   "en": "Will-O-Wisp"
+  },
+  "power_actual": null,
+  "accuracy_actual": 85,
+  "type_actual": "fire",
+  "damage_class": "status",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "ailment",
+  "past_values": [
+   {
+    "version_group": "x-y",
+    "power": null,
+    "accuracy": 75,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": 85,
+   "type": "fire",
+   "pp": 15,
+   "effect_chance": null
+  },
+  "short_effect_en": "Burns the target.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 263,
+  "name": "facade",
+  "names_es_en": {
+   "es": "Fachada",
+   "en": "Facade"
+  },
+  "power_actual": 70,
+  "accuracy_actual": 100,
+  "type_actual": "normal",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 70,
+   "accuracy": 100,
+   "type": "normal",
+   "pp": 20,
+   "effect_chance": null
+  },
+  "short_effect_en": "Power doubles if user is burned, paralyzed, or poisoned.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 264,
+  "name": "focus-punch",
+  "names_es_en": {
+   "es": "Puño Certero",
+   "en": "Focus Punch"
+  },
+  "power_actual": 150,
+  "accuracy_actual": 100,
+  "type_actual": "fighting",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 150,
+   "accuracy": 100,
+   "type": "fighting",
+   "pp": 20,
+   "effect_chance": null
+  },
+  "short_effect_en": "If the user takes damage before attacking, the attack is canceled.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 270,
+  "name": "helping-hand",
+  "names_es_en": {
+   "es": "Refuerzo",
+   "en": "Helping Hand"
+  },
+  "power_actual": null,
+  "accuracy_actual": null,
+  "type_actual": "normal",
+  "damage_class": "status",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "unique",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": null,
+   "type": "normal",
+   "pp": 20,
+   "effect_chance": null
+  },
+  "short_effect_en": "Ally’s next move inflicts half more damage.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 280,
+  "name": "brick-break",
+  "names_es_en": {
+   "es": "Demolición",
+   "en": "Brick Break"
+  },
+  "power_actual": 75,
+  "accuracy_actual": 100,
+  "type_actual": "fighting",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 75,
+   "accuracy": 100,
+   "type": "fighting",
+   "pp": 15,
+   "effect_chance": null
+  },
+  "short_effect_en": "Destroys Reflect and Light Screen.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 307,
+  "name": "blast-burn",
+  "names_es_en": {
+   "es": "Anillo Ígneo",
+   "en": "Blast Burn"
+  },
+  "power_actual": 150,
+  "accuracy_actual": 90,
+  "type_actual": "fire",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 150,
+   "accuracy": 90,
+   "type": "fire",
+   "pp": 5,
+   "effect_chance": null
+  },
+  "short_effect_en": "User foregoes its next turn to recharge.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 311,
+  "name": "weather-ball",
+  "names_es_en": {
+   "es": "Meteorobola",
+   "en": "Weather Ball"
+  },
+  "power_actual": 50,
+  "accuracy_actual": 100,
+  "type_actual": "normal",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 50,
+   "accuracy": 100,
+   "type": "normal",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "If there be weather, this move has doubled power and the weather’s type.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 314,
+  "name": "air-cutter",
+  "names_es_en": {
+   "es": "Aire Afilado",
+   "en": "Air Cutter"
+  },
+  "power_actual": 60,
+  "accuracy_actual": 95,
+  "type_actual": "flying",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [
+   {
+    "version_group": "x-y",
+    "power": 55,
+    "accuracy": null,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 60,
+   "accuracy": 95,
+   "type": "flying",
+   "pp": 25,
+   "effect_chance": null
+  },
+  "short_effect_en": "Has an increased chance for a critical hit.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 315,
+  "name": "overheat",
+  "names_es_en": {
+   "es": "Sofoco",
+   "en": "Overheat"
+  },
+  "power_actual": 130,
+  "accuracy_actual": 90,
+  "type_actual": "fire",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-raise",
+  "past_values": [
+   {
+    "version_group": "x-y",
+    "power": 140,
+    "accuracy": null,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 130,
+   "accuracy": 90,
+   "type": "fire",
+   "pp": 5,
+   "effect_chance": 100
+  },
+  "short_effect_en": "Lowers the user’s Special Attack by two stages after inflicting damage.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 317,
+  "name": "rock-tomb",
+  "names_es_en": {
+   "es": "Tumba Rocas",
+   "en": "Rock Tomb"
+  },
+  "power_actual": 60,
+  "accuracy_actual": 95,
+  "type_actual": "rock",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-lower",
+  "past_values": [
+   {
+    "version_group": "x-y",
+    "power": 50,
+    "accuracy": 80,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 60,
+   "accuracy": 95,
+   "type": "rock",
+   "pp": 15,
+   "effect_chance": 100
+  },
+  "short_effect_en": "Has a chance to lower the target’s Speed by one stage.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 332,
+  "name": "aerial-ace",
+  "names_es_en": {
+   "es": "Golpe Aéreo",
+   "en": "Aerial Ace"
+  },
+  "power_actual": 60,
+  "accuracy_actual": null,
+  "type_actual": "flying",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 60,
+   "accuracy": null,
+   "type": "flying",
+   "pp": 20,
+   "effect_chance": null
+  },
+  "short_effect_en": "Never misses.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 337,
+  "name": "dragon-claw",
+  "names_es_en": {
+   "es": "Garra Dragón",
+   "en": "Dragon Claw"
+  },
+  "power_actual": 80,
+  "accuracy_actual": 100,
+  "type_actual": "dragon",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 80,
+   "accuracy": 100,
+   "type": "dragon",
+   "pp": 15,
+   "effect_chance": null
+  },
+  "short_effect_en": "Inflicts regular damage with no additional effect.",
+  "metodos_sv": [
+   [
+    "level-up",
+    1
+   ],
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 349,
+  "name": "dragon-dance",
+  "names_es_en": {
+   "es": "Danza Dragón",
+   "en": "Dragon Dance"
+  },
+  "power_actual": null,
+  "accuracy_actual": null,
+  "type_actual": "dragon",
+  "damage_class": "status",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "net-good-stats",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": null,
+   "type": "dragon",
+   "pp": 20,
+   "effect_chance": null
+  },
+  "short_effect_en": "Raises the user’s Attack and Speed by one stage.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 374,
+  "name": "fling",
+  "names_es_en": {
+   "es": "Lanzamiento",
+   "en": "Fling"
+  },
+  "power_actual": null,
+  "accuracy_actual": 100,
+  "type_actual": "dark",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": 100,
+   "type": "dark",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "Throws held item at the target; power depends on the item.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 394,
+  "name": "flare-blitz",
+  "names_es_en": {
+   "es": "Envite Ígneo",
+   "en": "Flare Blitz"
+  },
+  "power_actual": 120,
+  "accuracy_actual": 100,
+  "type_actual": "fire",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": -33
+  },
+  "meta_category": "damage-ailment",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 120,
+   "accuracy": 100,
+   "type": "fire",
+   "pp": 15,
+   "effect_chance": 10
+  },
+  "short_effect_en": "User takes 1/3 the damage inflicted in recoil.  Has a chance to burn the target.",
+  "metodos_sv": [
+   [
+    "level-up",
+    62
+   ],
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 403,
+  "name": "air-slash",
+  "names_es_en": {
+   "es": "Tajo Aéreo",
+   "en": "Air Slash"
+  },
+  "power_actual": 75,
+  "accuracy_actual": 95,
+  "type_actual": "flying",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [
+   {
+    "version_group": "x-y",
+    "power": null,
+    "accuracy": null,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 75,
+   "accuracy": 95,
+   "type": "flying",
+   "pp": 15,
+   "effect_chance": 30
+  },
+  "short_effect_en": "Has a chance to make the target flinch.",
+  "metodos_sv": [
+   [
+    "level-up",
+    0
+   ],
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 406,
+  "name": "dragon-pulse",
+  "names_es_en": {
+   "es": "Pulso Dragón",
+   "en": "Dragon Pulse"
+  },
+  "power_actual": 85,
+  "accuracy_actual": 100,
+  "type_actual": "dragon",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [
+   {
+    "version_group": "x-y",
+    "power": 90,
+    "accuracy": null,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 85,
+   "accuracy": 100,
+   "type": "dragon",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "Inflicts regular damage with no additional effect.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 407,
+  "name": "dragon-rush",
+  "names_es_en": {
+   "es": "Carga Dragón",
+   "en": "Dragon Rush"
+  },
+  "power_actual": 100,
+  "accuracy_actual": 75,
+  "type_actual": "dragon",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 100,
+   "accuracy": 75,
+   "type": "dragon",
+   "pp": 10,
+   "effect_chance": 20
+  },
+  "short_effect_en": "Has a chance to make the target flinch.",
+  "metodos_sv": [
+   [
+    "egg",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 411,
+  "name": "focus-blast",
+  "names_es_en": {
+   "es": "Onda Certera",
+   "en": "Focus Blast"
+  },
+  "power_actual": 120,
+  "accuracy_actual": 70,
+  "type_actual": "fighting",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-lower",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 120,
+   "accuracy": 70,
+   "type": "fighting",
+   "pp": 5,
+   "effect_chance": 10
+  },
+  "short_effect_en": "Has a chance to lower the target’s Special Defense by one stage.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 416,
+  "name": "giga-impact",
+  "names_es_en": {
+   "es": "Gigaimpacto",
+   "en": "Giga Impact"
+  },
+  "power_actual": 150,
+  "accuracy_actual": 90,
+  "type_actual": "normal",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 150,
+   "accuracy": 90,
+   "type": "normal",
+   "pp": 5,
+   "effect_chance": null
+  },
+  "short_effect_en": "User foregoes its next turn to recharge.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 421,
+  "name": "shadow-claw",
+  "names_es_en": {
+   "es": "Garra Umbría",
+   "en": "Shadow Claw"
+  },
+  "power_actual": 70,
+  "accuracy_actual": 100,
+  "type_actual": "ghost",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 70,
+   "accuracy": 100,
+   "type": "ghost",
+   "pp": 15,
+   "effect_chance": null
+  },
+  "short_effect_en": "Has an increased chance for a critical hit.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 424,
+  "name": "fire-fang",
+  "names_es_en": {
+   "es": "Colmillo Ígneo",
+   "en": "Fire Fang"
+  },
+  "power_actual": 65,
+  "accuracy_actual": 95,
+  "type_actual": "fire",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-ailment",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 65,
+   "accuracy": 95,
+   "type": "fire",
+   "pp": 15,
+   "effect_chance": 10
+  },
+  "short_effect_en": "Has a chance to burn the target and a chance to make the target flinch.",
+  "metodos_sv": [
+   [
+    "level-up",
+    19
+   ],
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 488,
+  "name": "flame-charge",
+  "names_es_en": {
+   "es": "Nitrocarga",
+   "en": "Flame Charge"
+  },
+  "power_actual": 50,
+  "accuracy_actual": 100,
+  "type_actual": "fire",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-raise",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 50,
+   "accuracy": 100,
+   "type": "fire",
+   "pp": 20,
+   "effect_chance": 100
+  },
+  "short_effect_en": "Inflicts regular damage.  Raises the user’s Speed by one stage.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 512,
+  "name": "acrobatics",
+  "names_es_en": {
+   "es": "Acróbata",
+   "en": "Acrobatics"
+  },
+  "power_actual": 55,
+  "accuracy_actual": 100,
+  "type_actual": "flying",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 55,
+   "accuracy": 100,
+   "type": "flying",
+   "pp": 15,
+   "effect_chance": null
+  },
+  "short_effect_en": "Has double power if the user has no held item.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 517,
+  "name": "inferno",
+  "names_es_en": {
+   "es": "Infierno",
+   "en": "Inferno"
+  },
+  "power_actual": 100,
+  "accuracy_actual": 50,
+  "type_actual": "fire",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-ailment",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 100,
+   "accuracy": 50,
+   "type": "fire",
+   "pp": 5,
+   "effect_chance": 100
+  },
+  "short_effect_en": "Has a chance to burn the target.",
+  "metodos_sv": [
+   [
+    "level-up",
+    54
+   ]
+  ]
+ },
+ {
+  "id": 519,
+  "name": "fire-pledge",
+  "names_es_en": {
+   "es": "Voto Fuego",
+   "en": "Fire Pledge"
+  },
+  "power_actual": 80,
+  "accuracy_actual": 100,
+  "type_actual": "fire",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [
+   {
+    "version_group": "x-y",
+    "power": 50,
+    "accuracy": null,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 80,
+   "accuracy": 100,
+   "type": "fire",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "With Water Pledge, doubles the effect chance of friendly Pokémon’s moves for four turns.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 523,
+  "name": "bulldoze",
+  "names_es_en": {
+   "es": "Terratemblor",
+   "en": "Bulldoze"
+  },
+  "power_actual": 60,
+  "accuracy_actual": 100,
+  "type_actual": "ground",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-lower",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 60,
+   "accuracy": 100,
+   "type": "ground",
+   "pp": 20,
+   "effect_chance": 100
+  },
+  "short_effect_en": "Has a chance to lower the target’s Speed by one stage.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 525,
+  "name": "dragon-tail",
+  "names_es_en": {
+   "es": "Cola Dragón",
+   "en": "Dragon Tail"
+  },
+  "power_actual": 60,
+  "accuracy_actual": 90,
+  "type_actual": "dragon",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 60,
+   "accuracy": 90,
+   "type": "dragon",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "Ends wild battles.  Forces trainers to switch Pokémon.",
+  "metodos_sv": [
+   [
+    "egg",
+    0
+   ],
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 535,
+  "name": "heat-crash",
+  "names_es_en": {
+   "es": "Golpe Calor",
+   "en": "Heat Crash"
+  },
+  "power_actual": null,
+  "accuracy_actual": 100,
+  "type_actual": "fire",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": null,
+   "accuracy": 100,
+   "type": "fire",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": "Power is higher when the user weighs more than the target, up to a maximum of 120.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 542,
+  "name": "hurricane",
+  "names_es_en": {
+   "es": "Vendaval",
+   "en": "Hurricane"
+  },
+  "power_actual": 110,
+  "accuracy_actual": 70,
+  "type_actual": "flying",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-ailment",
+  "past_values": [
+   {
+    "version_group": "x-y",
+    "power": 120,
+    "accuracy": null,
+    "type": null
+   }
+  ],
+  "valores_vigentes_sv": {
+   "power": 110,
+   "accuracy": 70,
+   "type": "flying",
+   "pp": 10,
+   "effect_chance": 30
+  },
+  "short_effect_en": "Has a chance to confuse the target.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 784,
+  "name": "breaking-swipe",
+  "names_es_en": {
+   "es": "Vasto Impacto",
+   "en": "Breaking Swipe"
+  },
+  "power_actual": 60,
+  "accuracy_actual": 100,
+  "type_actual": "dragon",
+  "damage_class": "physical",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-lower",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 60,
+   "accuracy": 100,
+   "type": "dragon",
+   "pp": 15,
+   "effect_chance": 100
+  },
+  "short_effect_en": "Lowers the target’s Attack by one stage after inflicting damage.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 815,
+  "name": "scorching-sands",
+  "names_es_en": {
+   "es": "Arenas Ardientes",
+   "en": "Scorching Sands"
+  },
+  "power_actual": 70,
+  "accuracy_actual": 100,
+  "type_actual": "ground",
+  "damage_class": "special",
+  "meta": {
+   "min_hits": null,
+   "max_hits": null,
+   "drain": 0
+  },
+  "meta_category": "damage-ailment",
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 70,
+   "accuracy": 100,
+   "type": "ground",
+   "pp": 10,
+   "effect_chance": 30
+  },
+  "short_effect_en": "Has a chance to burn the target.",
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 851,
+  "name": "tera-blast",
+  "names_es_en": {
+   "es": "Teraexplosión",
+   "en": "Tera Blast"
+  },
+  "power_actual": 80,
+  "accuracy_actual": 100,
+  "type_actual": "normal",
+  "damage_class": "special",
+  "meta": null,
+  "meta_category": null,
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 80,
+   "accuracy": 100,
+   "type": "normal",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": null,
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 913,
+  "name": "dragon-cheer",
+  "names_es_en": {
+   "es": "Bramido Dragón",
+   "en": "Dragon Cheer"
+  },
+  "power_actual": 0,
+  "accuracy_actual": 0,
+  "type_actual": "dragon",
+  "damage_class": "status",
+  "meta": null,
+  "meta_category": null,
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 0,
+   "accuracy": 0,
+   "type": "dragon",
+   "pp": 15,
+   "effect_chance": null
+  },
+  "short_effect_en": null,
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ },
+ {
+  "id": 915,
+  "name": "temper-flare",
+  "names_es_en": {
+   "es": "Cólera Ardiente",
+   "en": "Temper Flare"
+  },
+  "power_actual": 75,
+  "accuracy_actual": 100,
+  "type_actual": "fire",
+  "damage_class": "physical",
+  "meta": null,
+  "meta_category": null,
+  "past_values": [],
+  "valores_vigentes_sv": {
+   "power": 75,
+   "accuracy": 100,
+   "type": "fire",
+   "pp": 10,
+   "effect_chance": null
+  },
+  "short_effect_en": null,
+  "metodos_sv": [
+   [
+    "machine",
+    0
+   ]
+  ]
+ }
+]

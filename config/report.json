@@ -1,0 +1,46 @@
+{
+  "_descripcion": "Datos de portada y publicacion del informe. Para completar la URL del repositorio: python scripts/build_report.py --repo-url https://github.com/USUARIO/REPO",
+  "repo_url": "https://github.com/PabloV2003/tp2-charizard-ga",
+  "fecha_presentacion": "03/10/2026",
+  "fecha_presentacion_nota": "Fecha de preparacion de esta version final. Si la entrega se sube otro dia, cambiarla aqui y regenerar el informe.",
+  "anio": "2026",
+  "trabajo_practico": "Trabajo Práctico N° 2",
+  "entrega": "Entrega Final",
+  "grupo": "6",
+  "titulo": "Optimización del moveset ofensivo del Pokémon Charizard mediante Algoritmo Genético",
+  "integrantes": [
+    [
+      "Dominguez Nimo, Abril",
+      "adomingueznimo@frba.utn.edu.ar"
+    ],
+    [
+      "Gandola, Joaquin",
+      "jgandola@frba.utn.edu.ar"
+    ],
+    [
+      "Juncos Mieres, Matias Leonel",
+      "mjuncosmieres@frba.utn.edu.ar"
+    ],
+    [
+      "Magarzo, Matias Leonel",
+      "magarzo@frba.utn.edu.ar"
+    ],
+    [
+      "Ochoa Charlín, Rocío",
+      "rochoacharlin@frba.utn.edu.ar"
+    ],
+    [
+      "Perez, Melisa Selene",
+      "melperez@frba.utn.edu.ar"
+    ],
+    [
+      "Valmadre Amoia, Valentina",
+      "vvalmadreamoia@frba.utn.edu.ar"
+    ],
+    [
+      "Vigil, Pablo",
+      "pvigil@frba.utn.edu.ar"
+    ]
+  ],
+  "plantilla": "Plantilla Entrega - Trabajos Prácticos (3).docx"
+}

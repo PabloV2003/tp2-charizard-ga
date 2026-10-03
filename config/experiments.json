@@ -1,0 +1,47 @@
+{
+  "_descripcion": "Configuración EXACTA de los experimentos. Los pesos son entradas del experimento, no resultados. Ningún parámetro se modifica entre configuraciones salvo lo indicado en 'overrides'.",
+  "ga_base": {
+    "population_size": 100,
+    "generations": 200,
+    "selection": "tournament",
+    "tournament_size": 3,
+    "crossover": "uniform",
+    "cx_prob": 0.8,
+    "cx_indpb": 0.5,
+    "mutation_prob": 0.1,
+    "elitism": 2,
+    "stop_criterion": "generations"
+  },
+  "alcance_probabilidades": {
+    "cx_prob": "por pareja de padres consecutivos seleccionados",
+    "cx_indpb": "por gen (posición) dentro de una pareja que se cruza (solo cruza uniforme)",
+    "mutation_prob": "por individuo hijo; si se activa, se reemplaza UN gen elegido al azar",
+    "generations": "generaciones evolutivas además de la generación inicial 0 (se registran 201 filas por corrida)"
+  },
+  "base_profile": "R1",
+  "profiles": {
+    "R1": {"nombre": "Base", "wC": 0.40, "wP": 0.20, "wA": 0.15, "wS": 0.15, "wD": 0.10,
+           "justificacion": "Prioriza la cobertura general (objetivo central de la propuesta) y reparte el resto entre potencia, precisión, STAB y diversidad. Es una decisión de modelado, no un valor oficial ni demostrado óptimo."},
+    "R2": {"nombre": "Mayor cobertura", "wC": 0.60, "wP": 0.15, "wA": 0.10, "wS": 0.05, "wD": 0.10,
+           "justificacion": "Representa a un jugador que quiere responder a la mayor variedad de tipos rivales aun resignando STAB."},
+    "R3": {"nombre": "Mayor potencia", "wC": 0.20, "wP": 0.45, "wA": 0.15, "wS": 0.10, "wD": 0.10,
+           "justificacion": "Representa un enfoque ofensivo que prioriza el daño bruto por encima de la cobertura."},
+    "R4": {"nombre": "Mayor precisión", "wC": 0.25, "wP": 0.15, "wA": 0.40, "wS": 0.10, "wD": 0.10,
+           "justificacion": "Representa un enfoque conservador que penaliza los ataques que pueden fallar."},
+    "R5": {"nombre": "Mayor STAB y diversidad", "wC": 0.25, "wP": 0.15, "wA": 0.10, "wS": 0.30, "wD": 0.20,
+           "justificacion": "Representa un enfoque que valora aprovechar los tipos propios de Charizard y variar los tipos de ataque."}
+  },
+  "seeds": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51],
+  "main_seed": 42,
+  "main_seed_nota": "La semilla 42 se eligió ANTES de observar resultados para las cinco corridas principales; las demás réplicas solo se usan para analizar variabilidad.",
+  "configs": [
+    {"id": "R1", "grupo": "principal", "profile": "R1", "descripcion": "Perfil base", "overrides": {}},
+    {"id": "R2", "grupo": "principal", "profile": "R2", "descripcion": "Perfil mayor cobertura", "overrides": {}},
+    {"id": "R3", "grupo": "principal", "profile": "R3", "descripcion": "Perfil mayor potencia", "overrides": {}},
+    {"id": "R4", "grupo": "principal", "profile": "R4", "descripcion": "Perfil mayor precisión", "overrides": {}},
+    {"id": "R5", "grupo": "principal", "profile": "R5", "descripcion": "Perfil mayor STAB y diversidad", "overrides": {}},
+    {"id": "OP-RUL", "grupo": "operadores", "profile": "R1", "descripcion": "Pesos base; selección por ruleta en lugar de torneo", "overrides": {"selection": "roulette"}},
+    {"id": "OP-1P", "grupo": "operadores", "profile": "R1", "descripcion": "Pesos base; cruza de un punto en lugar de uniforme", "overrides": {"crossover": "one_point"}},
+    {"id": "OP-MUT20", "grupo": "operadores", "profile": "R1", "descripcion": "Pesos base; probabilidad de mutación 0.20 en lugar de 0.10", "overrides": {"mutation_prob": 0.2}}
+  ]
+}

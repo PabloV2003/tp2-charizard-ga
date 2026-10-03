@@ -1,0 +1,146 @@
+{
+  "config_id": "R2",
+  "grupo": "principal",
+  "perfil": "R2",
+  "perfil_nombre": "Mayor cobertura",
+  "descripcion": "Perfil mayor cobertura",
+  "replica": 3,
+  "semilla": 44,
+  "corrida_principal": false,
+  "parametros_ag": {
+    "population_size": 100,
+    "generations": 200,
+    "selection": "tournament",
+    "tournament_size": 3,
+    "crossover": "uniform",
+    "cx_prob": 0.8,
+    "cx_indpb": 0.5,
+    "mutation_prob": 0.1,
+    "elitism": 2,
+    "stop_criterion": "generations"
+  },
+  "overrides_respecto_base": {},
+  "pesos": {
+    "wC": 0.6,
+    "wP": 0.15,
+    "wA": 0.1,
+    "wS": 0.05,
+    "wD": 0.1
+  },
+  "dataset_version": "6557b19f60a8",
+  "fitness_version": "F1 (C/P/A/S/D; P normalizada por la potencia máxima del catálogo)",
+  "mejor_solucion": {
+    "moveset_ids": [
+      19,
+      76,
+      89,
+      264
+    ],
+    "generacion_encontrada": 26,
+    "valido": true,
+    "movimientos": [
+      {
+        "move_id": 19,
+        "slug": "fly",
+        "nombre_es": "Vuelo",
+        "tipo": "flying",
+        "tipo_es": "Volador",
+        "potencia": 90,
+        "precision": 95,
+        "categoria": "physical",
+        "stab": true,
+        "efectos_ignorados": "requiere turno de carga"
+      },
+      {
+        "move_id": 76,
+        "slug": "solar-beam",
+        "nombre_es": "Rayo Solar",
+        "tipo": "grass",
+        "tipo_es": "Planta",
+        "potencia": 120,
+        "precision": 100,
+        "categoria": "special",
+        "stab": false,
+        "efectos_ignorados": "requiere turno de carga; potencia condicional (el modelo usa la potencia base)"
+      },
+      {
+        "move_id": 89,
+        "slug": "earthquake",
+        "nombre_es": "Terremoto",
+        "tipo": "ground",
+        "tipo_es": "Tierra",
+        "potencia": 100,
+        "precision": 100,
+        "categoria": "physical",
+        "stab": false,
+        "efectos_ignorados": ""
+      },
+      {
+        "move_id": 264,
+        "slug": "focus-punch",
+        "nombre_es": "Puño Certero",
+        "tipo": "fighting",
+        "tipo_es": "Lucha",
+        "potencia": 150,
+        "precision": 100,
+        "categoria": "physical",
+        "stab": false,
+        "efectos_ignorados": "falla si el usuario recibe daño antes de actuar; prioridad -3"
+      }
+    ],
+    "componentes": {
+      "C": 0.7222222222222222,
+      "P": 0.7666666666666667,
+      "A": 0.9875,
+      "S": 0.25,
+      "D": 1.0
+    },
+    "aportes": {
+      "C": 43.333333333333336,
+      "P": 11.5,
+      "A": 9.875,
+      "S": 1.25,
+      "D": 10.0
+    },
+    "aptitud": 75.95833333333333,
+    "tipos_cubiertos": [
+      "normal",
+      "fire",
+      "water",
+      "electric",
+      "grass",
+      "ice",
+      "fighting",
+      "poison",
+      "ground",
+      "bug",
+      "rock",
+      "dark",
+      "steel"
+    ],
+    "tipos_no_cubiertos": [
+      "flying",
+      "psychic",
+      "ghost",
+      "dragon",
+      "fairy"
+    ],
+    "n_tipos_cubiertos": 13,
+    "aptitud_perfil_base": 72.78472222222223
+  },
+  "generaciones_ejecutadas": 200,
+  "filas_log": 201,
+  "motivo_paro": "se completaron las 200 generaciones configuradas (criterio de paro por generaciones)",
+  "tiempo_segundos": 0.22297559992875904,
+  "candidatos_generados": 19700,
+  "evaluaciones_solicitadas": 16121,
+  "evaluaciones_efectivas": 806,
+  "reutilizacion_cache": 15315,
+  "poblacion_final": {
+    "combinaciones_distintas": 16,
+    "aptitud_media": 74.83375,
+    "aptitud_max": 75.95833333333333
+  },
+  "total_hijos_reparados": 673,
+  "total_individuos_invalidos_registrados": 0
+}
