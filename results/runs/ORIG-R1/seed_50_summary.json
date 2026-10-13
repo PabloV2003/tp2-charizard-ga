@@ -1,0 +1,160 @@
+{
+  "config_id": "ORIG-R1",
+  "grupo": "referencia",
+  "perfil": "R1",
+  "perfil_nombre": "Base",
+  "descripcion": "Versión original para comparar: aptitud F1 (potencia base) y cruza binomial aleatoria con reparación",
+  "replica": 9,
+  "semilla": 50,
+  "corrida_principal": false,
+  "parametros_ag": {
+    "population_size": 100,
+    "generations": 200,
+    "selection": "tournament",
+    "tournament_size": 3,
+    "crossover": "uniform",
+    "cx_prob": 0.8,
+    "cx_indpb": 0.5,
+    "mutation_prob": 0.1,
+    "mutation_mode": "simple",
+    "mutation_prob_max": 0.4,
+    "convergence_threshold": 0.9,
+    "elitism": 2,
+    "stop_criterion": "generations",
+    "patience": 30,
+    "fitness_version": "F1"
+  },
+  "overrides_respecto_base": {
+    "fitness_version": "F1",
+    "crossover": "uniform"
+  },
+  "pesos": {
+    "wC": 0.4,
+    "wP": 0.2,
+    "wA": 0.15,
+    "wS": 0.15,
+    "wD": 0.1
+  },
+  "dataset_version": "6557b19f60a8",
+  "fitness_version": "F1",
+  "fitness_descripcion": "F1 (C/P/A/S/D; P = potencia base / potencia máxima del catálogo)",
+  "mejor_solucion": {
+    "moveset_ids": [
+      19,
+      76,
+      89,
+      264
+    ],
+    "generacion_encontrada": 9,
+    "valido": true,
+    "version_aptitud": "F1",
+    "movimientos": [
+      {
+        "move_id": 19,
+        "slug": "fly",
+        "nombre_es": "Vuelo",
+        "tipo": "flying",
+        "tipo_es": "Volador",
+        "potencia": 90,
+        "potencia_efectiva": 34.67889908256881,
+        "precision": 95,
+        "categoria": "physical",
+        "stab": true,
+        "efectos_ignorados": "requiere turno de carga"
+      },
+      {
+        "move_id": 76,
+        "slug": "solar-beam",
+        "nombre_es": "Rayo Solar",
+        "tipo": "grass",
+        "tipo_es": "Planta",
+        "potencia": 120,
+        "potencia_efectiva": 60.0,
+        "precision": 100,
+        "categoria": "special",
+        "stab": false,
+        "efectos_ignorados": "requiere turno de carga; potencia condicional (el modelo usa la potencia base)"
+      },
+      {
+        "move_id": 89,
+        "slug": "earthquake",
+        "nombre_es": "Terremoto",
+        "tipo": "ground",
+        "tipo_es": "Tierra",
+        "potencia": 100,
+        "potencia_efectiva": 77.06422018348624,
+        "precision": 100,
+        "categoria": "physical",
+        "stab": false,
+        "efectos_ignorados": ""
+      },
+      {
+        "move_id": 264,
+        "slug": "focus-punch",
+        "nombre_es": "Puño Certero",
+        "tipo": "fighting",
+        "tipo_es": "Lucha",
+        "potencia": 150,
+        "potencia_efectiva": 28.89908256880734,
+        "precision": 100,
+        "categoria": "physical",
+        "stab": false,
+        "efectos_ignorados": "falla si el usuario recibe daño antes de actuar; prioridad -3"
+      }
+    ],
+    "componentes": {
+      "C": 0.7222222222222222,
+      "P": 0.7666666666666667,
+      "A": 0.9875,
+      "S": 0.25,
+      "D": 1.0
+    },
+    "aportes": {
+      "C": 28.88888888888889,
+      "P": 15.333333333333334,
+      "A": 14.8125,
+      "S": 3.75,
+      "D": 10.0
+    },
+    "aptitud": 72.78472222222223,
+    "tipos_cubiertos": [
+      "normal",
+      "fire",
+      "water",
+      "electric",
+      "grass",
+      "ice",
+      "fighting",
+      "poison",
+      "ground",
+      "bug",
+      "rock",
+      "dark",
+      "steel"
+    ],
+    "tipos_no_cubiertos": [
+      "flying",
+      "psychic",
+      "ghost",
+      "dragon",
+      "fairy"
+    ],
+    "n_tipos_cubiertos": 13,
+    "aptitud_perfil_base": 72.78472222222223
+  },
+  "generaciones_ejecutadas": 200,
+  "filas_log": 201,
+  "motivo_paro": "se completaron las 200 generaciones configuradas (criterio de paro por generaciones)",
+  "tiempo_segundos": 0.18024502999833203,
+  "candidatos_generados": 19700,
+  "evaluaciones_solicitadas": 16067,
+  "evaluaciones_efectivas": 751,
+  "reutilizacion_cache": 15316,
+  "poblacion_final": {
+    "combinaciones_distintas": 12,
+    "aptitud_media": 72.15673611111112,
+    "aptitud_max": 72.78472222222223
+  },
+  "total_hijos_reparados": 47,
+  "total_individuos_invalidos_registrados": 0
+}

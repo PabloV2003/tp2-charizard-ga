@@ -12,12 +12,17 @@
     "generations": 200,
     "selection": "tournament",
     "tournament_size": 3,
-    "crossover": "uniform",
+    "crossover": "set",
     "cx_prob": 0.8,
     "cx_indpb": 0.5,
     "mutation_prob": 0.1,
+    "mutation_mode": "simple",
+    "mutation_prob_max": 0.4,
+    "convergence_threshold": 0.9,
     "elitism": 2,
-    "stop_criterion": "generations"
+    "stop_criterion": "generations",
+    "patience": 30,
+    "fitness_version": "F2"
   },
   "overrides_respecto_base": {},
   "pesos": {
@@ -28,40 +33,31 @@
     "wD": 0.1
   },
   "dataset_version": "6557b19f60a8",
-  "fitness_version": "F1 (C/P/A/S/D; P normalizada por la potencia máxima del catálogo)",
+  "fitness_version": "F2",
+  "fitness_descripcion": "F2 (C/P/A/S/D; P = potencia efectiva / potencia efectiva máxima del catálogo)",
   "mejor_solucion": {
     "moveset_ids": [
-      19,
-      76,
+      53,
       89,
-      264
+      242,
+      403
     ],
-    "generacion_encontrada": 4,
+    "generacion_encontrada": 16,
     "valido": true,
+    "version_aptitud": "F2",
     "movimientos": [
       {
-        "move_id": 19,
-        "slug": "fly",
-        "nombre_es": "Vuelo",
-        "tipo": "flying",
-        "tipo_es": "Volador",
+        "move_id": 53,
+        "slug": "flamethrower",
+        "nombre_es": "Lanzallamas",
+        "tipo": "fire",
+        "tipo_es": "Fuego",
         "potencia": 90,
-        "precision": 95,
-        "categoria": "physical",
-        "stab": true,
-        "efectos_ignorados": "requiere turno de carga"
-      },
-      {
-        "move_id": 76,
-        "slug": "solar-beam",
-        "nombre_es": "Rayo Solar",
-        "tipo": "grass",
-        "tipo_es": "Planta",
-        "potencia": 120,
+        "potencia_efectiva": 90.0,
         "precision": 100,
         "categoria": "special",
-        "stab": false,
-        "efectos_ignorados": "requiere turno de carga; potencia condicional (el modelo usa la potencia base)"
+        "stab": true,
+        "efectos_ignorados": ""
       },
       {
         "move_id": 89,
@@ -70,77 +66,92 @@
         "tipo": "ground",
         "tipo_es": "Tierra",
         "potencia": 100,
+        "potencia_efectiva": 77.06422018348624,
         "precision": 100,
         "categoria": "physical",
         "stab": false,
         "efectos_ignorados": ""
       },
       {
-        "move_id": 264,
-        "slug": "focus-punch",
-        "nombre_es": "Puño Certero",
-        "tipo": "fighting",
-        "tipo_es": "Lucha",
-        "potencia": 150,
+        "move_id": 242,
+        "slug": "crunch",
+        "nombre_es": "Triturar",
+        "tipo": "dark",
+        "tipo_es": "Siniestro",
+        "potencia": 80,
+        "potencia_efectiva": 61.65137614678899,
         "precision": 100,
         "categoria": "physical",
         "stab": false,
-        "efectos_ignorados": "falla si el usuario recibe daño antes de actuar; prioridad -3"
+        "efectos_ignorados": ""
+      },
+      {
+        "move_id": 403,
+        "slug": "air-slash",
+        "nombre_es": "Tajo Aéreo",
+        "tipo": "flying",
+        "tipo_es": "Volador",
+        "potencia": 75,
+        "potencia_efectiva": 75.0,
+        "precision": 95,
+        "categoria": "special",
+        "stab": true,
+        "efectos_ignorados": ""
       }
     ],
     "componentes": {
-      "C": 0.7222222222222222,
-      "P": 0.7666666666666667,
+      "C": 0.6111111111111112,
+      "P": 0.6327408256880733,
       "A": 0.9875,
-      "S": 0.25,
+      "S": 0.5,
       "D": 1.0
     },
     "aportes": {
-      "C": 18.055555555555554,
-      "P": 11.5,
+      "C": 15.277777777777779,
+      "P": 9.4911123853211,
       "A": 39.5,
-      "S": 2.5,
+      "S": 5.0,
       "D": 10.0
     },
-    "aptitud": 81.55555555555556,
+    "aptitud": 79.26889016309889,
     "tipos_cubiertos": [
-      "normal",
       "fire",
-      "water",
       "electric",
       "grass",
       "ice",
       "fighting",
       "poison",
-      "ground",
+      "psychic",
       "bug",
       "rock",
-      "dark",
+      "ghost",
       "steel"
     ],
     "tipos_no_cubiertos": [
+      "normal",
+      "water",
+      "ground",
       "flying",
-      "psychic",
-      "ghost",
       "dragon",
+      "dark",
       "fairy"
     ],
-    "n_tipos_cubiertos": 13,
-    "aptitud_perfil_base": 72.78472222222223
+    "n_tipos_cubiertos": 11,
+    "aptitud_perfil_base": 69.41176095820592
   },
   "generaciones_ejecutadas": 200,
   "filas_log": 201,
   "motivo_paro": "se completaron las 200 generaciones configuradas (criterio de paro por generaciones)",
-  "tiempo_segundos": 0.24921729997731745,
+  "tiempo_segundos": 0.18194388200208778,
   "candidatos_generados": 19700,
-  "evaluaciones_solicitadas": 16095,
-  "evaluaciones_efectivas": 593,
-  "reutilizacion_cache": 15502,
+  "evaluaciones_solicitadas": 16225,
+  "evaluaciones_efectivas": 746,
+  "reutilizacion_cache": 15479,
   "poblacion_final": {
-    "combinaciones_distintas": 11,
-    "aptitud_media": 81.14791666666667,
-    "aptitud_max": 81.55555555555556
+    "combinaciones_distintas": 8,
+    "aptitud_media": 78.9752396151886,
+    "aptitud_max": 79.26889016309889
   },
-  "total_hijos_reparados": 21,
+  "total_hijos_reparados": 0,
   "total_individuos_invalidos_registrados": 0
 }

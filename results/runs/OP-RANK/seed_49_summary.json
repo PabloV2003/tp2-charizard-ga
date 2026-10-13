@@ -1,0 +1,159 @@
+{
+  "config_id": "OP-RANK",
+  "grupo": "operadores",
+  "perfil": "R1",
+  "perfil_nombre": "Base",
+  "descripcion": "Pesos base; selección por ranking lineal en lugar de torneo",
+  "replica": 8,
+  "semilla": 49,
+  "corrida_principal": false,
+  "parametros_ag": {
+    "population_size": 100,
+    "generations": 200,
+    "selection": "ranking",
+    "tournament_size": 3,
+    "crossover": "set",
+    "cx_prob": 0.8,
+    "cx_indpb": 0.5,
+    "mutation_prob": 0.1,
+    "mutation_mode": "simple",
+    "mutation_prob_max": 0.4,
+    "convergence_threshold": 0.9,
+    "elitism": 2,
+    "stop_criterion": "generations",
+    "patience": 30,
+    "fitness_version": "F2"
+  },
+  "overrides_respecto_base": {
+    "selection": "ranking"
+  },
+  "pesos": {
+    "wC": 0.4,
+    "wP": 0.2,
+    "wA": 0.15,
+    "wS": 0.15,
+    "wD": 0.1
+  },
+  "dataset_version": "6557b19f60a8",
+  "fitness_version": "F2",
+  "fitness_descripcion": "F2 (C/P/A/S/D; P = potencia efectiva / potencia efectiva máxima del catálogo)",
+  "mejor_solucion": {
+    "moveset_ids": [
+      89,
+      126,
+      411,
+      542
+    ],
+    "generacion_encontrada": 11,
+    "valido": true,
+    "version_aptitud": "F2",
+    "movimientos": [
+      {
+        "move_id": 89,
+        "slug": "earthquake",
+        "nombre_es": "Terremoto",
+        "tipo": "ground",
+        "tipo_es": "Tierra",
+        "potencia": 100,
+        "potencia_efectiva": 77.06422018348624,
+        "precision": 100,
+        "categoria": "physical",
+        "stab": false,
+        "efectos_ignorados": ""
+      },
+      {
+        "move_id": 126,
+        "slug": "fire-blast",
+        "nombre_es": "Llamarada",
+        "tipo": "fire",
+        "tipo_es": "Fuego",
+        "potencia": 110,
+        "potencia_efectiva": 110.0,
+        "precision": 85,
+        "categoria": "special",
+        "stab": true,
+        "efectos_ignorados": ""
+      },
+      {
+        "move_id": 411,
+        "slug": "focus-blast",
+        "nombre_es": "Onda Certera",
+        "tipo": "fighting",
+        "tipo_es": "Lucha",
+        "potencia": 120,
+        "potencia_efectiva": 120.0,
+        "precision": 70,
+        "categoria": "special",
+        "stab": false,
+        "efectos_ignorados": ""
+      },
+      {
+        "move_id": 542,
+        "slug": "hurricane",
+        "nombre_es": "Vendaval",
+        "tipo": "flying",
+        "tipo_es": "Volador",
+        "potencia": 110,
+        "potencia_efectiva": 110.0,
+        "precision": 70,
+        "categoria": "special",
+        "stab": true,
+        "efectos_ignorados": ""
+      }
+    ],
+    "componentes": {
+      "C": 0.6111111111111112,
+      "P": 0.8688837920489296,
+      "A": 0.8125,
+      "S": 0.5,
+      "D": 1.0
+    },
+    "aportes": {
+      "C": 24.444444444444446,
+      "P": 17.377675840978593,
+      "A": 12.1875,
+      "S": 7.5,
+      "D": 10.0
+    },
+    "aptitud": 71.50962028542304,
+    "tipos_cubiertos": [
+      "normal",
+      "fire",
+      "electric",
+      "grass",
+      "ice",
+      "fighting",
+      "poison",
+      "bug",
+      "rock",
+      "dark",
+      "steel"
+    ],
+    "tipos_no_cubiertos": [
+      "water",
+      "ground",
+      "flying",
+      "psychic",
+      "ghost",
+      "dragon",
+      "fairy"
+    ],
+    "n_tipos_cubiertos": 11,
+    "aptitud_perfil_base": 71.50962028542304
+  },
+  "generaciones_ejecutadas": 200,
+  "filas_log": 201,
+  "motivo_paro": "se completaron las 200 generaciones configuradas (criterio de paro por generaciones)",
+  "tiempo_segundos": 0.17451227600031416,
+  "candidatos_generados": 19700,
+  "evaluaciones_solicitadas": 16093,
+  "evaluaciones_efectivas": 971,
+  "reutilizacion_cache": 15122,
+  "poblacion_final": {
+    "combinaciones_distintas": 8,
+    "aptitud_media": 71.12395514780836,
+    "aptitud_max": 71.50962028542304
+  },
+  "total_hijos_reparados": 0,
+  "total_individuos_invalidos_registrados": 0
+}
