@@ -24,13 +24,13 @@ def test_every_run_has_complete_evidence(catalog, experiments):
     for r in rows:
         log = read_csv(RESULTS_DIR / "runs" / r["config_id"] / f"seed_{r['semilla']}_log.csv")
         summary = json.loads((RESULTS_DIR / "runs" / r["config_id"] / f"seed_{r['semilla']}_summary.json").read_text(encoding="utf-8"))
-        assert len(log) == 201 and log[0]["generacion"] == "0"
+        assert len(log) == summary["generaciones_ejecutadas"] + 1 and log[0]["generacion"] == "0"
         assert float(log[-1]["mejor_acumulada"]) == float(r["mejor_aptitud"])
         assert max(float(x["aptitud_max"]) for x in log) == float(r["mejor_aptitud"])
         assert summary["dataset_version"] == catalog.dataset_version
         ids = summary["mejor_solucion"]["moveset_ids"]
         w = experiments["profiles"][r["perfil"]]
-        assert fitness(ids, catalog, w) == float(r["mejor_aptitud"])   # se recalcula exactamente
+        assert fitness(ids, catalog, w, summary["fitness_version"]) == float(r["mejor_aptitud"])   # se recalcula exactamente
         assert summary["mejor_solucion"]["generacion_encontrada"] == int(log[-1]["generacion_mejor_acumulada"])
 
 

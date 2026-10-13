@@ -1,10 +1,14 @@
-"""Funcion de aptitud aprobada en la entrega parcial.
+"""Funcion de aptitud de la entrega parcial (misma formula y mismos pesos en sus dos versiones).
 
     F(x) = 100 * (wC*C(x) + wP*P(x) + wA*A(x) + wS*S(x) + wD*D(x))
 
 Componentes (todos en [0, 1]):
     C(x): tipos defensores individuales (de 18) con al menos un movimiento de multiplicador > 1, / 18.
-    P(x): potencia base promedio de los 4 movimientos / potencia maxima del catalogo completo.
+    P(x): potencia promedio de los 4 movimientos / potencia maxima del catalogo completo.
+          F1 (prototipo de la parcial): potencia base, tal como figura en el juego.
+          F2 (version por defecto): potencia EFECTIVA (mechanics.py): descuenta los turnos perdidos
+          (carga, recarga), los fallos condicionales, el bloqueo, el retroceso, la caida del propio stat
+          ofensivo y la categoria fisica/especial segun los stats base de Charizard.
     A(x): precision promedio de los 4 movimientos / 100.
     S(x): cantidad de movimientos de tipo Fuego o Volador / 4  (presencia de STAB; NO multiplica P).
     D(x): cantidad de tipos distintos entre los 4 movimientos / 4.
@@ -19,9 +23,14 @@ from dataclasses import dataclass
 
 from .data import TYPE_ORDER, Catalog
 
-# Identificador de la version de la formula. Se guarda en cada log para que los resultados
-# puedan rastrearse a la definicion exacta de aptitud con la que fueron calculados.
-FITNESS_VERSION = "F1 (C/P/A/S/D; P normalizada por la potencia máxima del catálogo)"
+# Versiones de la formula. La clave se guarda en cada log para que los resultados puedan rastrearse a
+# la definicion exacta de aptitud con la que fueron calculados.
+FITNESS_VERSIONS = {
+    "F1": "F1 (C/P/A/S/D; P = potencia base / potencia máxima del catálogo)",
+    "F2": "F2 (C/P/A/S/D; P = potencia efectiva / potencia efectiva máxima del catálogo)",
+}
+DEFAULT_FITNESS = "F2"
+FITNESS_VERSION = FITNESS_VERSIONS[DEFAULT_FITNESS]
 MOVESET_SIZE = 4
 N_TYPES = len(TYPE_ORDER)
 COMPONENT_NAMES = ("C", "P", "A", "S", "D")
@@ -91,8 +100,24 @@ def validate_moveset(moveset, catalog: Catalog) -> tuple[bool, str]:
     return True, ""
 
 
-def components(moveset, catalog: Catalog) -> Components:
+def check_version(version: str) -> str:
+    if version not in FITNESS_VERSIONS:
+        raise ValueError(f"Version de aptitud desconocida: {version} (validas: {', '.join(FITNESS_VERSIONS)})")
+    return version
+
+
+def _power(mv, version: str) -> float:
+    # F1: potencia base del juego. F2: potencia efectiva (lo que pega de verdad por turno).
+    return mv.potencia if version == "F1" else mv.potencia_efectiva
+
+
+def _power_max(catalog: Catalog, version: str) -> float:
+    return catalog.power_max if version == "F1" else catalog.power_eff_max
+
+
+def components(moveset, catalog: Catalog, version: str = DEFAULT_FITNESS) -> Components:
     """Calcula C, P, A, S y D de un moveset VALIDO (no aplica pesos)."""
+    check_version(version)
     moves = [catalog.moves[g] for g in moveset]
     covered = set()
     for mv in moves:
@@ -100,7 +125,7 @@ def components(moveset, catalog: Catalog) -> Components:
     n = len(moves)
     return Components(
         C=len(covered) / N_TYPES,
-        P=(sum(mv.potencia for mv in moves) / n) / catalog.power_max,
+        P=(sum(_power(mv, version) for mv in moves) / n) / _power_max(catalog, version),
         A=(sum(mv.precision for mv in moves) / n) / 100.0,
         S=sum(1 for mv in moves if mv.stab) / MOVESET_SIZE,
         D=len({mv.tipo for mv in moves}) / MOVESET_SIZE,
@@ -119,15 +144,15 @@ def contributions(comp: Components, weights: Weights) -> dict:
     return {name: 100.0 * w * c for name, w, c in zip(COMPONENT_NAMES, weights.as_tuple(), comp.as_tuple())}
 
 
-def fitness(moveset, catalog: Catalog, weights: Weights) -> float:
+def fitness(moveset, catalog: Catalog, weights: Weights, version: str = DEFAULT_FITNESS) -> float:
     """Aptitud completa: 0 si el individuo es invalido; si no, la ponderacion de sus componentes."""
     ok, _ = validate_moveset(moveset, catalog)
     if not ok:
         return 0.0
-    return weighted_fitness(components(moveset, catalog), weights)
+    return weighted_fitness(components(moveset, catalog, version), weights)
 
 
-def partial_components(moves_subset, catalog: Catalog) -> tuple:
+def partial_components(moves_subset, catalog: Catalog, version: str = DEFAULT_FITNESS) -> tuple:
     """Componentes de un moveset INCOMPLETO (k <= 4) con las casillas vacias aportando 0.
 
     Solo la usa la heuristica voraz para medir ganancia marginal. Con k = 4 coincide exactamente
@@ -139,7 +164,7 @@ def partial_components(moves_subset, catalog: Catalog) -> tuple:
         covered |= catalog.se_types[mv.tipo]
     return (
         len(covered) / N_TYPES,
-        sum(mv.potencia for mv in moves) / (MOVESET_SIZE * catalog.power_max),
+        sum(_power(mv, version) for mv in moves) / (MOVESET_SIZE * _power_max(catalog, version)),
         sum(mv.precision for mv in moves) / (MOVESET_SIZE * 100.0),
         sum(1 for mv in moves if mv.stab) / MOVESET_SIZE,
         len({mv.tipo for mv in moves}) / MOVESET_SIZE,
@@ -154,19 +179,20 @@ def canonical_key(moveset) -> tuple:
 class Evaluator:
     """Evaluador con cache para el AG y las lineas base.
 
-    La cache se indexa por la clave ordenada del moveset y pertenece a UN solo par
-    (dataset, pesos): cada corrida crea su propio Evaluator, por lo que nunca se reutiliza
-    una aptitud calculada con otros pesos u otro dataset.
+    La cache se indexa por la clave ordenada del moveset y pertenece a UNA sola terna
+    (dataset, pesos, version de la aptitud): cada corrida crea su propio Evaluator, por lo que nunca
+    se reutiliza una aptitud calculada con otros pesos, otro dataset u otra version.
     Contadores:
         requested -> evaluaciones solicitadas (incluye aciertos de cache).
         effective -> evaluaciones efectivas (calculos reales; fallos de cache).
         invalid   -> individuos invalidos evaluados (reciben 0).
     """
 
-    def __init__(self, catalog: Catalog, weights: Weights):
+    def __init__(self, catalog: Catalog, weights: Weights, version: str = DEFAULT_FITNESS):
         self.catalog = catalog
         self.weights = weights
-        self.identity = (catalog.dataset_version, weights.as_tuple(), FITNESS_VERSION)
+        self.version = check_version(version)
+        self.identity = (catalog.dataset_version, weights.as_tuple(), FITNESS_VERSIONS[version])
         self._cache: dict = {}
         self.requested = 0
         self.effective = 0
@@ -182,7 +208,7 @@ class Evaluator:
         cached = self._cache.get(key)
         if cached is None:
             self.effective += 1
-            cached = weighted_fitness(components(key, self.catalog), self.weights)
+            cached = weighted_fitness(components(key, self.catalog, self.version), self.weights)
             self._cache[key] = cached
         return cached
 

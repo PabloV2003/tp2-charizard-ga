@@ -5,6 +5,7 @@ Requiere haber ejecutado antes scripts/run_experiments.py (usa sus presupuestos 
 Salidas en results/baselines/ y results/:
     exhaustive_optimum.csv          optimo exacto por perfil (catalogo completo), empates y costo
     exhaustive_top10.csv            10 mejores combinaciones por perfil
+    exhaustive_optimum_F1_vs_F2.csv optimo de la version original (F1) medido con F2, y viceversa
     conservative_optimum.csv        optimo restringido al subconjunto conservador (sensibilidad del catalogo)
     random_search.csv               busqueda aleatoria con presupuesto igualado al del AG (2 modos)
     random_search_curves_R1.csv     mejor acumulada vs evaluaciones (perfil base)
@@ -31,7 +32,7 @@ from charizard_ga.baselines import (TOL, exhaustive_optimum, exhaustive_table, g
                                     random_search, rank_of)
 from charizard_ga.config import load_experiments, load_quality_criterion  # noqa: E402
 from charizard_ga.data import load_catalog  # noqa: E402
-from charizard_ga.fitness import components, weighted_fitness  # noqa: E402
+from charizard_ga.fitness import DEFAULT_FITNESS, components, weighted_fitness  # noqa: E402
 from charizard_ga.io_utils import write_json, write_rows_csv  # noqa: E402
 from charizard_ga.paths import RESULTS_DIR  # noqa: E402
 
@@ -70,15 +71,16 @@ def main():
     table = exhaustive_table(catalog)
     assert table.n == math.comb(catalog.M, 4)
     print(f"Exhaustiva: {table.n:,} combinaciones; enumeracion + componentes en {table.seconds:.2f} s")
-    optima, opt_rows, top_rows, fit_arrays = {}, [], [], {}
+    optima, opt_rows, top_rows, fit_arrays, best_keys = {}, [], [], {}, {}
     for pid, w in profiles.items():
         res = exhaustive_optimum(table, w)
         optima[pid] = res["optimo"]
         fit_arrays[pid] = res["fitness_array"]
         best_key = res["movesets_optimos"][0]
+        best_keys[pid] = best_key
         comp = components(best_key, catalog)
         opt_rows.append({
-            "perfil": pid, "optimo": res["optimo"], "n_empates_optimo": res["n_empates_optimo"],
+            "perfil": pid, "version_aptitud": DEFAULT_FITNESS, "optimo": res["optimo"], "n_empates_optimo": res["n_empates_optimo"],
             "movesets_optimos": " || ".join(slugs(catalog, k) for k in res["movesets_optimos"]),
             "movesets_optimos_es": " || ".join(names_es(catalog, k) for k in res["movesets_optimos"]),
             "C": comp.C, "P": comp.P, "A": comp.A, "S": comp.S, "D": comp.D,
@@ -102,6 +104,28 @@ def main():
             hist_rows.append({"perfil": pid, "desde": float(a), "hasta": float(b), "combinaciones": int(c)})
     write_rows_csv(OUT / "exhaustive_histogram.csv", hist_rows, ["perfil", "desde", "hasta", "combinaciones"])
     write_rows_csv(OUT / "exhaustive_top10.csv", top_rows, list(top_rows[0].keys()))
+
+    # 1b) Referencia: optimo de la version original (F1, potencia base) y donde queda medido con F2,
+    #     y viceversa. Cuantifica el cambio de la funcion de aptitud.
+    tables = {DEFAULT_FITNESS: table, "F1": exhaustive_table(catalog, version="F1")}
+    opt_by = {(pid, DEFAULT_FITNESS): optima[pid] for pid in profiles}
+    fit_by = {(pid, DEFAULT_FITNESS): fit_arrays[pid] for pid in profiles}
+    f1_rows = []
+    for pid, w in profiles.items():
+        res = exhaustive_optimum(tables["F1"], w)
+        opt_by[(pid, "F1")], fit_by[(pid, "F1")] = res["optimo"], res["fitness_array"]
+        k1, k2 = res["movesets_optimos"][0], best_keys[pid]
+        f2_of_k1 = weighted_fitness(components(k1, catalog), w)
+        f1_of_k2 = weighted_fitness(components(k2, catalog, "F1"), w)
+        f1_rows.append({
+            "perfil": pid, "optimo_F1": res["optimo"], "moveset_optimo_F1": slugs(catalog, k1),
+            "moveset_optimo_F1_es": names_es(catalog, k1), "aptitud_F2_del_optimo_F1": f2_of_k1,
+            "puesto_F2_del_optimo_F1": rank_of(table, fit_arrays[pid], f2_of_k1),
+            "optimo_F2": optima[pid], "moveset_optimo_F2": slugs(catalog, k2), "moveset_optimo_F2_es": names_es(catalog, k2),
+            "aptitud_F1_del_optimo_F2": f1_of_k2, "puesto_F1_del_optimo_F2": rank_of(tables["F1"], res["fitness_array"], f1_of_k2),
+        })
+        print(f"  F1 {pid}: {names_es(catalog, k1)} -> puesto {f1_rows[-1]['puesto_F2_del_optimo_F1']} con F2")
+    write_rows_csv(OUT / "exhaustive_optimum_F1_vs_F2.csv", f1_rows, list(f1_rows[0].keys()))
 
     # 2) Sensibilidad del catalogo: optimo restringido al subconjunto conservador ---------------
     #    Misma funcion (incluida la normalizacion P con la potencia maxima del catalogo completo);
@@ -127,20 +151,22 @@ def main():
         print(f"  conservador {pid}: {res['optimo']:.6f} -> {slugs(catalog, k)}")
     write_rows_csv(OUT / "conservative_optimum.csv", cons_rows, list(cons_rows[0].keys()))
 
-    # 3) Brecha del AG respecto del optimo ------------------------------------------------------
+    # 3) Brecha del AG respecto del optimo (de su perfil y de su version de aptitud) -------------
     gap_rows = []
     for r in runs:
         pid = r["perfil"]
+        version = r.get("fitness_version") or DEFAULT_FITNESS
         val = float(r["mejor_aptitud"])
-        opt = optima[pid]
+        opt = opt_by[(pid, version)]
         log = read_csv(RESULTS_DIR / "runs" / r["config_id"] / f"seed_{r['semilla']}_log.csv")
         hit_row = next((row for row in log if float(row["mejor_acumulada"]) >= opt - TOL), None)
         gap_rows.append({
-            "config_id": r["config_id"], "grupo": r["grupo"], "perfil": pid, "semilla": r["semilla"],
+            "config_id": r["config_id"], "grupo": r["grupo"], "perfil": pid, "fitness_version": version,
+            "semilla": r["semilla"],
             "corrida_principal": r["corrida_principal"], "mejor_aptitud": val, "optimo": opt,
             "brecha_absoluta": opt - val, "brecha_relativa": (opt - val) / opt,
             "alcanza_optimo": abs(opt - val) < TOL,
-            "puesto_en_exhaustiva": rank_of(table, fit_arrays[pid], val),
+            "puesto_en_exhaustiva": rank_of(tables[version], fit_by[(pid, version)], val),
             "generacion_alcanza_optimo": int(hit_row["generacion"]) if hit_row else "",
             "efectivas_hasta_optimo": int(hit_row["evaluaciones_efectivas_acum"]) if hit_row else "",
             "solicitadas_hasta_optimo": int(hit_row["evaluaciones_solicitadas_acum"]) if hit_row else "",
@@ -273,6 +299,7 @@ def main():
     max_cov = int(round(comp_max["C"] * 18))
     n_max_cov = int(np.sum(np.isclose(table.comps[:, 0] * 18, max_cov)))
     write_json(OUT / "exhaustive_info.json", {
+        "version_aptitud": DEFAULT_FITNESS,
         "M": catalog.M, "combinaciones": table.n, "segundos_enumeracion_y_componentes": table.seconds,
         "maximo_por_componente": comp_max, "cobertura_maxima_tipos": max_cov,
         "combinaciones_con_cobertura_maxima": n_max_cov,

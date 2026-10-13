@@ -33,3 +33,13 @@ def test_greedy_and_local_search(catalog, base_weights):
     assert g["mejor_aptitud"] == pytest.approx(fitness(g["mejor_moveset"], catalog, base_weights))
     ls = local_search(catalog, base_weights, g["mejor_moveset"])
     assert ls["mejor_aptitud"] >= g["mejor_aptitud"]
+
+
+def test_exhaustive_optimum_f1_vs_f2(catalog, base_weights):
+    # La version original (F1) premia ataques trampa; con potencia efectiva (F2) el optimo cambia.
+    names = lambda key: {catalog.moves[m].slug for m in key}  # noqa: E731
+    f1 = exhaustive_optimum(exhaustive_table(catalog, version="F1"), base_weights)
+    f2 = exhaustive_optimum(exhaustive_table(catalog, version="F2"), base_weights)
+    assert names(f1["movesets_optimos"][0]) == {"fly", "solar-beam", "earthquake", "focus-punch"}
+    assert names(f2["movesets_optimos"][0]) == {"earthquake", "fire-blast", "focus-blast", "hurricane"}
+    assert f1["n_empates_optimo"] == 1 and f2["n_empates_optimo"] == 1

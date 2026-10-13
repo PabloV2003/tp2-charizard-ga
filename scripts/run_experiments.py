@@ -1,10 +1,17 @@
-"""Lote completo de experimentos: 8 configuraciones x 10 semillas (42..51).
+"""Lote completo de experimentos: 15 configuraciones x 10 semillas (42..51).
 
-Configuraciones (config/experiments.json):
-    R1..R5   -> cinco perfiles de pesos con los mismos parametros del AG (corridas principales: semilla 42).
-    OP-RUL   -> pesos base, seleccion por ruleta.
-    OP-1P    -> pesos base, cruza de un punto.
-    OP-MUT20 -> pesos base, mutacion 0.20.
+Configuraciones (config/experiments.json; todas con aptitud F2 y cruza de conjuntos salvo lo indicado):
+    R1..R5    -> cinco perfiles de pesos con los mismos parametros del AG (corridas principales: semilla 42).
+    ORIG-R1   -> version original para comparar: aptitud F1 y cruza binomial aleatoria, pesos base.
+    OP-UNIF   -> pesos base, cruza binomial aleatoria (uniforme) con reparacion.
+    OP-1P     -> pesos base, cruza simple (un punto) con reparacion.
+    OP-RUL    -> pesos base, seleccion por ruleta.
+    OP-RANK   -> pesos base, seleccion por ranking lineal.
+    OP-CNE    -> pesos base, seleccion por control sobre numero esperado.
+    OP-MUT20  -> pesos base, mutacion 0.20.
+    OP-MUTAD  -> pesos base, mutacion adaptativa por convergencia.
+    OP-ESTANC -> pesos base, paro por estancamiento.
+    OP-POB20  -> pesos base, poblacion 20 y 30 generaciones.
 
 Salidas:
     results/runs/<config>/seed_<s>_log.csv      log por generacion (generacion 0 incluida)
@@ -28,13 +35,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from charizard_ga.config import load_experiments, load_quality_criterion  # noqa: E402
 from charizard_ga.data import load_catalog, load_metadata  # noqa: E402
 from charizard_ga.experiments import run_and_save  # noqa: E402
-from charizard_ga.fitness import FITNESS_VERSION  # noqa: E402
+from charizard_ga.fitness import DEFAULT_FITNESS, FITNESS_VERSIONS  # noqa: E402
 from charizard_ga.io_utils import environment_info, write_json, write_rows_csv  # noqa: E402
 from charizard_ga.paths import RESULTS_DIR  # noqa: E402
 
 RUN_FIELDS = [
-    "config_id", "grupo", "perfil", "perfil_nombre", "replica", "semilla", "corrida_principal",
-    "mejor_aptitud", "aptitud_perfil_base", "generacion_encontrada", "moveset_slugs", "moveset_es",
+    "config_id", "grupo", "perfil", "perfil_nombre", "replica", "semilla", "corrida_principal", "fitness_version",
+    "mejor_aptitud", "aptitud_perfil_base", "generacion_encontrada", "generaciones_ejecutadas", "moveset_slugs", "moveset_es",
     "C", "P", "A", "S", "D", "n_tipos_cubiertos", "tipos_cubiertos", "tipos_no_cubiertos",
     "candidatos_generados", "evaluaciones_solicitadas", "evaluaciones_efectivas", "tiempo_segundos",
     "distintas_poblacion_final", "media_poblacion_final", "hijos_reparados_total", "invalidos_registrados",
@@ -46,8 +53,10 @@ def flatten(summary: dict) -> dict:
     return {
         "config_id": summary["config_id"], "grupo": summary["grupo"], "perfil": summary["perfil"],
         "perfil_nombre": summary["perfil_nombre"], "replica": summary["replica"], "semilla": summary["semilla"],
-        "corrida_principal": summary["corrida_principal"], "mejor_aptitud": best["aptitud"],
+        "corrida_principal": summary["corrida_principal"], "fitness_version": summary["fitness_version"],
+        "mejor_aptitud": best["aptitud"],
         "aptitud_perfil_base": best["aptitud_perfil_base"], "generacion_encontrada": best["generacion_encontrada"],
+        "generaciones_ejecutadas": summary["generaciones_ejecutadas"],
         "moveset_slugs": "|".join(m["slug"] for m in best["movimientos"]),
         "moveset_es": " | ".join(m["nombre_es"] for m in best["movimientos"]),
         **best["componentes"], "n_tipos_cubiertos": best["n_tipos_cubiertos"],
@@ -108,8 +117,11 @@ def main():
 
     write_json(RESULTS_DIR / "parameters.json", {
         "generado_utc": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(),
-        "dataset_version": catalog.dataset_version, "fitness_version": FITNESS_VERSION,
-        "catalogo_M": catalog.M, "potencia_maxima_normalizacion": catalog.power_max,
+        "dataset_version": catalog.dataset_version, "fitness_version_por_defecto": DEFAULT_FITNESS,
+        "fitness_versiones": FITNESS_VERSIONS,
+        "catalogo_M": catalog.M, "potencia_maxima_normalizacion_F1": catalog.power_max,
+        "potencia_efectiva_maxima_normalizacion_F2": catalog.power_eff_max,
+        "estadisticas_base_charizard": catalog.base_stats,
         "semillas": exps["seeds"], "semilla_principal": exps["main_seed"], "perfil_base": exps["base_profile"],
         "alcance_probabilidades": exps["raw"]["alcance_probabilidades"],
         "criterio_calidad": load_quality_criterion(),

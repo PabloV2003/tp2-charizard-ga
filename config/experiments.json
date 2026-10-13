@@ -1,22 +1,30 @@
 {
-  "_descripcion": "Configuración EXACTA de los experimentos. Los pesos son entradas del experimento, no resultados. Ningún parámetro se modifica entre configuraciones salvo lo indicado en 'overrides'.",
+  "_descripcion": "Configuración EXACTA de los experimentos. Los pesos son entradas del experimento, no resultados. Ningún parámetro se modifica entre configuraciones salvo lo indicado en 'overrides'. Versión 2: aptitud F2 (P = potencia efectiva) y cruza de conjuntos por defecto; ORIG-R1 reproduce la versión original (F1 + cruza binomial aleatoria) para comparar.",
   "ga_base": {
     "population_size": 100,
     "generations": 200,
     "selection": "tournament",
     "tournament_size": 3,
-    "crossover": "uniform",
+    "crossover": "set",
     "cx_prob": 0.8,
     "cx_indpb": 0.5,
     "mutation_prob": 0.1,
+    "mutation_mode": "simple",
+    "mutation_prob_max": 0.4,
+    "convergence_threshold": 0.9,
     "elitism": 2,
-    "stop_criterion": "generations"
+    "stop_criterion": "generations",
+    "patience": 30,
+    "fitness_version": "F2"
   },
   "alcance_probabilidades": {
     "cx_prob": "por pareja de padres consecutivos seleccionados",
-    "cx_indpb": "por gen (posición) dentro de una pareja que se cruza (solo cruza uniforme)",
-    "mutation_prob": "por individuo hijo; si se activa, se reemplaza UN gen elegido al azar",
-    "generations": "generaciones evolutivas además de la generación inicial 0 (se registran 201 filas por corrida)"
+    "cx_indpb": "por gen (posición) dentro de una pareja que se cruza (solo cruza uniforme / binomial aleatoria)",
+    "mutation_prob": "por individuo hijo; si se activa, se reemplaza UN gen elegido al azar. Con mutación adaptativa es la probabilidad base",
+    "mutation_prob_max": "solo mutación adaptativa: tope al que sube la probabilidad cuando la población converge",
+    "convergence_threshold": "solo mutación adaptativa: media/máxima de la población a partir de la cual la probabilidad empieza a subir",
+    "generations": "generaciones evolutivas además de la generación inicial 0 (se registran generaciones + 1 filas por corrida); con paro por estancamiento es el tope",
+    "patience": "solo paro por estancamiento: generaciones seguidas sin mejora de la mejor solución"
   },
   "base_profile": "R1",
   "profiles": {
@@ -40,8 +48,15 @@
     {"id": "R3", "grupo": "principal", "profile": "R3", "descripcion": "Perfil mayor potencia", "overrides": {}},
     {"id": "R4", "grupo": "principal", "profile": "R4", "descripcion": "Perfil mayor precisión", "overrides": {}},
     {"id": "R5", "grupo": "principal", "profile": "R5", "descripcion": "Perfil mayor STAB y diversidad", "overrides": {}},
+    {"id": "ORIG-R1", "grupo": "referencia", "profile": "R1", "descripcion": "Versión original para comparar: aptitud F1 (potencia base) y cruza binomial aleatoria con reparación", "overrides": {"fitness_version": "F1", "crossover": "uniform"}},
+    {"id": "OP-UNIF", "grupo": "operadores", "profile": "R1", "descripcion": "Pesos base; cruza binomial aleatoria (uniforme) con reparación en lugar de cruza de conjuntos", "overrides": {"crossover": "uniform"}},
+    {"id": "OP-1P", "grupo": "operadores", "profile": "R1", "descripcion": "Pesos base; cruza simple (un punto) con reparación en lugar de cruza de conjuntos", "overrides": {"crossover": "one_point"}},
     {"id": "OP-RUL", "grupo": "operadores", "profile": "R1", "descripcion": "Pesos base; selección por ruleta en lugar de torneo", "overrides": {"selection": "roulette"}},
-    {"id": "OP-1P", "grupo": "operadores", "profile": "R1", "descripcion": "Pesos base; cruza de un punto en lugar de uniforme", "overrides": {"crossover": "one_point"}},
-    {"id": "OP-MUT20", "grupo": "operadores", "profile": "R1", "descripcion": "Pesos base; probabilidad de mutación 0.20 en lugar de 0.10", "overrides": {"mutation_prob": 0.2}}
+    {"id": "OP-RANK", "grupo": "operadores", "profile": "R1", "descripcion": "Pesos base; selección por ranking lineal en lugar de torneo", "overrides": {"selection": "ranking"}},
+    {"id": "OP-CNE", "grupo": "operadores", "profile": "R1", "descripcion": "Pesos base; selección por control sobre número esperado en lugar de torneo", "overrides": {"selection": "expected_count"}},
+    {"id": "OP-MUT20", "grupo": "operadores", "profile": "R1", "descripcion": "Pesos base; probabilidad de mutación 0.20 en lugar de 0.10", "overrides": {"mutation_prob": 0.2}},
+    {"id": "OP-MUTAD", "grupo": "operadores", "profile": "R1", "descripcion": "Pesos base; mutación adaptativa por convergencia (0.10 a 0.40) en lugar de simple", "overrides": {"mutation_mode": "adaptive"}},
+    {"id": "OP-ESTANC", "grupo": "operadores", "profile": "R1", "descripcion": "Pesos base; paro por estancamiento (30 generaciones sin mejora, tope 200)", "overrides": {"stop_criterion": "stagnation"}},
+    {"id": "OP-POB20", "grupo": "operadores", "profile": "R1", "descripcion": "Pesos base; población 20 y 30 generaciones (pocos recursos: no siempre llega al óptimo)", "overrides": {"population_size": 20, "generations": 30}}
   ]
 }

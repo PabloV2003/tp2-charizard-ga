@@ -9,12 +9,12 @@ from pathlib import Path
 
 from .config import ExperimentConfig
 from .data import Catalog
-from .fitness import FITNESS_VERSION, Weights
+from .fitness import FITNESS_VERSIONS, Weights
 from .ga import RunResult, describe_solution, run_ga
 from .io_utils import write_json, write_rows_csv
 
 LOG_FIELDS = [
-    "generacion", "tam_poblacion", "aptitud_min", "aptitud_media", "aptitud_max", "aptitud_desvio",
+    "generacion", "tam_poblacion", "prob_mutacion", "aptitud_min", "aptitud_media", "aptitud_max", "aptitud_desvio",
     "mejor_acumulada", "generacion_mejor_acumulada", "combinaciones_distintas", "individuos_invalidos",
     "evaluaciones_solicitadas", "evaluaciones_efectivas", "evaluaciones_solicitadas_acum",
     "evaluaciones_efectivas_acum", "cruzas", "mutaciones", "hijos_reparados", "genes_reparados",
@@ -30,7 +30,7 @@ def run_paths(out_dir: Path, config_id: str, seed: int) -> tuple[Path, Path]:
 def build_summary(exp: ExperimentConfig, result: RunResult, catalog: Catalog, base_weights: Weights,
                   is_main: bool) -> dict:
     """Resumen completo de una corrida: configuracion, semilla, versiones y mejor solucion decodificada."""
-    sol = describe_solution(result.best_moveset, catalog, exp.weights, base_weights)
+    sol = describe_solution(result.best_moveset, catalog, exp.weights, base_weights, result.fitness_version)
     last = result.log[-1]
     return {
         "config_id": exp.config_id,
@@ -45,7 +45,8 @@ def build_summary(exp: ExperimentConfig, result: RunResult, catalog: Catalog, ba
         "overrides_respecto_base": exp.overrides,
         "pesos": result.weights,
         "dataset_version": result.dataset_version,
-        "fitness_version": FITNESS_VERSION,
+        "fitness_version": result.fitness_version,
+        "fitness_descripcion": FITNESS_VERSIONS[result.fitness_version],
         "mejor_solucion": {
             "moveset_ids": list(result.best_moveset),
             "generacion_encontrada": result.best_generation,
