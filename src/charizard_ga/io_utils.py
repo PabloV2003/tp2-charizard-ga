@@ -1,7 +1,7 @@
 """Escritura de evidencias: logs CSV por generacion y resumenes JSON por corrida.
 
 Los valores numericos se guardan con precision completa (repr de float); el redondeo se hace
-solo al presentar resultados (tablas del informe y graficos).
+solo al presentar resultados (tablas, graficos y notebook).
 """
 from __future__ import annotations
 
@@ -71,7 +71,6 @@ def environment_info() -> dict:
         "numpy": pkg("numpy"),
         "pandas": pkg("pandas"),
         "matplotlib": pkg("matplotlib"),
-        "python_docx": pkg("python-docx"),
         "pytest": pkg("pytest"),
         "nbconvert": pkg("nbconvert"),
     }

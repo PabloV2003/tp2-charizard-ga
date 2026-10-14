@@ -4,6 +4,4 @@
 *.md text eol=lf
 *.py text eol=lf
 *.ipynb text eol=lf
-*.docx binary
-*.pdf binary
 *.png binary
