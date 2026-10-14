@@ -6,8 +6,8 @@ Verifica:
   3. Ejecucion desde cero: se copia el proyecto (sin resultados ni entorno) a una carpeta temporal y se ejecuta la
      demostracion por consola con el dataset local y rutas relativas.
   4. Notebook ejecutado sin errores y con salidas.
-  5. Graficos de las 80 corridas y de los analisis presentes.
-  6. Controles del informe generado (marcadores sin resolver, figuras y tablas) si ya existe.
+  5. Graficos de todas las corridas y de los analisis presentes.
+  6. Legalidad conjunta de los movesets con Showdown, si se ejecuto la verificacion opcional.
 
 Uso:  python scripts/run_validation.py
 """
@@ -96,8 +96,8 @@ def check_figures() -> dict:
     runs = read_csv(RESULTS / "summary_runs.csv")
     missing = [f"{r['config_id']}_seed{r['semilla']}" for r in runs
                if not (ROOT / "figures" / "runs" / f"{r['config_id']}_seed{r['semilla']}.png").exists()]
-    analysis = ["fig_tabla_tipos.png", "fig_variabilidad.png", "fig_operadores.png", "fig_componentes_perfiles.png",
-                "fig_ag_vs_aleatoria.png", "fig_distribucion_exhaustiva.png"]
+    analysis = ["fig_tabla_tipos.png", "fig_variabilidad.png", "fig_operadores.png", "fig_seleccion.png",
+                "fig_componentes_perfiles.png", "fig_ag_vs_aleatoria.png", "fig_distribucion_exhaustiva.png"]
     missing += [a for a in analysis if not (ROOT / "figures" / a).exists()]
     return {"graficos_corridas": len(runs), "graficos_analisis": len(analysis), "faltantes": missing}
 
@@ -117,23 +117,16 @@ def main():
     print("4/5 notebook...")
     nb = check_notebook()
     print("   ", nb)
-    print("5/5 graficos e informe...")
+    print("5/5 graficos y legalidad...")
     figs = check_figures()
-    report = json.loads((RESULTS / "report_checks.json").read_text(encoding="utf-8")) if (RESULTS / "report_checks.json").exists() else None
     legal = json.loads((RESULTS / "legality_showdown.json").read_text(encoding="utf-8")) if (RESULTS / "legality_showdown.json").exists() else None
 
     ok = (pytest_res["failed"] == 0 and all(repro.values()) and fresh["codigo_salida"] == 0 and fresh["log_identico_al_guardado"]
           and nb["errores"] == 0 and nb["todas_ejecutadas"] and not figs["faltantes"])
-    frases = [
-        f"Además, las cinco corridas principales se reejecutaron y reprodujeron exactamente sus logs; la demostración por consola "
-        f"se ejecutó desde una copia limpia del proyecto (solo código, configuración y datos locales, sin caché de descargas) y "
-        f"generó un log idéntico al guardado; y el notebook se ejecutó de principio a fin en un kernel nuevo sin errores "
-        f"({nb['celdas_codigo']} celdas de código)." if ok else "Ver docs/registro_validacion.md: alguna verificación no se cumplió."
-    ]
     summary = {"fecha_utc": dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(), "todo_ok": ok,
                "pytest": {k: v for k, v in pytest_res.items() if k != "casos"}, "reproducibilidad_corridas_principales": repro,
-               "copia_limpia": fresh, "notebook": nb, "graficos": figs, "informe": report, "legalidad_showdown": legal,
-               "frases_informe": frases, "entorno": environment_info()}
+               "copia_limpia": fresh, "notebook": nb, "graficos": figs, "legalidad_showdown": legal,
+               "entorno": environment_info()}
     (RESULTS / "validation_summary.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
     write_registry(summary, pytest_res["casos"])
     print("TODO OK" if ok else "HAY VERIFICACIONES FALLIDAS", "-> docs/registro_validacion.md")
@@ -153,14 +146,19 @@ def write_registry(s: dict, cases: list[str]):
         "- Casos:", ""] + [f"  - `{c}`" for c in cases] + ["",
         "Cobertura de los requisitos de verificación:", "",
         "| Verificación pedida | Prueba |", "|---|---|",
-        "| Fórmulas C/P/A/S/D y F contra un caso calculado independientemente | `test_fitness::test_example_components_hand_computed`, `test_example_fitness_base_profile` |",
+        "| Fórmulas C/P/A/S/D y F (F2 y F1) contra un caso calculado independientemente | `test_fitness::test_example_components_hand_computed`, `test_example_fitness_base_profile` |",
+        "| Potencia efectiva (F2) contra valores calculados a mano y mecánicas leídas de Showdown | `test_fitness::test_effective_power_hand_computed`, `test_data::test_mechanics_for_effective_power` |",
+        "| F2 como versión por defecto; F1 solo como referencia, con óptimo y caché propios | `test_fitness::test_default_version_is_f2`, `test_cache_is_isolated_per_version`, `test_baselines::test_exhaustive_optimum_f1_vs_f2` |",
         "| Aptitud 0 ante longitud incorrecta, repetidos o IDs no permitidos | `test_fitness::test_invalid_individuals_get_zero` |",
         "| Invariancia frente a permutaciones | `test_fitness::test_permutation_invariance` |",
         "| Orientación y valores de la tabla de tipos, incluidas inmunidades | `test_data::test_type_chart_*`, `test_super_effective_sets` |",
         "| Inicialización, cruza/reparación y mutación coherentes con las restricciones | `test_operators::*` |",
-        "| Tamaño constante, élites conservadas, mejor acumulada coherente | `test_ga::test_population_and_best_invariants` |",
+        "| Cruza de conjuntos: conserva los genes comunes y nunca genera repetidos | `test_operators::test_set_crossover_keeps_shared_genes_and_never_repeats`, `test_positional_crossover_can_lose_shared_genes` |",
+        "| Selección por ranking y por control sobre número esperado; mutación adaptativa | `test_operators::test_ranking_selection_depends_on_order_not_on_values`, `test_expected_count_selection_follows_the_class_example`, `test_adaptive_mutation_rises_when_population_converges` |",
+        "| Tamaño constante, élites conservadas, mejor acumulada coherente (con cada variante de selección, cruza y mutación) | `test_ga::test_population_and_best_invariants` |",
+        "| Paro por estancamiento | `test_ga::test_stagnation_stops_after_patience_without_improvement` |",
         "| Misma semilla y configuración => mismos resultados (sin tiempos) | `test_ga::test_same_seed_same_results_excluding_time`, `test_results_consistency::test_saved_main_run_is_reproducible` |",
-        "| Gráficos, tablas y resúmenes coinciden con los logs | `test_results_consistency::*` y controles del informe (`claim`) |",
+        "| Gráficos, tablas y resúmenes coinciden con los logs | `test_results_consistency::*` |",
         "| Reinicialización correcta de DEAP entre corridas | `test_ga::test_deap_types_can_be_recreated_without_warnings` |",
         "| Caché aislada por pesos/dataset | `test_fitness::test_cache_is_isolated_per_weights` |", "",
         "## 2. Reproducibilidad de las corridas principales (semilla 42)", ""]
@@ -178,36 +176,19 @@ def write_registry(s: dict, cases: list[str]):
               "## 5. Gráficos", "",
               f"- {s['graficos']['graficos_corridas']} gráficos de corridas y {s['graficos']['graficos_analisis']} de análisis; "
               f"faltantes: {s['graficos']['faltantes'] or 'ninguno'}. Todos se generan desde los CSV con `scripts/make_figures.py`.", ""]
-    if s["informe"]:
-        r = s["informe"]
-        lines += ["## 6. Informe", "",
-                  f"- Figuras numeradas: {r['figuras']}; tablas numeradas: {r['tablas']}; marcadores sin resolver: "
-                  f"{r['marcadores_sin_resolver'] or 'ninguno'}; marcadores [COMPLETAR] intencionales: {r['placeholders_completar']} "
-                  f"(URL del repositorio{' ya completada' if r.get('repo_url') else ' pendiente'}).",
-                  "- Las afirmaciones cuantitativas y cualitativas del texto se generan desde los archivos de resultados y se "
-                  "verifican con `claim(...)` en `scripts/build_report.py`.",
-                  "- Revisión visual del PDF (portada, índice, márgenes, tablas, fórmulas, ejes, leyendas, numeración y cortes de "
-                  "página): realizada sobre las páginas renderizadas; ver detalle en la sección 8.", ""]
+    section = 6
     if s["legalidad_showdown"]:
         lg = s["legalidad_showdown"]
-        lines += ["## 7. Legalidad conjunta de los movesets (verificación externa opcional)", "",
+        lines += [f"## {section}. Legalidad conjunta de los movesets (verificación externa opcional)", "",
                   f"- Validador de Pokémon Showdown, formato `{lg['formato']}` ({lg['regla']}), commit `{lg['showdown_commit'][:12]}`: "
                   f"{lg['movesets_validos']}/{lg['movesets_validados']} movesets resultantes válidos; "
-                  f"{lg['controles_rechazados']}/{lg['controles']} controles negativos rechazados.", ""]
-    lines += ["## 8. Revisión manual del informe y correcciones aplicadas", "",
-              "Durante la revisión visual de las páginas renderizadas del PDF se detectaron y corrigieron:", "",
-              "- Índice demasiado largo (incluía el nivel 3) y pegado al resumen: ahora va en página propia y con niveles 1–2.",
-              "- Subíndices de los encabezados de tabla (w_C, w_P...) mostrados como texto literal: corregido el marcado.",
-              "- Nombres de archivos y funciones con acentos graves literales: ahora se muestran en fuente monoespaciada.",
-              "- Tablas cortas partidas entre páginas con el título solo al pie: las filas se mantienen juntas.",
-              "- Textos sin tildes provenientes de la configuración y de las notas del catálogo: corregidos en origen.",
-              "- Motivos de exclusión en mayúsculas (códigos internos) en el Anexo C: reemplazados por descripciones.",
-              "- Gráficos: anotaciones superpuestas a curvas, etiquetas fuera del eje y ticks logarítmicos superpuestos: corregidos.",
-              "", "## 9. Errores de desarrollo detectados y corregidos", "",
+                  f"{lg['controles_rechazados']}/{lg['controles']} controles negativos rechazados. Detalle en "
+                  "`results/legality_showdown.csv`.", ""]
+        section += 1
+    lines += [f"## {section}. Errores de desarrollo detectados y corregidos", "",
               "- Lector de banderas de Showdown: no marcaba Vuelo/Excavar como movimientos con carga (banderas en varias líneas).",
               "- Diferencia de 2e-16 entre el óptimo calculado con numpy y la aptitud del AG: el óptimo se recalcula con la misma rutina.",
-              "- La afirmación inicial sobre la heurística voraz (primer movimiento elegido) no coincidía con el log de pasos: se "
-              "corrigió el texto y se agregó un `claim` que la verifica.", ""]
+              ""]
     (ROOT / "docs" / "registro_validacion.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 

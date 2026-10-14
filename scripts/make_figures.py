@@ -272,7 +272,7 @@ def fig_ga_vs_random(exps, optimum_r1):
     return save(fig, "fig_ag_vs_aleatoria.png")
 
 
-def fig_distribution(optimum_r1):
+def fig_distribution(optimum_r1, gaps):
     hist = [r for r in read_csv(RESULTS_DIR / "baselines" / "exhaustive_histogram.csv") if r["perfil"] == "R1"]
     left = np.array([float(r["desde"]) for r in hist])
     right = np.array([float(r["hasta"]) for r in hist])
@@ -284,11 +284,16 @@ def fig_distribution(optimum_r1):
     ax.bar(left, count, width=(right - left) * 0.9, align="edge", color=S1, linewidth=0)
     rs_rank = np.mean([float(r["puesto_en_exhaustiva"]) for r in read_csv(RESULTS_DIR / "baselines" / "random_search.csv")
                        if r["perfil"] == "R1" and r["modo_presupuesto"] == "requested"])
-    marks = [(optimum_r1, f"Óptimo exacto = AG en 10/10 semillas (F = {fmt(optimum_r1)}; puesto 1)", INK, 1.6),
-             (float(greedy["mejor_aptitud"]), f"Voraz (F = {fmt(float(greedy['mejor_aptitud']))}; puesto {greedy['puesto_en_exhaustiva']})", S2, 1.2),
-             (float(np.mean(rs)), f"Aleatoria, media de 10 (F = {fmt(float(np.mean(rs)))}; puesto medio {fmt(rs_rank, 1)})", MUTED, 1.2)]
-    for x, lab, col, lw in marks:
-        ax.axvline(x, color=col, linewidth=lw, label=lab)
+    r1_runs = [g for g in gaps if g["config_id"] == "R1"]
+    hits = sum(g["alcanza_optimo"] == "True" for g in r1_runs)
+    # El voraz va punteado y por encima del optimo: si ambos coinciden, se ven las dos lineas.
+    marks = [(optimum_r1, f"Óptimo exacto = AG en {hits}/{len(r1_runs)} semillas (F = {fmt(optimum_r1)}; puesto 1)", INK, 1.6, "-"),
+             (float(greedy["mejor_aptitud"]), f"Voraz (F = {fmt(float(greedy['mejor_aptitud']))}; puesto {greedy['puesto_en_exhaustiva']})",
+              S2, 1.6, (0, (3, 2))),
+             (float(np.mean(rs)), f"Aleatoria, media de {len(rs)} (F = {fmt(float(np.mean(rs)))}; puesto medio {fmt(rs_rank, 1)})",
+              MUTED, 1.2, "-")]
+    for z, (x, lab, col, lw, ls) in enumerate(marks, start=2):
+        ax.axvline(x, color=col, linewidth=lw, linestyle=ls, label=lab, zorder=z)
     ax.legend(loc="upper left", fontsize=7.8, title=f"Referencias (de {count.sum():,} combinaciones)".replace(",", "."),
               title_fontsize=8, alignment="left")
     ax.set_ylim(0, count.max() * 1.42)
@@ -314,7 +319,7 @@ def main():
         fig_run(r["config_id"], int(r["semilla"]), label, dpi=200 if main_run else 110)
     out = [fig_type_chart(catalog), fig_variability(exps, gaps), fig_operators(exps, optimum_r1),
            fig_operators(exps, optimum_r1, SELECTION_SERIES, "fig_seleccion.png"),
-           fig_components(catalog, optimum_rows), fig_ga_vs_random(exps, optimum_r1), fig_distribution(optimum_r1)]
+           fig_components(catalog, optimum_rows), fig_ga_vs_random(exps, optimum_r1), fig_distribution(optimum_r1, gaps)]
     print(f"{len(runs)} graficos de corridas en figures/runs/ y {len(out)} graficos de analisis:")
     for p in out:
         print("  ", p.name)

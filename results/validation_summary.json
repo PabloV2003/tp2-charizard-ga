@@ -1,12 +1,12 @@
 {
-  "fecha_utc": "2026-10-03T23:36:13+00:00",
+  "fecha_utc": "2026-10-14T13:34:01+00:00",
   "todo_ok": true,
   "pytest": {
-    "total": 36,
-    "passed": 36,
+    "total": 51,
+    "passed": 51,
     "failed": 0,
     "skipped": 0,
-    "salida": "36 passed in 0.73s"
+    "salida": "51 passed in 3.57s"
   },
   "reproducibilidad_corridas_principales": {
     "R1": true,
@@ -19,7 +19,7 @@
     "codigo_salida": 0,
     "log_identico_al_guardado": true,
     "sin_cache_de_descargas": true,
-    "ultima_linea": "Log: <copia_temporal>\\results\\demo\\R1\\seed_42_log.csv"
+    "ultima_linea": "Log: <copia_temporal>/results/demo/R1/seed_42_log.csv"
   },
   "notebook": {
     "celdas_codigo": 10,
@@ -28,60 +28,32 @@
     "errores": 0
   },
   "graficos": {
-    "graficos_corridas": 80,
-    "graficos_analisis": 6,
+    "graficos_corridas": 150,
+    "graficos_analisis": 7,
     "faltantes": []
   },
-  "informe": {
-    "figuras": 14,
-    "tablas": 25,
-    "marcadores_sin_resolver": [],
-    "placeholders_completar": 0,
-    "repo_url": "https://github.com/PabloV2003/tp2-charizard-ga",
-    "figuras_insertadas": [
-      "figures/fig_tabla_tipos.png",
-      "figures/runs/R1_seed42.png",
-      "figures/runs/R2_seed42.png",
-      "figures/runs/R3_seed42.png",
-      "figures/runs/R4_seed42.png",
-      "figures/runs/R5_seed42.png",
-      "figures/fig_componentes_perfiles.png",
-      "figures/fig_variabilidad.png",
-      "figures/fig_operadores.png",
-      "figures/fig_ag_vs_aleatoria.png",
-      "figures/fig_distribucion_exhaustiva.png",
-      "figures/runs/OP-RUL_seed42.png",
-      "figures/runs/OP-1P_seed42.png",
-      "figures/runs/OP-MUT20_seed42.png"
-    ],
-    "pdf": "docs\\informe_final.pdf"
-  },
   "legalidad_showdown": {
-    "fecha_utc": "2026-10-03T23:27:20+00:00",
+    "fecha_utc": "2026-10-14T13:31:27+00:00",
     "showdown_commit": "9fb3a5b99f1a0bea17f495c5cc1bfe04fdd19c3e",
     "formato": "gen9anythinggoes",
     "regla": "Standard AG -> Obtainable",
-    "node": "v24.15.0",
+    "node": "v26.2.0",
     "movesets_validados": 12,
     "movesets_validos": 12,
     "controles_rechazados": 2,
     "controles": 2,
     "nota": "EVs: 1 HP se agrega solo para evitar la advertencia de 0 EVs del validador; no forma parte del modelo."
   },
-  "frases_informe": [
-    "Además, las cinco corridas principales se reejecutaron y reprodujeron exactamente sus logs; la demostración por consola se ejecutó desde una copia limpia del proyecto (solo código, configuración y datos locales, sin caché de descargas) y generó un log idéntico al guardado; y el notebook se ejecutó de principio a fin en un kernel nuevo sin errores (10 celdas de código)."
-  ],
   "entorno": {
-    "python": "3.13.14",
+    "python": "3.14.7",
     "implementacion": "CPython",
-    "sistema": "Windows-11-10.0.26200-SP0",
-    "procesador": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
-    "nucleos_logicos": 20,
+    "sistema": "Linux-7.2.3-arch1-3-x86_64-with-glibc2.44",
+    "procesador": "",
+    "nucleos_logicos": 12,
     "deap": "1.4.4",
-    "numpy": "2.5.3",
+    "numpy": "2.5.4",
     "pandas": "3.0.6",
     "matplotlib": "3.11.2",
-    "python_docx": "1.2.0",
     "pytest": "9.1.1",
     "nbconvert": "7.17.1"
   }

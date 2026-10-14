@@ -12,5 +12,4 @@ data/cache/
 # Salidas temporales
 results/demo/
 results/pytest_report.xml
-dist/
 ~$*

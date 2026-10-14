@@ -7,7 +7,7 @@ import pytest
 from charizard_ga.fitness import (Evaluator, Weights, components, contributions, fitness, partial_components,
                                   validate_moveset, weighted_fitness)
 
-EXAMPLE = ["flamethrower", "air-slash", "dragon-pulse", "solar-beam"]  # ejemplo de la entrega parcial
+EXAMPLE = ["flamethrower", "air-slash", "dragon-pulse", "solar-beam"]  # ejemplo de referencia
 PHYS = 84 / 109  # At / AtEsp base de Charizard: factor de los movimientos fisicos en la potencia efectiva
 
 
