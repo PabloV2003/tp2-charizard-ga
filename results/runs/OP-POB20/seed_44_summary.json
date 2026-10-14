@@ -1,0 +1,160 @@
+{
+  "config_id": "OP-POB20",
+  "grupo": "operadores",
+  "perfil": "R1",
+  "perfil_nombre": "Base",
+  "descripcion": "Pesos base; población 20 y 30 generaciones (pocos recursos: no siempre llega al óptimo)",
+  "replica": 3,
+  "semilla": 44,
+  "corrida_principal": false,
+  "parametros_ag": {
+    "population_size": 20,
+    "generations": 30,
+    "selection": "tournament",
+    "tournament_size": 3,
+    "crossover": "set",
+    "cx_prob": 0.8,
+    "cx_indpb": 0.5,
+    "mutation_prob": 0.1,
+    "mutation_mode": "simple",
+    "mutation_prob_max": 0.4,
+    "convergence_threshold": 0.9,
+    "elitism": 2,
+    "stop_criterion": "generations",
+    "patience": 30,
+    "fitness_version": "F2"
+  },
+  "overrides_respecto_base": {
+    "population_size": 20,
+    "generations": 30
+  },
+  "pesos": {
+    "wC": 0.4,
+    "wP": 0.2,
+    "wA": 0.15,
+    "wS": 0.15,
+    "wD": 0.1
+  },
+  "dataset_version": "6557b19f60a8",
+  "fitness_version": "F2",
+  "fitness_descripcion": "F2 (C/P/A/S/D; P = potencia efectiva / potencia efectiva máxima del catálogo)",
+  "mejor_solucion": {
+    "moveset_ids": [
+      91,
+      280,
+      512,
+      519
+    ],
+    "generacion_encontrada": 1,
+    "valido": true,
+    "version_aptitud": "F2",
+    "movimientos": [
+      {
+        "move_id": 91,
+        "slug": "dig",
+        "nombre_es": "Excavar",
+        "tipo": "ground",
+        "tipo_es": "Tierra",
+        "potencia": 80,
+        "potencia_efectiva": 30.825688073394495,
+        "precision": 100,
+        "categoria": "physical",
+        "stab": false,
+        "efectos_ignorados": "requiere turno de carga"
+      },
+      {
+        "move_id": 280,
+        "slug": "brick-break",
+        "nombre_es": "Demolición",
+        "tipo": "fighting",
+        "tipo_es": "Lucha",
+        "potencia": 75,
+        "potencia_efectiva": 57.79816513761468,
+        "precision": 100,
+        "categoria": "physical",
+        "stab": false,
+        "efectos_ignorados": ""
+      },
+      {
+        "move_id": 512,
+        "slug": "acrobatics",
+        "nombre_es": "Acróbata",
+        "tipo": "flying",
+        "tipo_es": "Volador",
+        "potencia": 55,
+        "potencia_efectiva": 42.38532110091743,
+        "precision": 100,
+        "categoria": "physical",
+        "stab": true,
+        "efectos_ignorados": "potencia condicional (el modelo usa la potencia base)"
+      },
+      {
+        "move_id": 519,
+        "slug": "fire-pledge",
+        "nombre_es": "Voto Fuego",
+        "tipo": "fire",
+        "tipo_es": "Fuego",
+        "potencia": 80,
+        "potencia_efectiva": 80.0,
+        "precision": 100,
+        "categoria": "special",
+        "stab": true,
+        "efectos_ignorados": "potencia condicional (el modelo usa la potencia base)"
+      }
+    ],
+    "componentes": {
+      "C": 0.6111111111111112,
+      "P": 0.4396024464831804,
+      "A": 1.0,
+      "S": 0.5,
+      "D": 1.0
+    },
+    "aportes": {
+      "C": 24.444444444444446,
+      "P": 8.792048929663608,
+      "A": 15.0,
+      "S": 7.5,
+      "D": 10.0
+    },
+    "aptitud": 65.73649337410805,
+    "tipos_cubiertos": [
+      "normal",
+      "fire",
+      "electric",
+      "grass",
+      "ice",
+      "fighting",
+      "poison",
+      "bug",
+      "rock",
+      "dark",
+      "steel"
+    ],
+    "tipos_no_cubiertos": [
+      "water",
+      "ground",
+      "flying",
+      "psychic",
+      "ghost",
+      "dragon",
+      "fairy"
+    ],
+    "n_tipos_cubiertos": 11,
+    "aptitud_perfil_base": 65.73649337410805
+  },
+  "generaciones_ejecutadas": 30,
+  "filas_log": 31,
+  "motivo_paro": "se completaron las 30 generaciones configuradas (criterio de paro por generaciones)",
+  "tiempo_segundos": 0.006215167999471305,
+  "candidatos_generados": 560,
+  "evaluaciones_solicitadas": 462,
+  "evaluaciones_efectivas": 79,
+  "reutilizacion_cache": 383,
+  "poblacion_final": {
+    "combinaciones_distintas": 3,
+    "aptitud_media": 65.37235601427115,
+    "aptitud_max": 65.73649337410805
+  },
+  "total_hijos_reparados": 0,
+  "total_individuos_invalidos_registrados": 0
+}

@@ -1,9 +1,22 @@
 {
-  "generado_utc": "2026-10-03T23:26:32+00:00",
+  "generado_utc": "2026-10-13T01:24:25+00:00",
   "dataset_version": "6557b19f60a8",
-  "fitness_version": "F1 (C/P/A/S/D; P normalizada por la potencia máxima del catálogo)",
+  "fitness_version_por_defecto": "F2",
+  "fitness_versiones": {
+    "F1": "F1 (C/P/A/S/D; P = potencia base / potencia máxima del catálogo)",
+    "F2": "F2 (C/P/A/S/D; P = potencia efectiva / potencia efectiva máxima del catálogo)"
+  },
   "catalogo_M": 53,
-  "potencia_maxima_normalizacion": 150,
+  "potencia_maxima_normalizacion_F1": 150,
+  "potencia_efectiva_maxima_normalizacion_F2": 120.0,
+  "estadisticas_base_charizard": {
+    "hp": 78,
+    "attack": 84,
+    "defense": 78,
+    "special-attack": 109,
+    "special-defense": 85,
+    "speed": 100
+  },
   "semillas": [
     42,
     43,
@@ -20,9 +33,12 @@
   "perfil_base": "R1",
   "alcance_probabilidades": {
     "cx_prob": "por pareja de padres consecutivos seleccionados",
-    "cx_indpb": "por gen (posición) dentro de una pareja que se cruza (solo cruza uniforme)",
-    "mutation_prob": "por individuo hijo; si se activa, se reemplaza UN gen elegido al azar",
-    "generations": "generaciones evolutivas además de la generación inicial 0 (se registran 201 filas por corrida)"
+    "cx_indpb": "por gen (posición) dentro de una pareja que se cruza (solo cruza uniforme / binomial aleatoria)",
+    "mutation_prob": "por individuo hijo; si se activa, se reemplaza UN gen elegido al azar. Con mutación adaptativa es la probabilidad base",
+    "mutation_prob_max": "solo mutación adaptativa: tope al que sube la probabilidad cuando la población converge",
+    "convergence_threshold": "solo mutación adaptativa: media/máxima de la población a partir de la cual la probabilidad empieza a subir",
+    "generations": "generaciones evolutivas además de la generación inicial 0 (se registran generaciones + 1 filas por corrida); con paro por estancamiento es el tope",
+    "patience": "solo paro por estancamiento: generaciones seguidas sin mejora de la mejor solución"
   },
   "criterio_calidad": {
     "_descripcion": "Criterio de calidad adoptado. Se fijo el 2026-10-03 ANTES de ejecutar los experimentos y no se modifico despues de observar resultados.",
@@ -58,12 +74,17 @@
         "generations": 200,
         "selection": "tournament",
         "tournament_size": 3,
-        "crossover": "uniform",
+        "crossover": "set",
         "cx_prob": 0.8,
         "cx_indpb": 0.5,
         "mutation_prob": 0.1,
+        "mutation_mode": "simple",
+        "mutation_prob_max": 0.4,
+        "convergence_threshold": 0.9,
         "elitism": 2,
-        "stop_criterion": "generations"
+        "stop_criterion": "generations",
+        "patience": 30,
+        "fitness_version": "F2"
       },
       "overrides_respecto_base": {}
     },
@@ -85,12 +106,17 @@
         "generations": 200,
         "selection": "tournament",
         "tournament_size": 3,
-        "crossover": "uniform",
+        "crossover": "set",
         "cx_prob": 0.8,
         "cx_indpb": 0.5,
         "mutation_prob": 0.1,
+        "mutation_mode": "simple",
+        "mutation_prob_max": 0.4,
+        "convergence_threshold": 0.9,
         "elitism": 2,
-        "stop_criterion": "generations"
+        "stop_criterion": "generations",
+        "patience": 30,
+        "fitness_version": "F2"
       },
       "overrides_respecto_base": {}
     },
@@ -112,12 +138,17 @@
         "generations": 200,
         "selection": "tournament",
         "tournament_size": 3,
-        "crossover": "uniform",
+        "crossover": "set",
         "cx_prob": 0.8,
         "cx_indpb": 0.5,
         "mutation_prob": 0.1,
+        "mutation_mode": "simple",
+        "mutation_prob_max": 0.4,
+        "convergence_threshold": 0.9,
         "elitism": 2,
-        "stop_criterion": "generations"
+        "stop_criterion": "generations",
+        "patience": 30,
+        "fitness_version": "F2"
       },
       "overrides_respecto_base": {}
     },
@@ -139,12 +170,17 @@
         "generations": 200,
         "selection": "tournament",
         "tournament_size": 3,
-        "crossover": "uniform",
+        "crossover": "set",
         "cx_prob": 0.8,
         "cx_indpb": 0.5,
         "mutation_prob": 0.1,
+        "mutation_mode": "simple",
+        "mutation_prob_max": 0.4,
+        "convergence_threshold": 0.9,
         "elitism": 2,
-        "stop_criterion": "generations"
+        "stop_criterion": "generations",
+        "patience": 30,
+        "fitness_version": "F2"
       },
       "overrides_respecto_base": {}
     },
@@ -166,14 +202,122 @@
         "generations": 200,
         "selection": "tournament",
         "tournament_size": 3,
+        "crossover": "set",
+        "cx_prob": 0.8,
+        "cx_indpb": 0.5,
+        "mutation_prob": 0.1,
+        "mutation_mode": "simple",
+        "mutation_prob_max": 0.4,
+        "convergence_threshold": 0.9,
+        "elitism": 2,
+        "stop_criterion": "generations",
+        "patience": 30,
+        "fitness_version": "F2"
+      },
+      "overrides_respecto_base": {}
+    },
+    {
+      "config_id": "ORIG-R1",
+      "grupo": "referencia",
+      "perfil": "R1",
+      "perfil_nombre": "Base",
+      "descripcion": "Versión original para comparar: aptitud F1 (potencia base) y cruza binomial aleatoria con reparación",
+      "pesos": {
+        "wC": 0.4,
+        "wP": 0.2,
+        "wA": 0.15,
+        "wS": 0.15,
+        "wD": 0.1
+      },
+      "parametros_ag": {
+        "population_size": 100,
+        "generations": 200,
+        "selection": "tournament",
+        "tournament_size": 3,
         "crossover": "uniform",
         "cx_prob": 0.8,
         "cx_indpb": 0.5,
         "mutation_prob": 0.1,
+        "mutation_mode": "simple",
+        "mutation_prob_max": 0.4,
+        "convergence_threshold": 0.9,
         "elitism": 2,
-        "stop_criterion": "generations"
+        "stop_criterion": "generations",
+        "patience": 30,
+        "fitness_version": "F1"
       },
-      "overrides_respecto_base": {}
+      "overrides_respecto_base": {
+        "fitness_version": "F1",
+        "crossover": "uniform"
+      }
+    },
+    {
+      "config_id": "OP-UNIF",
+      "grupo": "operadores",
+      "perfil": "R1",
+      "perfil_nombre": "Base",
+      "descripcion": "Pesos base; cruza binomial aleatoria (uniforme) con reparación en lugar de cruza de conjuntos",
+      "pesos": {
+        "wC": 0.4,
+        "wP": 0.2,
+        "wA": 0.15,
+        "wS": 0.15,
+        "wD": 0.1
+      },
+      "parametros_ag": {
+        "population_size": 100,
+        "generations": 200,
+        "selection": "tournament",
+        "tournament_size": 3,
+        "crossover": "uniform",
+        "cx_prob": 0.8,
+        "cx_indpb": 0.5,
+        "mutation_prob": 0.1,
+        "mutation_mode": "simple",
+        "mutation_prob_max": 0.4,
+        "convergence_threshold": 0.9,
+        "elitism": 2,
+        "stop_criterion": "generations",
+        "patience": 30,
+        "fitness_version": "F2"
+      },
+      "overrides_respecto_base": {
+        "crossover": "uniform"
+      }
+    },
+    {
+      "config_id": "OP-1P",
+      "grupo": "operadores",
+      "perfil": "R1",
+      "perfil_nombre": "Base",
+      "descripcion": "Pesos base; cruza simple (un punto) con reparación en lugar de cruza de conjuntos",
+      "pesos": {
+        "wC": 0.4,
+        "wP": 0.2,
+        "wA": 0.15,
+        "wS": 0.15,
+        "wD": 0.1
+      },
+      "parametros_ag": {
+        "population_size": 100,
+        "generations": 200,
+        "selection": "tournament",
+        "tournament_size": 3,
+        "crossover": "one_point",
+        "cx_prob": 0.8,
+        "cx_indpb": 0.5,
+        "mutation_prob": 0.1,
+        "mutation_mode": "simple",
+        "mutation_prob_max": 0.4,
+        "convergence_threshold": 0.9,
+        "elitism": 2,
+        "stop_criterion": "generations",
+        "patience": 30,
+        "fitness_version": "F2"
+      },
+      "overrides_respecto_base": {
+        "crossover": "one_point"
+      }
     },
     {
       "config_id": "OP-RUL",
@@ -193,23 +337,28 @@
         "generations": 200,
         "selection": "roulette",
         "tournament_size": 3,
-        "crossover": "uniform",
+        "crossover": "set",
         "cx_prob": 0.8,
         "cx_indpb": 0.5,
         "mutation_prob": 0.1,
+        "mutation_mode": "simple",
+        "mutation_prob_max": 0.4,
+        "convergence_threshold": 0.9,
         "elitism": 2,
-        "stop_criterion": "generations"
+        "stop_criterion": "generations",
+        "patience": 30,
+        "fitness_version": "F2"
       },
       "overrides_respecto_base": {
         "selection": "roulette"
       }
     },
     {
-      "config_id": "OP-1P",
+      "config_id": "OP-RANK",
       "grupo": "operadores",
       "perfil": "R1",
       "perfil_nombre": "Base",
-      "descripcion": "Pesos base; cruza de un punto en lugar de uniforme",
+      "descripcion": "Pesos base; selección por ranking lineal en lugar de torneo",
       "pesos": {
         "wC": 0.4,
         "wP": 0.2,
@@ -220,17 +369,56 @@
       "parametros_ag": {
         "population_size": 100,
         "generations": 200,
-        "selection": "tournament",
+        "selection": "ranking",
         "tournament_size": 3,
-        "crossover": "one_point",
+        "crossover": "set",
         "cx_prob": 0.8,
         "cx_indpb": 0.5,
         "mutation_prob": 0.1,
+        "mutation_mode": "simple",
+        "mutation_prob_max": 0.4,
+        "convergence_threshold": 0.9,
         "elitism": 2,
-        "stop_criterion": "generations"
+        "stop_criterion": "generations",
+        "patience": 30,
+        "fitness_version": "F2"
       },
       "overrides_respecto_base": {
-        "crossover": "one_point"
+        "selection": "ranking"
+      }
+    },
+    {
+      "config_id": "OP-CNE",
+      "grupo": "operadores",
+      "perfil": "R1",
+      "perfil_nombre": "Base",
+      "descripcion": "Pesos base; selección por control sobre número esperado en lugar de torneo",
+      "pesos": {
+        "wC": 0.4,
+        "wP": 0.2,
+        "wA": 0.15,
+        "wS": 0.15,
+        "wD": 0.1
+      },
+      "parametros_ag": {
+        "population_size": 100,
+        "generations": 200,
+        "selection": "expected_count",
+        "tournament_size": 3,
+        "crossover": "set",
+        "cx_prob": 0.8,
+        "cx_indpb": 0.5,
+        "mutation_prob": 0.1,
+        "mutation_mode": "simple",
+        "mutation_prob_max": 0.4,
+        "convergence_threshold": 0.9,
+        "elitism": 2,
+        "stop_criterion": "generations",
+        "patience": 30,
+        "fitness_version": "F2"
+      },
+      "overrides_respecto_base": {
+        "selection": "expected_count"
       }
     },
     {
@@ -251,15 +439,123 @@
         "generations": 200,
         "selection": "tournament",
         "tournament_size": 3,
-        "crossover": "uniform",
+        "crossover": "set",
         "cx_prob": 0.8,
         "cx_indpb": 0.5,
         "mutation_prob": 0.2,
+        "mutation_mode": "simple",
+        "mutation_prob_max": 0.4,
+        "convergence_threshold": 0.9,
         "elitism": 2,
-        "stop_criterion": "generations"
+        "stop_criterion": "generations",
+        "patience": 30,
+        "fitness_version": "F2"
       },
       "overrides_respecto_base": {
         "mutation_prob": 0.2
+      }
+    },
+    {
+      "config_id": "OP-MUTAD",
+      "grupo": "operadores",
+      "perfil": "R1",
+      "perfil_nombre": "Base",
+      "descripcion": "Pesos base; mutación adaptativa por convergencia (0.10 a 0.40) en lugar de simple",
+      "pesos": {
+        "wC": 0.4,
+        "wP": 0.2,
+        "wA": 0.15,
+        "wS": 0.15,
+        "wD": 0.1
+      },
+      "parametros_ag": {
+        "population_size": 100,
+        "generations": 200,
+        "selection": "tournament",
+        "tournament_size": 3,
+        "crossover": "set",
+        "cx_prob": 0.8,
+        "cx_indpb": 0.5,
+        "mutation_prob": 0.1,
+        "mutation_mode": "adaptive",
+        "mutation_prob_max": 0.4,
+        "convergence_threshold": 0.9,
+        "elitism": 2,
+        "stop_criterion": "generations",
+        "patience": 30,
+        "fitness_version": "F2"
+      },
+      "overrides_respecto_base": {
+        "mutation_mode": "adaptive"
+      }
+    },
+    {
+      "config_id": "OP-ESTANC",
+      "grupo": "operadores",
+      "perfil": "R1",
+      "perfil_nombre": "Base",
+      "descripcion": "Pesos base; paro por estancamiento (30 generaciones sin mejora, tope 200)",
+      "pesos": {
+        "wC": 0.4,
+        "wP": 0.2,
+        "wA": 0.15,
+        "wS": 0.15,
+        "wD": 0.1
+      },
+      "parametros_ag": {
+        "population_size": 100,
+        "generations": 200,
+        "selection": "tournament",
+        "tournament_size": 3,
+        "crossover": "set",
+        "cx_prob": 0.8,
+        "cx_indpb": 0.5,
+        "mutation_prob": 0.1,
+        "mutation_mode": "simple",
+        "mutation_prob_max": 0.4,
+        "convergence_threshold": 0.9,
+        "elitism": 2,
+        "stop_criterion": "stagnation",
+        "patience": 30,
+        "fitness_version": "F2"
+      },
+      "overrides_respecto_base": {
+        "stop_criterion": "stagnation"
+      }
+    },
+    {
+      "config_id": "OP-POB20",
+      "grupo": "operadores",
+      "perfil": "R1",
+      "perfil_nombre": "Base",
+      "descripcion": "Pesos base; población 20 y 30 generaciones (pocos recursos: no siempre llega al óptimo)",
+      "pesos": {
+        "wC": 0.4,
+        "wP": 0.2,
+        "wA": 0.15,
+        "wS": 0.15,
+        "wD": 0.1
+      },
+      "parametros_ag": {
+        "population_size": 20,
+        "generations": 30,
+        "selection": "tournament",
+        "tournament_size": 3,
+        "crossover": "set",
+        "cx_prob": 0.8,
+        "cx_indpb": 0.5,
+        "mutation_prob": 0.1,
+        "mutation_mode": "simple",
+        "mutation_prob_max": 0.4,
+        "convergence_threshold": 0.9,
+        "elitism": 2,
+        "stop_criterion": "generations",
+        "patience": 30,
+        "fitness_version": "F2"
+      },
+      "overrides_respecto_base": {
+        "population_size": 20,
+        "generations": 30
       }
     }
   ]

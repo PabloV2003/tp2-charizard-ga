@@ -12,12 +12,17 @@
     "generations": 200,
     "selection": "tournament",
     "tournament_size": 3,
-    "crossover": "uniform",
+    "crossover": "set",
     "cx_prob": 0.8,
     "cx_indpb": 0.5,
     "mutation_prob": 0.1,
+    "mutation_mode": "simple",
+    "mutation_prob_max": 0.4,
+    "convergence_threshold": 0.9,
     "elitism": 2,
-    "stop_criterion": "generations"
+    "stop_criterion": "generations",
+    "patience": 30,
+    "fitness_version": "F2"
   },
   "overrides_respecto_base": {},
   "pesos": {
@@ -28,29 +33,19 @@
     "wD": 0.2
   },
   "dataset_version": "6557b19f60a8",
-  "fitness_version": "F1 (C/P/A/S/D; P normalizada por la potencia máxima del catálogo)",
+  "fitness_version": "F2",
+  "fitness_descripcion": "F2 (C/P/A/S/D; P = potencia efectiva / potencia efectiva máxima del catálogo)",
   "mejor_solucion": {
     "moveset_ids": [
-      19,
       89,
-      264,
-      307
+      126,
+      411,
+      542
     ],
-    "generacion_encontrada": 7,
+    "generacion_encontrada": 10,
     "valido": true,
+    "version_aptitud": "F2",
     "movimientos": [
-      {
-        "move_id": 19,
-        "slug": "fly",
-        "nombre_es": "Vuelo",
-        "tipo": "flying",
-        "tipo_es": "Volador",
-        "potencia": 90,
-        "precision": 95,
-        "categoria": "physical",
-        "stab": true,
-        "efectos_ignorados": "requiere turno de carga"
-      },
       {
         "move_id": 89,
         "slug": "earthquake",
@@ -58,51 +53,67 @@
         "tipo": "ground",
         "tipo_es": "Tierra",
         "potencia": 100,
+        "potencia_efectiva": 77.06422018348624,
         "precision": 100,
         "categoria": "physical",
         "stab": false,
         "efectos_ignorados": ""
       },
       {
-        "move_id": 264,
-        "slug": "focus-punch",
-        "nombre_es": "Puño Certero",
-        "tipo": "fighting",
-        "tipo_es": "Lucha",
-        "potencia": 150,
-        "precision": 100,
-        "categoria": "physical",
-        "stab": false,
-        "efectos_ignorados": "falla si el usuario recibe daño antes de actuar; prioridad -3"
-      },
-      {
-        "move_id": 307,
-        "slug": "blast-burn",
-        "nombre_es": "Anillo Ígneo",
+        "move_id": 126,
+        "slug": "fire-blast",
+        "nombre_es": "Llamarada",
         "tipo": "fire",
         "tipo_es": "Fuego",
-        "potencia": 150,
-        "precision": 90,
+        "potencia": 110,
+        "potencia_efectiva": 110.0,
+        "precision": 85,
         "categoria": "special",
         "stab": true,
-        "efectos_ignorados": "obliga a recargar un turno"
+        "efectos_ignorados": ""
+      },
+      {
+        "move_id": 411,
+        "slug": "focus-blast",
+        "nombre_es": "Onda Certera",
+        "tipo": "fighting",
+        "tipo_es": "Lucha",
+        "potencia": 120,
+        "potencia_efectiva": 120.0,
+        "precision": 70,
+        "categoria": "special",
+        "stab": false,
+        "efectos_ignorados": ""
+      },
+      {
+        "move_id": 542,
+        "slug": "hurricane",
+        "nombre_es": "Vendaval",
+        "tipo": "flying",
+        "tipo_es": "Volador",
+        "potencia": 110,
+        "potencia_efectiva": 110.0,
+        "precision": 70,
+        "categoria": "special",
+        "stab": true,
+        "efectos_ignorados": ""
       }
     ],
     "componentes": {
       "C": 0.6111111111111112,
-      "P": 0.8166666666666667,
-      "A": 0.9625,
+      "P": 0.8688837920489296,
+      "A": 0.8125,
       "S": 0.5,
       "D": 1.0
     },
     "aportes": {
       "C": 15.277777777777779,
-      "P": 12.25,
-      "A": 9.625,
+      "P": 13.033256880733944,
+      "A": 8.125,
       "S": 15.0,
       "D": 20.0
     },
-    "aptitud": 72.15277777777777,
+    "aptitud": 71.43603465851173,
     "tipos_cubiertos": [
       "normal",
       "fire",
@@ -126,21 +137,21 @@
       "fairy"
     ],
     "n_tipos_cubiertos": 11,
-    "aptitud_perfil_base": 72.71527777777777
+    "aptitud_perfil_base": 71.50962028542304
   },
   "generaciones_ejecutadas": 200,
   "filas_log": 201,
   "motivo_paro": "se completaron las 200 generaciones configuradas (criterio de paro por generaciones)",
-  "tiempo_segundos": 0.28619740006979555,
+  "tiempo_segundos": 0.1818057679993217,
   "candidatos_generados": 19700,
-  "evaluaciones_solicitadas": 16204,
-  "evaluaciones_efectivas": 655,
-  "reutilizacion_cache": 15549,
+  "evaluaciones_solicitadas": 16280,
+  "evaluaciones_efectivas": 709,
+  "reutilizacion_cache": 15571,
   "poblacion_final": {
-    "combinaciones_distintas": 12,
-    "aptitud_media": 71.64013888888888,
-    "aptitud_max": 72.15277777777777
+    "combinaciones_distintas": 8,
+    "aptitud_media": 70.91809288990827,
+    "aptitud_max": 71.43603465851173
   },
-  "total_hijos_reparados": 41,
+  "total_hijos_reparados": 0,
   "total_individuos_invalidos_registrados": 0
 }

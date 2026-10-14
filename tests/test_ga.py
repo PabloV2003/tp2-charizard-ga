@@ -15,6 +15,10 @@ SMALL = GAConfig(population_size=30, generations=25)
     GAConfig(population_size=30, generations=25, selection="roulette"),
     GAConfig(population_size=31, generations=25, crossover="one_point", elitism=1),
     GAConfig(population_size=30, generations=25, mutation_prob=0.5, elitism=0),
+    GAConfig(population_size=30, generations=25, crossover="uniform", fitness_version="F1"),
+    GAConfig(population_size=30, generations=25, selection="ranking"),
+    GAConfig(population_size=31, generations=25, selection="expected_count"),
+    GAConfig(population_size=30, generations=25, mutation_mode="adaptive"),
 ])
 def test_population_and_best_invariants(catalog, base_weights, cfg):
     res = run_ga(catalog, base_weights, cfg, seed=123)
@@ -30,7 +34,12 @@ def test_population_and_best_invariants(catalog, base_weights, cfg):
         maxima = [row["aptitud_max"] for row in res.log]
         assert all(b >= a - 1e-12 for a, b in zip(maxima, maxima[1:]))  # las elites protegen al maximo
     assert validate_moveset(res.best_moveset, catalog)[0]
-    assert fitness(res.best_moveset, catalog, base_weights) == pytest.approx(res.best_fitness, abs=1e-12)
+    assert fitness(res.best_moveset, catalog, base_weights, cfg.fitness_version) == pytest.approx(res.best_fitness, abs=1e-12)
+    assert all(row["prob_mutacion"] is None for row in res.log[:1])
+    if cfg.mutation_mode == "adaptive":
+        assert all(cfg.mutation_prob <= row["prob_mutacion"] <= cfg.mutation_prob_max for row in res.log[1:])
+    else:
+        assert all(row["prob_mutacion"] == cfg.mutation_prob for row in res.log[1:])
     assert res.best_fitness == pytest.approx(max(r["aptitud_max"] for r in res.log), abs=1e-12)
 
 
@@ -51,10 +60,29 @@ def test_deap_types_can_be_recreated_without_warnings(catalog, base_weights):
         run_ga(catalog, base_weights, GAConfig(population_size=10, generations=2), seed=1)
 
 
+def test_stagnation_stops_after_patience_without_improvement(catalog, base_weights):
+    cfg = GAConfig(population_size=30, generations=200, stop_criterion="stagnation", patience=15)
+    res = run_ga(catalog, base_weights, cfg, seed=7)
+    assert res.generations_executed < cfg.generations
+    assert len(res.log) == res.generations_executed + 1
+    assert res.generations_executed - res.best_generation == cfg.patience
+    assert "estancamiento" in res.stop_reason
+    full = run_ga(catalog, base_weights, GAConfig(population_size=30, generations=200), seed=7)
+    assert full.log[:len(res.log)] == res.log            # mismas generaciones hasta el corte (misma semilla)
+
+
 def test_invalid_config_is_rejected():
     with pytest.raises(ValueError):
-        GAConfig(selection="ranking")
+        GAConfig(selection="inexistente")
+    with pytest.raises(ValueError):
+        GAConfig(crossover="inexistente")
     with pytest.raises(ValueError):
         GAConfig(elitism=100, population_size=100)
     with pytest.raises(ValueError):
-        GAConfig(stop_criterion="stagnation")
+        GAConfig(stop_criterion="inexistente")
+    with pytest.raises(ValueError):
+        GAConfig(mutation_mode="inexistente")
+    with pytest.raises(ValueError):
+        GAConfig(mutation_mode="adaptive", mutation_prob=0.5, mutation_prob_max=0.4)
+    with pytest.raises(ValueError):
+        GAConfig(fitness_version="F9")

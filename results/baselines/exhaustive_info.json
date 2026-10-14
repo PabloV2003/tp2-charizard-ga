@@ -1,10 +1,11 @@
 {
+  "version_aptitud": "F2",
   "M": 53,
   "combinaciones": 292825,
-  "segundos_enumeracion_y_componentes": 1.389758100034669,
+  "segundos_enumeracion_y_componentes": 1.1265330220012402,
   "maximo_por_componente": {
     "C": 0.7222222222222222,
-    "P": 1.0,
+    "P": 0.9166666666666666,
     "A": 1.0,
     "S": 1.0,
     "D": 1.0

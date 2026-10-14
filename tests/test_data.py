@@ -48,3 +48,16 @@ def test_super_effective_sets(catalog):
     assert catalog.se_types["flying"] == {"grass", "fighting", "bug"}
     assert catalog.se_types["normal"] == frozenset()
     assert catalog.se_types["ground"] == {"fire", "electric", "poison", "rock", "steel"}
+
+
+def test_mechanics_for_effective_power(catalog):
+    # Valores numericos leidos del extracto de Showdown (data/raw/showdown_extract.json).
+    mv = {s: catalog.moves[catalog.by_slug(s)] for s in ("overheat", "flare-blitz", "take-down", "fly", "solar-beam",
+                                                         "blast-burn", "focus-punch", "outrage", "flamethrower")}
+    assert mv["overheat"].caida_stat_ofensivo == 2
+    assert mv["flare-blitz"].retroceso == 0.33 and mv["take-down"].retroceso == 0.25
+    assert mv["fly"].carga and mv["solar-beam"].carga and mv["blast-burn"].recarga
+    assert mv["focus-punch"].falla_condicional and mv["outrage"].bloqueo
+    f = mv["flamethrower"]
+    assert not (f.carga or f.recarga or f.falla_condicional or f.bloqueo or f.retroceso or f.caida_stat_ofensivo)
+    assert catalog.base_stats["attack"] == 84 and catalog.base_stats["special-attack"] == 109

@@ -1,51 +1,51 @@
 perfil,puesto_orden,aptitud,moveset,moveset_es
-R1,1,72.78472222222223,fly|solar-beam|earthquake|focus-punch,Vuelo | Rayo Solar | Terremoto | Puño Certero
-R1,2,72.71527777777779,fly|earthquake|focus-punch|blast-burn,Vuelo | Terremoto | Puño Certero | Anillo Ígneo
-R1,3,72.51388888888889,solar-beam|earthquake|focus-punch|hurricane,Rayo Solar | Terremoto | Puño Certero | Vendaval
-R1,4,72.44444444444444,earthquake|focus-punch|blast-burn|hurricane,Terremoto | Puño Certero | Anillo Ígneo | Vendaval
-R1,5,72.375,solar-beam|earthquake|focus-punch|blast-burn,Rayo Solar | Terremoto | Puño Certero | Anillo Ígneo
-R1,6,72.28472222222223,solar-beam|earthquake|focus-punch|air-slash,Rayo Solar | Terremoto | Puño Certero | Tajo Aéreo
-R1,7,72.21527777777777,earthquake|focus-punch|blast-burn|air-slash,Terremoto | Puño Certero | Anillo Ígneo | Tajo Aéreo
-R1,8,72.11805555555556,fly|solar-beam|dig|focus-punch,Vuelo | Rayo Solar | Excavar | Puño Certero
-R1,9,72.09027777777779,fly|earthquake|focus-punch|flare-blitz,Vuelo | Terremoto | Puño Certero | Envite Ígneo
-R1,10,72.04861111111111,fly|earthquake|focus-punch|overheat,Vuelo | Terremoto | Puño Certero | Sofoco
-R2,1,75.95833333333333,fly|solar-beam|earthquake|focus-punch,Vuelo | Rayo Solar | Terremoto | Puño Certero
-R2,2,75.83333333333333,solar-beam|earthquake|focus-punch|hurricane,Rayo Solar | Terremoto | Puño Certero | Vendaval
-R2,3,75.58333333333333,solar-beam|earthquake|focus-punch|air-slash,Rayo Solar | Terremoto | Puño Certero | Tajo Aéreo
-R2,4,75.45833333333333,fly|solar-beam|dig|focus-punch,Vuelo | Rayo Solar | Excavar | Puño Certero
-R2,5,75.33333333333333,solar-beam|dig|focus-punch|hurricane,Rayo Solar | Excavar | Puño Certero | Vendaval
-R2,6,75.20833333333333,fly|solar-beam|focus-punch|scorching-sands,Vuelo | Rayo Solar | Puño Certero | Arenas Ardientes
-R2,7,75.20833333333333,solar-beam|earthquake|focus-punch|air-cutter,Rayo Solar | Terremoto | Puño Certero | Aire Afilado
-R2,8,75.20833333333333,solar-beam|earthquake|focus-punch|acrobatics,Rayo Solar | Terremoto | Puño Certero | Acróbata
-R2,9,75.08333333333333,solar-beam|dig|focus-punch|air-slash,Rayo Solar | Excavar | Puño Certero | Tajo Aéreo
-R2,10,75.08333333333333,solar-beam|focus-punch|hurricane|scorching-sands,Rayo Solar | Puño Certero | Vendaval | Arenas Ardientes
-R3,1,79.5,hyper-beam|solar-beam|focus-punch|blast-burn,Hiperrayo | Rayo Solar | Puño Certero | Anillo Ígneo
-R3,2,79.5,solar-beam|focus-punch|blast-burn|giga-impact,Rayo Solar | Puño Certero | Anillo Ígneo | Gigaimpacto
-R3,3,79.45833333333333,solar-beam|earthquake|focus-punch|blast-burn,Rayo Solar | Terremoto | Puño Certero | Anillo Ígneo
-R3,4,79.36111111111111,solar-beam|focus-punch|blast-burn|hurricane,Rayo Solar | Puño Certero | Anillo Ígneo | Vendaval
-R3,5,79.11111111111111,hyper-beam|earthquake|focus-punch|blast-burn,Hiperrayo | Terremoto | Puño Certero | Anillo Ígneo
-R3,6,79.11111111111111,earthquake|focus-punch|blast-burn|giga-impact,Terremoto | Puño Certero | Anillo Ígneo | Gigaimpacto
-R3,7,79.01388888888889,hyper-beam|focus-punch|blast-burn|hurricane,Hiperrayo | Puño Certero | Anillo Ígneo | Vendaval
-R3,8,79.01388888888889,focus-punch|blast-burn|giga-impact|hurricane,Puño Certero | Anillo Ígneo | Gigaimpacto | Vendaval
-R3,9,78.97222222222223,earthquake|focus-punch|blast-burn|hurricane,Terremoto | Puño Certero | Anillo Ígneo | Vendaval
-R3,10,78.79861111111111,fly|solar-beam|focus-punch|blast-burn,Vuelo | Rayo Solar | Puño Certero | Anillo Ígneo
-R4,1,81.55555555555556,fly|solar-beam|earthquake|focus-punch,Vuelo | Rayo Solar | Terremoto | Puño Certero
-R4,2,81.41666666666666,solar-beam|earthquake|focus-punch|flare-blitz,Rayo Solar | Terremoto | Puño Certero | Envite Ígneo
-R4,3,81.27777777777777,fly|earthquake|focus-punch|flare-blitz,Vuelo | Terremoto | Puño Certero | Envite Ígneo
-R4,4,81.18055555555556,solar-beam|earthquake|focus-punch|air-slash,Rayo Solar | Terremoto | Puño Certero | Tajo Aéreo
-R4,5,81.18055555555556,solar-beam|earthquake|focus-punch|acrobatics,Rayo Solar | Terremoto | Puño Certero | Acróbata
-R4,6,81.16666666666666,solar-beam|earthquake|focus-punch|blast-burn,Rayo Solar | Terremoto | Puño Certero | Anillo Ígneo
-R4,7,81.05555555555556,fly|solar-beam|dig|focus-punch,Vuelo | Rayo Solar | Excavar | Puño Certero
-R4,8,81.02777777777777,fly|earthquake|focus-punch|blast-burn,Vuelo | Terremoto | Puño Certero | Anillo Ígneo
-R4,9,80.91666666666666,solar-beam|dig|focus-punch|flare-blitz,Rayo Solar | Excavar | Puño Certero | Envite Ígneo
-R4,10,80.90277777777779,earthquake|focus-punch|flare-blitz|acrobatics,Terremoto | Puño Certero | Envite Ígneo | Acróbata
-R5,1,72.15277777777779,fly|earthquake|focus-punch|blast-burn,Vuelo | Terremoto | Puño Certero | Anillo Ígneo
-R5,2,72.02777777777779,earthquake|focus-punch|blast-burn|hurricane,Terremoto | Puño Certero | Anillo Ígneo | Vendaval
-R5,3,71.77777777777779,earthquake|focus-punch|blast-burn|air-slash,Terremoto | Puño Certero | Anillo Ígneo | Tajo Aéreo
-R5,4,71.65277777777779,fly|earthquake|focus-punch|overheat,Vuelo | Terremoto | Puño Certero | Sofoco
-R5,5,71.65277777777779,fly|earthquake|focus-punch|flare-blitz,Vuelo | Terremoto | Puño Certero | Envite Ígneo
-R5,6,71.65277777777779,fly|dig|focus-punch|blast-burn,Vuelo | Excavar | Puño Certero | Anillo Ígneo
-R5,7,71.52777777777779,earthquake|focus-punch|overheat|hurricane,Terremoto | Puño Certero | Sofoco | Vendaval
-R5,8,71.52777777777779,earthquake|focus-punch|flare-blitz|hurricane,Terremoto | Puño Certero | Envite Ígneo | Vendaval
-R5,9,71.52777777777779,dig|focus-punch|blast-burn|hurricane,Excavar | Puño Certero | Anillo Ígneo | Vendaval
-R5,10,71.40277777777779,fly|solar-beam|earthquake|blast-burn,Vuelo | Rayo Solar | Terremoto | Anillo Ígneo
+R1,1,71.50962028542304,earthquake|fire-blast|focus-blast|hurricane,Terremoto | Llamarada | Onda Certera | Vendaval
+R1,2,71.23878695208971,flamethrower|earthquake|focus-blast|hurricane,Lanzallamas | Terremoto | Onda Certera | Vendaval
+R1,3,71.21527777777777,fire-blast|focus-blast|hurricane|scorching-sands,Llamarada | Onda Certera | Vendaval | Arenas Ardientes
+R1,4,71.17628695208971,earthquake|overheat|focus-blast|hurricane,Terremoto | Sofoco | Onda Certera | Vendaval
+R1,5,71.07212028542304,earthquake|heat-wave|focus-blast|hurricane,Terremoto | Onda Ígnea | Onda Certera | Vendaval
+R1,6,70.98878695208971,earthquake|fire-blast|air-slash|focus-blast,Terremoto | Llamarada | Tajo Aéreo | Onda Certera
+R1,7,70.94444444444444,flamethrower|focus-blast|hurricane|scorching-sands,Lanzallamas | Onda Certera | Vendaval | Arenas Ardientes
+R1,8,70.88194444444444,overheat|focus-blast|hurricane|scorching-sands,Sofoco | Onda Certera | Vendaval | Arenas Ardientes
+R1,9,70.82212028542304,earthquake|focus-blast|fire-pledge|hurricane,Terremoto | Onda Certera | Voto Fuego | Vendaval
+R1,10,70.77777777777777,heat-wave|focus-blast|hurricane|scorching-sands,Onda Ígnea | Onda Certera | Vendaval | Arenas Ardientes
+R2,1,74.60569571865443,earthquake|crunch|focus-blast|hurricane,Terremoto | Triturar | Onda Certera | Vendaval
+R2,2,74.55409021406727,solar-beam|earthquake|focus-blast|hurricane,Rayo Solar | Terremoto | Onda Certera | Vendaval
+R2,3,74.48528287461774,thunder-punch|earthquake|focus-blast|hurricane,Puño Trueno | Terremoto | Onda Certera | Vendaval
+R2,4,74.38493883792049,crunch|focus-blast|hurricane|scorching-sands,Triturar | Onda Certera | Vendaval | Arenas Ardientes
+R2,5,74.36487003058103,earthquake|focus-blast|shadow-claw|hurricane,Terremoto | Onda Certera | Garra Umbría | Vendaval
+R2,6,74.33333333333333,solar-beam|focus-blast|hurricane|scorching-sands,Rayo Solar | Onda Certera | Vendaval | Arenas Ardientes
+R2,7,74.26452599388378,thunder-punch|focus-blast|hurricane|scorching-sands,Puño Trueno | Onda Certera | Vendaval | Arenas Ardientes
+R2,8,74.14411314984709,focus-blast|shadow-claw|hurricane|scorching-sands,Onda Certera | Garra Umbría | Vendaval | Arenas Ardientes
+R2,9,74.13694571865443,earthquake|crunch|air-slash|focus-blast,Terremoto | Triturar | Tajo Aéreo | Onda Certera
+R2,10,74.12404434250764,bite|earthquake|focus-blast|hurricane,Mordisco | Terremoto | Onda Certera | Vendaval
+R3,1,78.50949286442406,earthquake|fire-blast|focus-blast|hurricane,Terremoto | Llamarada | Onda Certera | Vendaval
+R3,2,77.84722222222223,fire-blast|focus-blast|hurricane|scorching-sands,Llamarada | Onda Certera | Vendaval | Arenas Ardientes
+R3,3,77.52511786442406,earthquake|overheat|focus-blast|hurricane,Terremoto | Sofoco | Onda Certera | Vendaval
+R3,4,77.29074286442406,earthquake|heat-wave|focus-blast|hurricane,Terremoto | Onda Ígnea | Onda Certera | Vendaval
+R3,5,77.19699286442406,flamethrower|earthquake|focus-blast|hurricane,Lanzallamas | Terremoto | Onda Certera | Vendaval
+R3,6,77.03125,fire-blast|dragon-pulse|focus-blast|hurricane,Llamarada | Pulso Dragón | Onda Certera | Vendaval
+R3,7,76.86284722222223,overheat|focus-blast|hurricane|scorching-sands,Sofoco | Onda Certera | Vendaval | Arenas Ardientes
+R3,8,76.7170138888889,fire-blast|overheat|focus-blast|hurricane,Llamarada | Sofoco | Onda Certera | Vendaval
+R3,9,76.62847222222223,heat-wave|focus-blast|hurricane|scorching-sands,Onda Ígnea | Onda Certera | Vendaval | Arenas Ardientes
+R3,10,76.53472222222223,flamethrower|focus-blast|hurricane|scorching-sands,Lanzallamas | Onda Certera | Vendaval | Arenas Ardientes
+R4,1,79.26889016309887,flamethrower|earthquake|crunch|air-slash,Lanzallamas | Terremoto | Triturar | Tajo Aéreo
+R4,2,79.21728465851172,flamethrower|solar-beam|earthquake|air-slash,Lanzallamas | Rayo Solar | Terremoto | Tajo Aéreo
+R4,3,79.14847731906218,thunder-punch|flamethrower|earthquake|air-slash,Puño Trueno | Lanzallamas | Terremoto | Tajo Aéreo
+R4,4,79.14847731906218,flamethrower|earthquake|brick-break|air-slash,Lanzallamas | Terremoto | Demolición | Tajo Aéreo
+R4,5,79.04813328236493,flamethrower|crunch|air-slash|scorching-sands,Lanzallamas | Triturar | Tajo Aéreo | Arenas Ardientes
+R4,6,79.02806447502549,flamethrower|earthquake|air-slash|shadow-claw,Lanzallamas | Terremoto | Tajo Aéreo | Garra Umbría
+R4,7,78.99652777777777,flamethrower|solar-beam|air-slash|scorching-sands,Lanzallamas | Rayo Solar | Tajo Aéreo | Arenas Ardientes
+R4,8,78.95639016309887,earthquake|crunch|air-slash|fire-pledge,Terremoto | Triturar | Tajo Aéreo | Voto Fuego
+R4,9,78.92772043832824,thunder-punch|flamethrower|air-slash|scorching-sands,Puño Trueno | Lanzallamas | Tajo Aéreo | Arenas Ardientes
+R4,10,78.92772043832824,flamethrower|brick-break|air-slash|scorching-sands,Lanzallamas | Demolición | Tajo Aéreo | Arenas Ardientes
+R5,1,71.43603465851173,earthquake|fire-blast|focus-blast|hurricane,Terremoto | Llamarada | Onda Certera | Vendaval
+R5,2,71.21527777777779,fire-blast|focus-blast|hurricane|scorching-sands,Llamarada | Onda Certera | Vendaval | Arenas Ardientes
+R5,3,71.18603465851173,flamethrower|earthquake|focus-blast|hurricane,Lanzallamas | Terremoto | Onda Certera | Vendaval
+R5,4,71.17040965851173,earthquake|overheat|focus-blast|hurricane,Terremoto | Sofoco | Onda Certera | Vendaval
+R5,5,71.09228465851173,earthquake|heat-wave|focus-blast|hurricane,Terremoto | Onda Ígnea | Onda Certera | Vendaval
+R5,6,70.97075688073394,flamethrower|earthquake|fire-blast|hurricane,Lanzallamas | Terremoto | Llamarada | Vendaval
+R5,7,70.96728465851173,earthquake|fire-blast|air-slash|focus-blast,Terremoto | Llamarada | Tajo Aéreo | Onda Certera
+R5,8,70.96527777777779,flamethrower|focus-blast|hurricane|scorching-sands,Lanzallamas | Onda Certera | Vendaval | Arenas Ardientes
+R5,9,70.95513188073394,earthquake|fire-blast|overheat|hurricane,Terremoto | Llamarada | Sofoco | Vendaval
+R5,10,70.94965277777779,overheat|focus-blast|hurricane|scorching-sands,Sofoco | Onda Certera | Vendaval | Arenas Ardientes

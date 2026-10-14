@@ -1,10 +1,11 @@
 """Genera todos los graficos A PARTIR DE LOS CSV de results/ y data/ (no recalcula experimentos).
 
 Salidas (figures/):
-    runs/<config>_seed<s>.png       evolucion de cada corrida (80 graficos)
+    runs/<config>_seed<s>.png       evolucion de cada corrida (un grafico por configuracion y semilla)
     fig_tabla_tipos.png             tabla de efectividad 18x18
     fig_variabilidad.png            generacion y evaluaciones hasta el optimo, por configuracion y semilla
-    fig_operadores.png              convergencia media: configuracion base vs variantes de operadores
+    fig_operadores.png              convergencia media: base vs variantes de cruza y de mutacion
+    fig_seleccion.png               convergencia media: torneo vs ruleta, ranking y control sobre numero esperado
     fig_componentes_perfiles.png    componentes de las soluciones optimas de cada perfil
     fig_ag_vs_aleatoria.png         mejor acumulada vs evaluaciones efectivas: AG vs busqueda aleatoria
     fig_distribucion_exhaustiva.png distribucion de la aptitud de las C(M,4) combinaciones (perfil base)
@@ -130,11 +131,14 @@ def fig_type_chart(catalog):
 
 def fig_variability(exps, gaps):
     cids = [c.config_id for c in exps["configs"]]
-    fig, axes = plt.subplots(1, 2, figsize=(6.4, 3.2), sharey=True)
+    fig, axes = plt.subplots(1, 2, figsize=(6.4, 0.8 + 0.3 * len(cids)), sharey=True)
     for ax, field, xlabel in ((axes[0], "generacion_alcanza_optimo", "Generación en que se alcanza el óptimo"),
                               (axes[1], "efectivas_hasta_optimo", "Evaluaciones efectivas hasta el óptimo")):
         for i, cid in enumerate(cids):
+            # Solo las replicas que alcanzaron el optimo de su perfil (y de su version de aptitud).
             vals = [float(g[field]) for g in gaps if g["config_id"] == cid and g[field] != ""]
+            if not vals:
+                continue
             y = np.full(len(vals), i) + np.linspace(-0.18, 0.18, len(vals))
             ax.scatter(vals, y, s=18, color=S1, alpha=0.75, linewidths=0)
             ax.plot([np.mean(vals)] * 2, [i - 0.3, i + 0.3], color=INK, linewidth=1.6)
@@ -142,14 +146,16 @@ def fig_variability(exps, gaps):
         ax.grid(axis="y", visible=False)
         if field == "efectivas_hasta_optimo":
             ax.set_xscale("log")
-            ax.set_xticks([300, 500, 1000, 2000, 4000])
+            ax.set_xticks([100, 300, 1000, 3000])
             ax.xaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:,.0f}".replace(",", ".")))
             ax.xaxis.set_minor_formatter(NullFormatter())
     axes[0].set_yticks(range(len(cids)), cids)
     axes[0].invert_yaxis()
-    axes[0].scatter([], [], s=18, color=S1, label="Réplica (semilla 42–51)")
+    axes[0].scatter([], [], s=18, color=S1, label="Réplica que alcanzó el óptimo (semillas 42–51)")
     axes[0].plot([], [], color=INK, linewidth=1.6, label="Media")
-    axes[0].legend(loc="lower right", fontsize=7.5)
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc="lower center", ncol=2, fontsize=8, bbox_to_anchor=(0.5, -0.04))
+    fig.tight_layout(rect=(0, 0.04, 1, 1))
     return save(fig, "fig_variabilidad.png")
 
 
@@ -161,10 +167,20 @@ def mean_curves(cid, seeds, field):
     return np.array(arr)
 
 
-def fig_operators(exps, optimum_r1):
+OPERATOR_SERIES = [("R1", "R1: torneo k=3, cruza de conjuntos, mut. 0,10", S1),
+                   ("OP-UNIF", "OP-UNIF: cruza binomial aleatoria", S2),
+                   ("OP-1P", "OP-1P: cruza simple (un punto)", S3),
+                   ("OP-MUTAD", "OP-MUTAD: mutación adaptativa", S4)]
+SELECTION_SERIES = [("R1", "R1: torneo k=3", S1), ("OP-RUL", "OP-RUL: ruleta", S2),
+                    ("OP-RANK", "OP-RANK: ranking lineal", S3), ("OP-CNE", "OP-CNE: control sobre número esperado", S4)]
+
+
+def fig_operators(exps, optimum_r1, series=OPERATOR_SERIES, name="fig_operadores.png"):
+    """Convergencia media (10 semillas) de la configuracion base frente a variantes de UN operador.
+
+    R1 conserva siempre el primer color; cada figura tiene a lo sumo 4 series (paleta validada de 4).
+    """
     seeds = exps["seeds"]
-    series = [("R1", "R1: torneo k=3, cruza uniforme, mut. 0,10", S1), ("OP-RUL", "OP-RUL: selección por ruleta", S2),
-              ("OP-1P", "OP-1P: cruza de un punto", S3), ("OP-MUT20", "OP-MUT20: mutación 0,20", S4)]
     fig, axes = plt.subplots(1, 2, figsize=(6.6, 3.3))
     for cid, label, color in series:
         best = mean_curves(cid, seeds, "mejor_acumulada")
@@ -184,7 +200,7 @@ def fig_operators(exps, optimum_r1):
     handles, labels = axes[0].get_legend_handles_labels()
     fig.legend(handles, labels, loc="lower center", ncol=2, fontsize=8, bbox_to_anchor=(0.5, -0.13))
     fig.tight_layout(rect=(0, 0.06, 1, 1))
-    return save(fig, "fig_operadores.png")
+    return save(fig, name)
 
 
 def fig_components(catalog, optimum_rows):
@@ -293,9 +309,11 @@ def main():
     gaps = read_csv(RESULTS_DIR / "ga_vs_optimum.csv")
     for r in runs:
         main_run = r["corrida_principal"] == "True"
-        label = f"{r['config_id']} · perfil {r['perfil']} ({r['perfil_nombre']}) · semilla {r['semilla']}"
+        label = (f"{r['config_id']} · perfil {r['perfil']} ({r['perfil_nombre']}) · semilla {r['semilla']}"
+                 f" · aptitud {r['fitness_version']}")
         fig_run(r["config_id"], int(r["semilla"]), label, dpi=200 if main_run else 110)
     out = [fig_type_chart(catalog), fig_variability(exps, gaps), fig_operators(exps, optimum_r1),
+           fig_operators(exps, optimum_r1, SELECTION_SERIES, "fig_seleccion.png"),
            fig_components(catalog, optimum_rows), fig_ga_vs_random(exps, optimum_r1), fig_distribution(optimum_r1)]
     print(f"{len(runs)} graficos de corridas en figures/runs/ y {len(out)} graficos de analisis:")
     for p in out:

@@ -2,15 +2,19 @@
 
 El proyecto funciona sin conexion: todo se lee de la carpeta data/, generada una unica vez por
 scripts/prepare_data.py a partir de commits fijos de PokeAPI y Pokemon Showdown.
+Los valores numericos de retroceso y de caida de stats propios (necesarios para la potencia
+efectiva de la aptitud F2) se leen del extracto de Showdown que guarda ese mismo script en data/raw/.
 """
 from __future__ import annotations
 
 import csv
 import hashlib
 import json
+import re
 from dataclasses import dataclass
 from pathlib import Path
 
+from .mechanics import potencia_efectiva
 from .paths import DATA_DIR
 
 # Los 18 tipos individuales en el orden canonico de la tabla de tipos.
@@ -38,6 +42,14 @@ class Move:
     stab: bool
     subconjunto_conservador: bool
     efectos_ignorados: str
+    # Mecanicas que usa la potencia efectiva (aptitud F2); F1 las ignora.
+    carga: bool = False
+    recarga: bool = False
+    falla_condicional: bool = False
+    bloqueo: bool = False
+    retroceso: float = 0.0           # fraccion del dano causado que vuelve al usuario
+    caida_stat_ofensivo: int = 0     # etapas que baja el propio stat ofensivo que usa el movimiento
+    potencia_efectiva: float = 0.0   # ver mechanics.py
 
 
 @dataclass(frozen=True)
@@ -51,6 +63,8 @@ class Catalog:
     se_types: dict         # tipo atacante -> frozenset de tipos defensores con multiplicador > 1
     power_max: int         # potencia maxima del catalogo COMPLETO (fija para todas las corridas)
     dataset_version: str   # hash corto del catalogo + tabla de tipos
+    power_eff_max: float = 0.0   # potencia efectiva maxima del catalogo completo (normalizacion de P en F2)
+    base_stats: dict | None = None   # estadisticas base de Charizard (PokeAPI)
 
     @property
     def M(self) -> int:
@@ -101,22 +115,53 @@ def load_type_chart(data_dir: Path = DATA_DIR) -> dict:
     return chart
 
 
+def showdown_id(slug: str) -> str:
+    """Identificador de Showdown a partir del slug de PokeAPI ('flare-blitz' -> 'flareblitz')."""
+    return re.sub(r"[^a-z0-9]", "", slug.lower())
+
+
+def _numeric_mechanics(data_dir: Path) -> dict:
+    """Retroceso y caida de stats propios de cada movimiento, del extracto de Showdown en data/raw/."""
+    raw = json.loads((data_dir / "raw" / "showdown_extract.json").read_text(encoding="utf-8"))["moves"]
+    out = {}
+    for sid, sd in raw.items():
+        recoil = sd.get("recoil")
+        out[sid] = {
+            "retroceso": recoil[0] / recoil[1] if recoil else 0.0,
+            "caidas": {stat: -v for stat, v in (sd.get("self_drops") or {}).items() if v < 0},
+        }
+    return out
+
+
 def load_catalog(data_dir: Path = DATA_DIR) -> Catalog:
     """Carga el catalogo definitivo y valida IDs, tipos y rangos numericos."""
     data_dir = Path(data_dir)
     chart = load_type_chart(data_dir)
     with (data_dir / "types.csv").open(encoding="utf-8", newline="") as fh:
         type_es = {r["tipo"]: r["tipo_es"] for r in csv.DictReader(fh)}
+    stats = load_metadata(data_dir)["estadisticas_base_charizard"]
+    atk, spa = stats["attack"], stats["special-attack"]
+    mechanics = _numeric_mechanics(data_dir)
 
     moves = {}
     with (data_dir / "catalog_moves.csv").open(encoding="utf-8", newline="") as fh:
         for r in csv.DictReader(fh):
+            sid = showdown_id(r["slug"])
+            if sid not in mechanics:
+                raise ValueError(f"{r['slug']} no figura en data/raw/showdown_extract.json")
+            # Solo cuenta la caida del stat que usa el propio movimiento (AtEsp si es especial, At si es fisico).
+            caida = mechanics[sid]["caidas"].get("spa" if r["categoria"] == "special" else "atk", 0)
+            mech = dict(carga=_as_bool(r["carga"]), recarga=_as_bool(r["recarga"]),
+                        falla_condicional=_as_bool(r["falla_condicional"]), bloqueo=_as_bool(r["bloqueo"]),
+                        retroceso=mechanics[sid]["retroceso"], caida_stat_ofensivo=caida)
             mv = Move(
                 move_id=int(r["move_id"]), slug=r["slug"], nombre_es=r["nombre_es"], nombre_en=r["nombre_en"],
                 tipo=r["tipo"], tipo_es=r["tipo_es"], potencia=int(r["potencia"]), precision=int(r["precision"]),
                 categoria=r["categoria"], stab=_as_bool(r["stab"]),
                 subconjunto_conservador=_as_bool(r["subconjunto_conservador"]),
                 efectos_ignorados=r.get("efectos_ignorados", "") or "",
+                **mech,
+                potencia_efectiva=potencia_efectiva(int(r["potencia"]), r["categoria"], atk, spa, **mech),
             )
             if mv.move_id in moves:
                 raise ValueError(f"ID duplicado en el catalogo: {mv.move_id}")
@@ -142,6 +187,8 @@ def load_catalog(data_dir: Path = DATA_DIR) -> Catalog:
         se_types=se_types,
         power_max=max(m.potencia for m in moves.values()),
         dataset_version=dataset_hash(data_dir)[:12],
+        power_eff_max=max(m.potencia_efectiva for m in moves.values()),
+        base_stats=dict(stats),
     )
 
 

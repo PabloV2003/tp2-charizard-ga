@@ -16,8 +16,8 @@ from dataclasses import dataclass
 import numpy as np
 
 from .data import Catalog
-from .fitness import (COMPONENT_NAMES, Evaluator, Weights, canonical_key, components, partial_components,
-                      weighted_fitness)
+from .fitness import (COMPONENT_NAMES, DEFAULT_FITNESS, Evaluator, Weights, canonical_key, components,
+                      partial_components, weighted_fitness)
 
 TOL = 1e-9
 
@@ -34,6 +34,7 @@ class ExhaustiveTable:
     seconds: float            # tiempo de enumeracion + calculo de componentes
     allowed_ids: tuple
     catalog: Catalog
+    version: str = DEFAULT_FITNESS   # version de la aptitud con la que se calcularon los componentes
 
     @property
     def n(self) -> int:
@@ -44,7 +45,7 @@ class ExhaustiveTable:
         return 100.0 * self.comps @ np.array(weights.as_tuple())
 
 
-def exhaustive_table(catalog: Catalog, allowed_ids=None) -> ExhaustiveTable:
+def exhaustive_table(catalog: Catalog, allowed_ids=None, version: str = DEFAULT_FITNESS) -> ExhaustiveTable:
     """Enumera todas las combinaciones de 4 movimientos y calcula sus componentes con fitness.components."""
     ids = tuple(sorted(allowed_ids)) if allowed_ids is not None else catalog.ids
     t0 = time.perf_counter()
@@ -53,8 +54,9 @@ def exhaustive_table(catalog: Catalog, allowed_ids=None) -> ExhaustiveTable:
     comps = np.empty((n, 5), dtype=np.float64)
     for i, combo in enumerate(itertools.combinations(ids, 4)):
         keys[i] = combo
-        comps[i] = components(combo, catalog).as_tuple()
-    return ExhaustiveTable(keys=keys, comps=comps, seconds=time.perf_counter() - t0, allowed_ids=ids, catalog=catalog)
+        comps[i] = components(combo, catalog, version).as_tuple()
+    return ExhaustiveTable(keys=keys, comps=comps, seconds=time.perf_counter() - t0, allowed_ids=ids, catalog=catalog,
+                           version=version)
 
 
 def exhaustive_optimum(table: ExhaustiveTable, weights: Weights, top_k: int = 10) -> dict:
@@ -67,7 +69,7 @@ def exhaustive_optimum(table: ExhaustiveTable, weights: Weights, top_k: int = 10
     # El valor del optimo se recalcula con la MISMA ruta de codigo que usa el AG
     # (fitness.weighted_fitness), para que la brecha no dependa del orden de suma de numpy.
     best_key = tuple(int(x) for x in table.keys[ties[0]])
-    best = weighted_fitness(components(best_key, table.catalog), weights)
+    best = weighted_fitness(components(best_key, table.catalog, table.version), weights)
     return {
         "optimo": best,
         "n_empates_optimo": int(len(ties)),
@@ -87,7 +89,7 @@ def rank_of(table: ExhaustiveTable, fit: np.ndarray, value: float) -> int:
 # Busqueda aleatoria
 # ---------------------------------------------------------------------------
 def random_search(catalog: Catalog, weights: Weights, budget: int, seed: int, budget_mode: str = "requested",
-                  record_curve: bool = False) -> dict:
+                  record_curve: bool = False, version: str = DEFAULT_FITNESS) -> dict:
     """Genera movesets validos al azar (4 movimientos sin reemplazo) y conserva el mejor.
 
     budget_mode = "requested": se generan exactamente `budget` candidatos (evaluaciones solicitadas).
@@ -97,7 +99,7 @@ def random_search(catalog: Catalog, weights: Weights, budget: int, seed: int, bu
     if budget_mode not in ("requested", "effective"):
         raise ValueError(budget_mode)
     rng = random.Random(seed)
-    ev = Evaluator(catalog, weights)
+    ev = Evaluator(catalog, weights, version)
     best_key, best_val = None, -1.0
     curve = []  # (evaluaciones efectivas acumuladas, evaluaciones solicitadas, mejor hasta el momento)
     t0 = time.perf_counter()
@@ -125,7 +127,7 @@ def random_search(catalog: Catalog, weights: Weights, budget: int, seed: int, bu
 # ---------------------------------------------------------------------------
 # Heuristica voraz y busqueda local
 # ---------------------------------------------------------------------------
-def greedy(catalog: Catalog, weights: Weights) -> dict:
+def greedy(catalog: Catalog, weights: Weights, version: str = DEFAULT_FITNESS) -> dict:
     """Construccion voraz: en cada paso agrega el movimiento con mayor aptitud parcial.
 
     Reglas: (1) se parte del moveset vacio; (2) en cada uno de los 4 pasos se evalua cada movimiento
@@ -144,13 +146,13 @@ def greedy(catalog: Catalog, weights: Weights) -> dict:
             if m in chosen:
                 continue
             evaluations += 1
-            v = 100.0 * float(np.dot(w, partial_components(chosen + [m], catalog)))
+            v = 100.0 * float(np.dot(w, partial_components(chosen + [m], catalog, version)))
             if v > best_v + 1e-12:
                 best_m, best_v = m, v
         chosen.append(best_m)
         steps.append((catalog.moves[best_m].slug, best_v))
     key = canonical_key(chosen)
-    ev = Evaluator(catalog, weights)
+    ev = Evaluator(catalog, weights, version)
     return {
         "metodo": "voraz",
         "mejor_moveset": key,
@@ -162,12 +164,12 @@ def greedy(catalog: Catalog, weights: Weights) -> dict:
     }
 
 
-def local_search(catalog: Catalog, weights: Weights, start) -> dict:
+def local_search(catalog: Catalog, weights: Weights, start, version: str = DEFAULT_FITNESS) -> dict:
     """Ascenso de colina: prueba todos los intercambios de 1 movimiento y aplica la mejor mejora.
 
     Se detiene cuando ningun intercambio mejora la aptitud (optimo local respecto de ese vecindario).
     """
-    ev = Evaluator(catalog, weights)
+    ev = Evaluator(catalog, weights, version)
     current = list(canonical_key(start))
     current_val = ev.value(current)
     iterations = 0
