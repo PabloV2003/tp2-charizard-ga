@@ -6,7 +6,7 @@ El validador comprueba que los CUATRO movimientos puedan coexistir en un mismo C
 (por ejemplo, incompatibilidades entre movimientos de evento o de huevo).
 
 Requisitos: Node.js y git. Con --setup se descarga Showdown en el commit fijado en config/data_sources.json
-(carpeta .cache/, excluida del paquete) y se instalan sus dependencias con npm.
+(carpeta .cache/, excluida del repositorio) y se instalan sus dependencias con npm.
 
 Uso:
     python scripts/validate_legality_showdown.py --setup   # primera vez (descarga ~100 MB)
@@ -62,7 +62,7 @@ def read_csv(path):
 
 def collect_movesets(catalog) -> list[tuple[str, tuple]]:
     """Movesets a validar: mejores de todas las corridas, optimos exactos (con empates), optimos del
-    subconjunto conservador, heuristicas y el ejemplo numerico de la entrega parcial."""
+    subconjunto conservador, heuristicas y un ejemplo numerico."""
     found: dict[tuple, list[str]] = {}
 
     def add(origin, slugs_text):

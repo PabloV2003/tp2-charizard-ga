@@ -92,7 +92,7 @@ categoría (los movimientos físicos rinden 84/109 por el Ataque de Charizard), 
 fallo condicional (×0,25), bloqueo (×0,75), retroceso r (×(1 − r/2)) y caída del propio stat ofensivo. La
 versión original **F1** usaba la potencia base; se conserva solo como referencia (configuración ORIG-R1).
 
-Ejemplo de la entrega parcial: Lanzallamas, Tajo Aéreo, Pulso Dragón, Rayo Solar."""),
+Ejemplo de referencia: Lanzallamas, Tajo Aéreo, Pulso Dragón, Rayo Solar."""),
     ("code", """exps = load_experiments()
 w_base = exps["profiles"]["R1"]
 example = [catalog.by_slug(s) for s in ["flamethrower", "air-slash", "dragon-pulse", "solar-beam"]]

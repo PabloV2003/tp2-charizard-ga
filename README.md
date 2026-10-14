@@ -24,8 +24,7 @@ de movimientos con STAB y D la diversidad de tipos.
   cruza binomial aleatoria y simple; mutación adaptativa; paro por estancamiento.
 
 Incluye datos versionados, 150 corridas reales (15 configuraciones × 10 semillas), comparación con búsqueda
-aleatoria, heurística voraz y enumeración exhaustiva, pruebas y un notebook ejecutado. El informe final se escribe
-aparte (`informe_tp2_charizard.md`) a partir de los resultados de este repositorio.
+aleatoria, heurística voraz y enumeración exhaustiva, pruebas y un notebook ejecutado.
 
 **Entregables principales**
 
@@ -36,7 +35,6 @@ aparte (`informe_tp2_charizard.md`) a partir de los resultados de este repositor
 | `figures/` | Gráfico de cada corrida (`figures/runs/`) y de los análisis |
 | `notebooks/tp2_charizard.ipynb` | Demostración didáctica ejecutada |
 | `docs/registro_validacion.md` | Registro de validación: pruebas, reproducibilidad, notebook, gráficos y legalidad |
-| `dist/TP2_Grupo6_Charizard_entrega_final.zip` | Paquete completo (se genera con `scripts/make_package.py`) |
 
 ## Instalación
 
@@ -73,7 +71,7 @@ Muestra el progreso, el mejor moveset con sus componentes y guarda `results/demo
 
 Ejecuta, en orden: las 150 corridas (`run_experiments.py`), la comparación con otros métodos (`run_baselines.py`),
 los gráficos desde los CSV (`make_figures.py`), la verificación de legalidad (opcional, si hay Node.js), el
-notebook (`build_notebook.py`), la validación (`run_validation.py`) y el ZIP (`make_package.py`). Tarda alrededor
+notebook (`build_notebook.py`) y la validación (`run_validation.py`). Tarda alrededor
 de un minuto y medio (sin contar la primera descarga de Showdown). Con las mismas semillas se obtienen los mismos
 logs y resultados; solo cambian los tiempos medidos.
 
@@ -103,7 +101,7 @@ fuentes fijadas por commit (PokéAPI `api-data` y Pokémon Showdown, ver `config
 .venv/bin/python scripts/validate_legality_showdown.py --setup
 ```
 
-Descarga Pokémon Showdown en el commit fijado (en `.cache/`, excluida del paquete) y valida que los cuatro
+Descarga Pokémon Showdown en el commit fijado (en `.cache/`, excluida del repositorio) y valida que los cuatro
 movimientos de cada moveset resultante puedan coexistir en `[Gen 9] Anything Goes`. El resultado queda en
 `results/legality_showdown.csv`.
 
@@ -116,7 +114,7 @@ data/        catalog_moves.csv (M = 53), type_chart.csv (filas = atacante, colum
              verificación cruzada, extractos crudos (raw/), metadata.json y FUENTES_DATOS.md
 src/charizard_ga/   data.py, mechanics.py, fitness.py, operators.py, ga.py, baselines.py, experiments.py,
                     config.py, io_utils.py, paths.py
-scripts/     preparación de datos, corridas, comparaciones, gráficos, legalidad, notebook, validación y paquete
+scripts/     preparación de datos, corridas, comparaciones, gráficos, legalidad, notebook y validación
 notebooks/   tp2_charizard.ipynb (ejecutado)
 results/     runs/<config>/seed_<s>_log.csv y _summary.json, resúmenes, comparaciones (baselines/), legalidad y validación
 figures/     gráficos de las 150 corridas (figures/runs/) y de los análisis
@@ -140,7 +138,7 @@ docs/        registro de validación
   las 50 ejecuciones (5 perfiles × 10 semillas). La heurística voraz también lo alcanza en los cinco perfiles, con
   206 evaluaciones; la enumeración exhaustiva es la referencia exacta.
 - Los 12 movesets validados con el validador de Pokémon Showdown (todos los resultados del AG y de los otros
-  métodos, más el ejemplo de la entrega parcial) son legales, y los 2 controles negativos se rechazan.
+  métodos, más un ejemplo numérico) son legales, y los 2 controles negativos se rechazan.
 
 ## Uso de asistentes de IA
 

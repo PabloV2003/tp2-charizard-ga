@@ -1,6 +1,6 @@
 """Potencia efectiva de un movimiento: la P de la version F2 de la funcion de aptitud.
 
-F1 (prototipo de la entrega parcial) usa la potencia base que figura en el juego. Eso sobrevalora
+F1 (version original) usa la potencia base que figura en el juego. Eso sobrevalora
 movimientos que en combate rinden mucho menos: los que tardan dos turnos, los que pueden fallar por
 una condicion ajena a la precision y los fisicos en un Pokemon especial (o al reves).
 F2 usa la potencia EFECTIVA, lo que el movimiento pega de verdad por turno con este Pokemon:

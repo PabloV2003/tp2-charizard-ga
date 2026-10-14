@@ -1,11 +1,11 @@
-"""Funcion de aptitud de la entrega parcial (misma formula y mismos pesos en sus dos versiones).
+"""Funcion de aptitud (misma formula y mismos pesos en sus dos versiones).
 
     F(x) = 100 * (wC*C(x) + wP*P(x) + wA*A(x) + wS*S(x) + wD*D(x))
 
 Componentes (todos en [0, 1]):
     C(x): tipos defensores individuales (de 18) con al menos un movimiento de multiplicador > 1, / 18.
     P(x): potencia promedio de los 4 movimientos / potencia maxima del catalogo completo.
-          F1 (prototipo de la parcial): potencia base, tal como figura en el juego.
+          F1 (version original): potencia base, tal como figura en el juego.
           F2 (version por defecto): potencia EFECTIVA (mechanics.py): descuenta los turnos perdidos
           (carga, recarga), los fallos condicionales, el bloqueo, el retroceso, la caida del propio stat
           ofensivo y la categoria fisica/especial segun los stats base de Charizard.

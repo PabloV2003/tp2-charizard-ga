@@ -1,5 +1,5 @@
-"""Regenera TODA la evidencia en orden: experimentos, comparaciones, graficos, legalidad, notebook,
-validacion y paquete ZIP.
+"""Regenera TODA la evidencia en orden: experimentos, comparaciones, graficos, legalidad, notebook
+y validacion.
 
 Uso:
     python scripts/run_all.py                 # usa el dataset local de data/
@@ -45,7 +45,6 @@ def main():
         print("\nNode.js no disponible: se omite la verificacion opcional de legalidad (se conservan sus resultados previos).")
     step("Notebook", ["scripts/build_notebook.py"])
     step("Validacion", ["scripts/run_validation.py"])
-    step("Paquete ZIP", ["scripts/make_package.py"])
 
 
 if __name__ == "__main__":
