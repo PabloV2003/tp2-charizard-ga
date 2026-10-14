@@ -16,7 +16,7 @@ Uso:
     python scripts/prepare_data.py            # usa data/cache si existe; si no, descarga
     python scripts/prepare_data.py --refresh  # fuerza la descarga desde los commits fijados
 
-El resto del proyecto (AG, experimentos, informe) solo lee los archivos de data/, por lo que
+El resto del proyecto (AG, experimentos, graficos y notebook) solo lee los archivos de data/, por lo que
 funciona sin conexion una vez preparado el dataset.
 """
 from __future__ import annotations
@@ -534,7 +534,7 @@ def main():
         "filtros": {
             "metodos_incluidos": cfg["metodos_aprendizaje_incluidos"],
             "reglas_exclusion": EXCLUSION_RULES,
-            "nota_efectos": "Carga, recarga, retroceso, autodebuff, bloqueo, prioridad, potencia condicional y tipo variable se conservan en el catalogo y se documentan en columnas descriptivas; la funcion de aptitud aprobada los ignora.",
+            "nota_efectos": "Carga, recarga, fallo condicional, bloqueo, retroceso, autodebuff, prioridad, potencia condicional y tipo variable se conservan en el catalogo como columnas descriptivas, y la columna efectos_ignorados resume en texto lo que la potencia base no refleja. La aptitud F2 usa carga, recarga, fallo condicional, bloqueo, retroceso y la caida del propio stat ofensivo (ademas del reparto fisico/especial de Charizard) para calcular la potencia efectiva (src/charizard_ga/mechanics.py); prioridad, potencia condicional, tipo variable y los demas efectos secundarios no se modelan.",
         },
         "conteos": {
             "learnset_total": len(learnset_rows),
@@ -626,7 +626,8 @@ def write_sources_md(meta: dict, learnset_rows: list[dict], catalog_rows: list[d
         "",
         f"- Learnset total en `{meta['version_group']}`: {c['learnset_total']} movimientos.",
         f"- Catalogo definitivo: **M = {c['catalogo_M']}** movimientos; espacio de busqueda **C(M,4) = {c['combinaciones_C_M_4']:,}** movesets.",
-        f"- Potencia maxima del catalogo (normalizacion de P): {c['potencia_maxima_catalogo']}.",
+        f"- Potencia maxima del catalogo: {c['potencia_maxima_catalogo']} (normaliza P solo en la aptitud original F1; F2 normaliza "
+        "con la potencia efectiva maxima del catalogo, registrada en results/parameters.json).",
         f"- Subconjunto conservador (solo para sensibilidad, sin carga/recarga/fallo condicional): {c['subconjunto_conservador_M']} movimientos.",
         "",
         "## Verificacion cruzada con Showdown",

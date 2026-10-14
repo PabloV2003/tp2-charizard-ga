@@ -62,7 +62,7 @@ def read_csv(path):
 
 def collect_movesets(catalog) -> list[tuple[str, tuple]]:
     """Movesets a validar: mejores de todas las corridas, optimos exactos (con empates), optimos del
-    subconjunto conservador, heuristicas y el ejemplo numerico del informe."""
+    subconjunto conservador, heuristicas y el ejemplo numerico de la entrega parcial."""
     found: dict[tuple, list[str]] = {}
 
     def add(origin, slugs_text):

@@ -1,9 +1,9 @@
 {
-  "fecha_utc": "2026-10-03T23:27:20+00:00",
+  "fecha_utc": "2026-10-14T13:31:27+00:00",
   "showdown_commit": "9fb3a5b99f1a0bea17f495c5cc1bfe04fdd19c3e",
   "formato": "gen9anythinggoes",
   "regla": "Standard AG -> Obtainable",
-  "node": "v24.15.0",
+  "node": "v26.2.0",
   "movesets_validados": 12,
   "movesets_validos": 12,
   "controles_rechazados": 2,

@@ -27,13 +27,13 @@ Archivo generado automaticamente por `scripts/prepare_data.py`. No editar a mano
 - `GOLPES_MULTIPLES` (0 movimientos): Golpes multiples: la potencia por golpe no representa el dano total del movimiento.
 - `OHKO` (0 movimientos): Movimiento de KO en un golpe: no tiene potencia base comparable.
 
-Nota: Carga, recarga, retroceso, autodebuff, bloqueo, prioridad, potencia condicional y tipo variable se conservan en el catalogo y se documentan en columnas descriptivas; la funcion de aptitud aprobada los ignora.
+Nota: Carga, recarga, fallo condicional, bloqueo, retroceso, autodebuff, prioridad, potencia condicional y tipo variable se conservan en el catalogo como columnas descriptivas, y la columna efectos_ignorados resume en texto lo que la potencia base no refleja. La aptitud F2 usa carga, recarga, fallo condicional, bloqueo, retroceso y la caida del propio stat ofensivo (ademas del reparto fisico/especial de Charizard) para calcular la potencia efectiva (src/charizard_ga/mechanics.py); prioridad, potencia condicional, tipo variable y los demas efectos secundarios no se modelan.
 
 ## Resultado
 
 - Learnset total en `scarlet-violet`: 75 movimientos.
 - Catalogo definitivo: **M = 53** movimientos; espacio de busqueda **C(M,4) = 292,825** movesets.
-- Potencia maxima del catalogo (normalizacion de P): 150.
+- Potencia maxima del catalogo: 150 (normaliza P solo en la aptitud original F1; F2 normaliza con la potencia efectiva maxima del catalogo, registrada en results/parameters.json).
 - Subconjunto conservador (solo para sensibilidad, sin carga/recarga/fallo condicional): 46 movimientos.
 
 ## Verificacion cruzada con Showdown

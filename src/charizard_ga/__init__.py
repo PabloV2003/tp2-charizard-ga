@@ -3,7 +3,8 @@
 Modulos:
     paths      -> rutas del proyecto (relativas a la carpeta raiz).
     data       -> carga y valida el catalogo de movimientos y la tabla de tipos.
-    fitness    -> funcion de aptitud: componentes C/P/A/S/D, ponderacion y validacion.
+    mechanics  -> potencia efectiva de cada movimiento (la P de la aptitud F2).
+    fitness    -> funcion de aptitud: componentes C/P/A/S/D, ponderacion y validacion (F2; F1 solo como referencia).
     operators  -> operadores geneticos adaptados al cromosoma de cuatro movimientos.
     ga         -> ciclo evolutivo explicito con DEAP y registro por generacion.
     baselines  -> metodos de comparacion: busqueda aleatoria, voraz, busqueda local y exhaustiva.
@@ -11,4 +12,4 @@ Modulos:
     io_utils   -> escritura de logs y resumenes.
 """
 
-__version__ = "1.0.0"
+__version__ = "2.0.0"
